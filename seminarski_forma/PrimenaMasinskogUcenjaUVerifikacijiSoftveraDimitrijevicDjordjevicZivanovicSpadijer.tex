@@ -242,6 +242,9 @@ koja vraca listu pogodnih modela tako sto analizira njihovu preciznost, stopu la
 
 U nastavku su prikazani rezultati poredjenja oko 71 klasifikatora, a na slikama su prikazani samo oni koji su se najbolje pokazali. Cela procedura je uradjena dva puta, s tim sto je drugi put umanjen broj atributa ukljucenih u proces.
 
+Medju 7 najboljih klasifikatora sa slike \ref{fig:acc} se nalaze tri zasnovana na najblizim susedima (``Ib1'', ``Ibk'', ``NNge''), tri zasovana na stablima
+(``LMT'', ``RotationForest'' i ``ADABoost'' primenjen na ``BFTree'') i jedan zasnovan na neuronskim mrezama (``MultiLayerPerceptron'').
+
 
 \begin{figure}[h!]
 \centering
@@ -249,20 +252,33 @@ U nastavku su prikazani rezultati poredjenja oko 71 klasifikatora, a na slikama 
 \caption{Preciznosti algoritama - sa svim atributima i bez}
 \label{fig:acc}
 \end{figure}
+
+Na slici  \ref{fig:falsePos} se vidi isti trend kao i na slici  \ref{fig:acc}: smanjenjem broja atributa algoritmi zasnovani na stablima se losije ponasaju dok algoritmi najblizih suseda i ``MultiLayerPerceptron'' daju bolje rezultate.
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{false_positive.png}
 \caption{Lazni pozitivni - sa svim atributima i bez}
 \label{fig:falsePos}
 \end{figure}
+
+%According to the results gained by Baca [3] it is very important for a static
+%analysis tool to have a low false positive rate. According to that results if a tool
+%signals to many false alarms the developer tend to ignore all signals or even worse,
+%introduces new faults at the position the tool signals them
+
+Prema rezultatima dobijenim u  \cite{baca} vrlo je bitno da alat staticke analize ima malo laznih pozitivnih jer
+u slucaju mnogo pogresnih uzbuna razvijaoci pocinju da ignorisu te signali, ili jos gore izmenjuju ispravan kod sto dolazi 
+do pravljenja novih greski kako bi izbegli upozorenja alata. Na slici \ref{fig:falseNeg} se vidi da je ``NNge'' najbolji, sto je i ocekivano s obzirom na prilicno 
+lose performanse sto se tice laznih pozitivnih.
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{false_negative.png}
 \caption{Lazni negativni - sa svim atributima i bez}
 \label{fig:falseNeg}
 \end{figure}
-Medju 7 najboljih klasifikatora sa slike \ref{fig:acc} se nalaze tri zasnovana na najblizim susedima (``Ib1'', ``Ibk'', ``NNge''), tri zasovana na stablima
-(``LMT'', ``RotationForest'' i ``ADABoost'' primenjen na ``BFTree'') i jedan zasnovan na neuronskim mrezama (``MultiLayerPerceptron'').
+
 
 
 
