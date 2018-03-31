@@ -1,0 +1,3 @@
+Svojstva statickog koda za pregled na osnovi masinskog ucenja
+
+
