@@ -8,23 +8,23 @@
 \usepackage[utf8]{inputenc} % make weird characters work
 \usepackage{graphicx}
 
-%\usepackage[english,serbian]{babel}
-\usepackage[english,serbianc]{babel} %ukljuciti babel sa ovim opcijama, umesto gornjim, ukoliko se koristi cirilica
+\usepackage[english,serbian]{babel}
+%\usepackage[english,serbianc]{babel} %ukljuciti babel sa ovim opcijama, umesto gornjim, ukoliko se koristi cirilica
 
 \usepackage[unicode]{hyperref}
 \hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
 
-\newtheorem{primer}{Пример}[section] %ćirilični primer
-%\newtheorem{primer}{Primer}[section]
+%\newtheorem{primer}{Пример}[section] %ćirilični primer
+\newtheorem{primer}{Primer}[section]
 
 \begin{document}
 
-\renewcommand{\abstractname}{Апстракт}
+%\renewcommand{\abstractname}{Apstrakt} %pisace Sazetak ako se ne ukljuci ova naredba
 
-\title{Примена машинског учења у ве\-ри\-фи\-ка\-ци\-ји софтвера\\ \small{Семинарски рад у оквиру курса\\Методологија стручног и научног рада\\ Математички факултет}}
+\title{Primena mašinskog učenja u verifikaciji softvera\\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
 
-\author{Никола Димитријевић, Растко Ђорђевић,\\
- Лука Живановић, Димитрије Шпадијер\\
+\author{Nikola Dimitrijević, Rastko Đorđević,\\
+ Luka Živanović, Dimitrije Špadijer\\
  nikoladim95@gmail.com, mi14078@alas.matf.bg.ac.rs,\\
   mi14164@alas.matf.bg.ac.rs, mm11021@alas.matf.bg.ac.rs}
 %\date{9.~april 2015.}
@@ -38,7 +38,7 @@ U ovom tekstu je ukratko prikazana osnovna forma seminarskog rada. Obratite paž
 
 \newpage
 
-\section{Увод}
+\section{Uvod}
 \label{sec:uvod}
 
 Ко жели, може да пише рад ћирилицом. У том случају, неопходно је да су инсталирани одговарајући пакети: texlive-fonts-extra, texlive-latex-extra, texlive-lang-cyrillic, texlive-lang-other. \\
@@ -89,7 +89,7 @@ Ovde pišem uvodni tekst.
 Ovde pišem uvodni tekst. 
 
 
-\section{Слике и табеле}
+\section{Slike i tabele}
 \label{slike_i_tabele}
 
 Slike i tabele treba da budu u svom okruženju, sa odgovarajućim naslovima, obeležene labelom da koje omogućava referenciranje. 
@@ -130,7 +130,7 @@ d &e&f\\ \hline
 
 
 
-\section{Први наслов}
+\section{Prvi naslov}
 \label{sec:naslov1}
 
 
@@ -144,7 +144,7 @@ Ovde pišem tekst.
 Ovde pišem tekst. 
 
 
-\subsection{Први поднаслов}
+\subsection{Prvi podnaslov}
 \label{subsec:podnaslov1}
 
 Ovde pišem tekst. 
@@ -155,7 +155,7 @@ Ovde pišem tekst.
 Ovde pišem tekst. 
 Ovde pišem tekst. 
 
-\subsection{Други поднаслов}
+\subsection{Drugi podnaslov}
 \label{subsec:podnaslov2}
 
 Ovde pišem tekst. 
@@ -165,7 +165,7 @@ Ovde pišem tekst.
 Ovde pišem tekst. 
 Ovde pišem tekst. 
 
-\section{Други наслов}
+\section{Drugi naslov}
 \label{sec:naslov2}
 
 Ovde pišem tekst. 
@@ -173,7 +173,7 @@ Ovde pišem tekst.
 Ovde pišem tekst. 
 Ovde pišem tekst. 
 
-\subsection{... поднаслов}
+\subsection{... podnaslov}
 \label{subsec:podnaslovN}
 
 Ovde pišem tekst. 
@@ -183,7 +183,7 @@ Ovde pišem tekst.
 Ovde pišem tekst. 
 Ovde pišem tekst. 
 
-\section{$n$-ти наслов}
+\section{$n$-ti naslov}
 \label{sec:naslovN}
 
 Ovde pišem tekst. 
@@ -192,7 +192,7 @@ Ovde pišem tekst.
 Ovde pišem tekst. 
 Ovde pišem tekst. 
 
-\subsection{... поднаслов}
+\subsection{... podnaslov}
 \label{subsec:podnaslovK}
 
 Ovde pišem tekst. 
@@ -201,7 +201,7 @@ Ovde pišem tekst.
 Ovde pišem tekst. 
 Ovde pišem tekst. 
 
-\subsection{... поднаслов}
+\subsection{... podnaslov}
 \label{subsec:podnaslovM}
 
 Ovde pišem tekst. 
@@ -210,7 +210,7 @@ Ovde pišem tekst.
 Ovde pišem tekst. 
 Ovde pišem tekst. 
 
-\section{Последњи наслов}
+\section{Poslednji naslov}
 \label{sec:naslovM}
 
 Ovde pišem tekst. 
@@ -223,7 +223,7 @@ Ovde pišem tekst.
 Ovde pišem tekst. 
 Ovde pišem tekst. 
 
-\section{Закључак}
+\section{Zaključak}
 \label{sec:zakljucak}
 
 Ovde pišem zaključak. 
@@ -246,7 +246,7 @@ Ovde pišem zaključak.
 \bibliographystyle{plain}
 
 \appendix
-\section{Додатак}
+\section{Dodatak}
 Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
 Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
 Ovde pišem dodatne stvari, ukoliko za time ima potrebe.
