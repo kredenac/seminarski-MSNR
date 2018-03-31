@@ -155,7 +155,7 @@ Ovde pišem tekst.
 Ovde pišem tekst.
 Ovde pišem tekst.
 
-\subsection{Pravljenje skupova treniranja, testiranja i upoređivanje uspešnosti modela}
+\subsection{Od izvornog koda do istreniranih modela}
 \label{subsec:pregled}
 
 Rad \cite{staticFeatures} predlaže rešenje za generisanje ulaznih podataka za algoritme mašinskog učenja na osnovu
@@ -218,10 +218,8 @@ Odgovor na prvo pitanje je softver ``CMore'', program koji može da pretvori izv
 jezika C u ARFF datoteku. Glavna ideja je da treba da bude u mogućnosti da prati tok izvršavanja programa
 i uhvati stanja svih uključenih promenljivih. Pošto su zapamćena sva stanja moguće je otkriti više vrsta
 grešaka pristupa memoriji.
-%Na slici (slika) je prikazan osnovni tok izvršavanja programa CMore.
-Prvi
-%(levi)
-deo izvršavanja je učitavanje datoteke u memoriju i njena obrada kako bi se izvukli
+
+Prvi deo izvršavanja je učitavanje datoteke u memoriju i njena obrada kako bi se izvukli
 razni elementi i ubacili u skladište nazvano ``Mozak''.
 Mozak sadrži listu svih poznatih tipova, struktura, konstanti i globalnih promenljivih unutar analizirane datoteke,
 ali najbitnije je što pamti sve funkcije i njihove parametre.
@@ -231,10 +229,8 @@ priroda svake naredbe, što bi moglo biti dodela, deklaracija, poziv funkcije il
 Sve vreme mora da se motri na sve sakupljene informacije i da se po potrebi dopisuju instance na kraj ARFF fajla
 (koji je ulaz za algoritme mašinskog učenja).
 
-% Slika primera izlaza ARFF možda?
 
 Za treniranje je potreban veliki broj različitih izvornih kodova, a pritom je potrebno obeležiti greške i imati verzije koda kod kojih je uklonjena greška.
-
 Izvorni kodovi od kojih se prave ulazi za treniranje su pokupljeni sa javno dostupnih repozitorijuma, što je dvostruko zgodno:
 velika količina datoteka se skupi na taj način, a pritom je moguće dobiti primere sa greškom i bez greške tako što se posmatraju različite verzije datoteka.
 
