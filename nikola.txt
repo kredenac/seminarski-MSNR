@@ -44,7 +44,6 @@ razne mogucnosti. Ulaz koji koristi WAKA je u formatu ARFF.
 
 ARFF datoteke se sastoje od nabrajanja tipova atributa odnosno njihovih imena i tipova, a potom su navedene sve instance skupa koji se pohranjuje u algoritme.
 
-
 Glavni problem koji se resava se moze podeliti u tri potproblema koji su:
 %list
 1. Kako transofmisati izvorni kod u odgovarajuci format za klasifikatore?
@@ -66,8 +65,7 @@ priroda svake naredbe, sto bi moglo biti dodela, deklaracija, poziv funkcije ili
 Sve vreme mora da se motri na sve sakupljene informacije i da se po potrebi dopisuje na kraj ARFF fajla
 (koji je ulaz za algoritme masinskog ucenja).
 
-Slika primera izlaza ARFF mozda?
-
+% Slika primera izlaza ARFF mozda?
 
 Za treniranje je potrebna velika kolicina razlicitih izvornih kodova, a pritom je potrebno obeleziti greske i imati verzije koda kod kojih je uklonjena greska.
 
@@ -81,3 +79,17 @@ generise izlaze koji mogu imati vise hiljada linija od koji je vecina ispravna.
 Potrebno je izdvojiti samo one linije koda koje su dovele do greske i njihove parove bez te greske.
 
 Za tu svrhu se koristi program "Holmes" koji uporedjuje dve datoteke i na izlazu se dobiju dve nove datoteke koje sadrze samo potrebne ARFF instance.
+
+Cim se svi modei masinskog ucenja istreniraju vrsi se analiza pogodnosti
+koja vraca listu pogodnih modela tako sto analizira njihovu preciznost, stopu laznih pozitivnih i laznih negativnih.
+
+U nastavku su prikazani rezultati poredjenja oko 71 klasifikatora, a na slikama su prikazani samo oni koji su se najbolje pokazali.
+
+Slika preciznost (puna)             slika preciznost (smanjena)
+
+Medju 7 najboljih klasifikatora se nalaze tri zasnovana na najblizim susedima (“Ib1”, “Ibk”, “NNge”), tri zasovana na stablu
+(“LMT”, “RotationForest” i “ADABoost” primenjen na “BFTree”) i jedan zasnovan na neuralnim mrezama ("MultiLayerPerceptron").
+
+Slika lazni pozitivi                slika lazni pozitivi
+
+slika lazni negativi                slika lazni negativi
