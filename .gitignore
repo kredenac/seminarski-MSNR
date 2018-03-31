@@ -12,6 +12,9 @@
 *.cb2
 *.pdf
 
+# za lukin mac:
+.DC_Store
+
 ## Intermediate documents:
 *.dvi
 *-converted-to.*
