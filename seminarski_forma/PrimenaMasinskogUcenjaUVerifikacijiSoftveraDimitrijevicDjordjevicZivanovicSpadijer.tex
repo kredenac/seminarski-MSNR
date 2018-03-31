@@ -55,21 +55,21 @@ Za prevođenje programa napisanih u programskom jeziku C može se koristiti GCC 
 \end{primer}
 
 \begin{primer}
- Da bi se ispitivala ispravost softvera, najpre je potrebno precizno definisati njegovo ponašanje \cite{laski2009software}. 
+ Da bi se ispitivala ispravost softvera, najpre je potrebno precizno definisati njegovo ponašanje \cite{laski2009software}.
 \end{primer}
 
 Reference koje se koriste u ovom tekstu zadate su u datoteci {\em seminarski.bib}. Prevođenje u pdf format u Linux okruženju može se uraditi na sledeći način:
 \begin{verbatim}
-pdflatex TemaImePrezime.tex 
-bibtex TemaImePrezime.aux 
-pdflatex TemaImePrezime.tex 
-pdflatex TemaImePrezime.tex 
+pdflatex TemaImePrezime.tex
+bibtex TemaImePrezime.aux
+pdflatex TemaImePrezime.tex
+pdflatex TemaImePrezime.tex
 \end{verbatim}
-Prvo latexovanje je neophodno da bi se generisao {\em .aux} fajl. {\em bibtex} proizvodi odgovarajući {\em .bbl} fajl koji se koristi za generisanje literature. 
-Potrebna su dva prolaza (dva puta pdflatex) da bi se reference ubacile u tekst (tj da ne bi ostali znakovi pitanja umesto referenci). Dodavanjem novih referenci potrebno je ponoviti ceo postupak.  
+Prvo latexovanje je neophodno da bi se generisao {\em .aux} fajl. {\em bibtex} proizvodi odgovarajući {\em .bbl} fajl koji se koristi za generisanje literature.
+Potrebna su dva prolaza (dva puta pdflatex) da bi se reference ubacile u tekst (tj da ne bi ostali znakovi pitanja umesto referenci). Dodavanjem novih referenci potrebno je ponoviti ceo postupak.
 
 
-Broj naslova i podnaslova je proizvoljan. Neophodni su samo Uvod i Zaključak. Na poglavlja unutar teksta referisati se po potrebi. 
+Broj naslova i podnaslova je proizvoljan. Neophodni su samo Uvod i Zaključak. Na poglavlja unutar teksta referisati se po potrebi.
 \begin{primer}
 U odeljku \ref{sec:naslov1} precizirani su osnovni pojmovi, dok su zaključci dati u odeljku \ref{sec:zakljucak}.
 \end{primer}
@@ -80,14 +80,14 @@ Još jednom da napomenem da nema razloga da pišete:
 \end{verbatim}
 Možete koristiti srpska slova
 \begin{verbatim}
-š i č i ć ... 
+š i č i ć ...
 \end{verbatim}
 
 
 Ovde pišem uvodni tekst.
-Ovde pišem uvodni tekst. 
-Ovde pišem uvodni tekst. 
-Ovde pišem uvodni tekst. 
+Ovde pišem uvodni tekst.
+Ovde pišem uvodni tekst.
+Ovde pišem uvodni tekst.
 
 
 \section{Verifikacija softvera}
@@ -116,50 +116,44 @@ Ovde pišem uvodni tekst.
 \label{subsec:staticka}
 
 
-
 \section{ML, big data, vr, blockchain, IoT, ar, AI}
 \label{sec:naslov2}
 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
 
 \subsection{... podnaslov}
 \label{subsec:podnaslovN}
 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
 
 \section{Nase pricice koje smo izabrali}
 \label{sec:naslovN}
 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
 
-\subsection{Pravljenje skupova treniranja, testiranja i uporedjivanje uspesnosti modela}
+\subsection{Pravljenje skupova treniranja, testiranja i upoređivanje uspešnosti modela}
 \label{subsec:pregled}
 
-%naslov
-
-
-% uvod
-% mozda nista ovde?
-% *chapter.+1
-
-Rad \cite{staticFeatures} predlaže rešenje za generisanje ulaznih podataka za algoritme mašinskog učenja na osnovu izvornog koda kako bi se napravio inteligentni metod detekcije grešaka.
+Rad \cite{staticFeatures} predlaže rešenje za generisanje ulaznih podataka za algoritme mašinskog učenja na osnovu
+izvornog koda kako bi se napravio inteligentni metod detekcije grešaka.
 
 Bitno je prvo definisati kakvim tipovima grešaka se posvećuje pažnja u okviru metoda.
-Iako postoje drukčije greske, vršena je selekcija prema važnosti, odnosno prema tome
+Iako postoje drukčije greške, vršena je selekcija prema važnosti, odnosno prema tome
 koliku štetu mogu da uzrokuju i mogućnost da budu detektovane računarskim alatom. Izabrani tipovi grešaka su:
-% moze se navesti iz koje knjige su uzete !!!!
+% može se navesti iz koje knjige su uzete !!!!
+
 \begin{itemize}
 \item Prekoračenje bafera
 
@@ -173,7 +167,8 @@ koliku štetu mogu da uzrokuju i mogućnost da budu detektovane računarskim ala
 \end{itemize}
 
 
-Korišćen je WEKA softver koji je kolekcija algoritama mašinskog učenja.
+Korišcen je WEKA softver koji je kolekcija algoritama mašinskog učenja.
+
 Bogat skup funkcionalnosti koje pruža WEKA uključuje:
 %lista
 \begin{itemize}
@@ -188,7 +183,9 @@ Bogat skup funkcionalnosti koje pruža WEKA uključuje:
 
 
 Za dati problem su najbitniji selekcija atributa i razni algoritmi klasifikacije i predviđanja.
-Prvi prikazuju koji od brojnih elemenata ulaznog vektora su zapravo uključeni u proces donošenja odluke a koji nisu, dok drugi klasifikuju odnosno predviđaju ispravnost na osnovu ulaza.
+
+Prvi prikazuju koji od brojnih elemenata ulaznog vektora su zapravo uključeni u proces donošenja odluke a koji nisu, dok
+drugi klasifikuju odnosno predviđaju ispravnost na osnovu ulaza.
 Međutim, najbitnija prednost koju pruža WAKA u odnosu na ostale dostupne alate je mogućnost da se koristi
 jedan standardizovani format ulaza za sve raspoložive algoritme učenja. To omogućava da se koristi jedan ulaz kako bi se isprobale
 razne mogućnosti. Ulaz koji koristi WAKA je u formatu ARFF.
@@ -204,33 +201,44 @@ Glavni problem koji se rešava se može podeliti u tri potproblema koji su:
 \end{enumerate}
 
 
-Odgovor na prvo pitanje je softver ``CMore'', program koji može da pretvori izvorni kod programskog jezika C u ARFF datoteku. Glavna ideja je da treba da bude u mogućnosti da prati tok izvršavanja programa i uhvati stanja svih uključenih promenljivih. Pošto su zapamćena sva stanja moguće je otkriti više vrsta grešaka pristupa memoriji.
-%Na slici (slika) je prikazan osnovni tok izvrsavanja programa CMore.
-Prvi 
-%(levi) 
+
+Odgovor na prvo pitanje je softver ``CMore'', program koji može da pretvori izvorni kod programskog
+jezika C u ARFF datoteku. Glavna ideja je da treba da bude u mogućnosti da prati tok izvršavanja programa
+i uhvati stanja svih uključenih promenljivih. Pošto su zapamćena sva stanja moguće je otkriti više vrsta
+grešaka pristupa memoriji.
+%Na slici (slika) je prikazan osnovni tok izvršavanja programa CMore.
+Prvi
+%(levi)
 deo izvršavanja je učitavanje datoteke u memoriju i njena obrada kako bi se izvukli
-razni elementi i ubacili u skladište nazvano "Mozak".
-Mozak sadrži listu svih poznatih tipova, struktura, konstanti, globalnih promenljivih unutar analizirane datoteke, ali najbitnije je što prati sve funkcije i njihove parametre.
+razni elementi i ubacili u skladište nazvano ``Mozak''.
+Mozak sadrži listu svih poznatih tipova, struktura, konstanti i globalnih promenljivih unutar analizirane datoteke,
+ali najbitnije je što pamti sve funkcije i njihove parametre.
 
-U drugom delu se prati tok izvršavanja i određuje priroda svake naredbe, što bi moglo biti dodela, deklaracija, poziv funkcije ili nešto drugo. Sve vreme mora da se motri na sve sakupljene informacije i da se po potrebi dopisuju instance na kraj ARFF fajla (koji je ulaz za algoritme mašinskog učenja).
+U drugom delu se prati tok izvršavanja i određuje
+priroda svake naredbe, što bi moglo biti dodela, deklaracija, poziv funkcije ili nešto drugo.
+Sve vreme mora da se motri na sve sakupljene informacije i da se po potrebi dopisuju instance na kraj ARFF fajla
+(koji je ulaz za algoritme mašinskog učenja).
 
-% Slika primera izlaza ARFF mozda?
+% Slika primera izlaza ARFF možda?
 
 Za treniranje je potreban veliki broj različitih izvornih kodova, a pritom je potrebno obeležiti greške i imati verzije koda kod kojih je uklonjena greška.
 
-Izvorni kodovi od kojih se prave ulazi za treniranje su pokupljeni sa javno dostupnih repozitorijuma, što je dvostruko zgodno: velika količina datoteka se skupi na taj način, a pritom je moguće dobiti primere sa greškom i bez greške tako što se posmatraju različite verzije datoteka.
+Izvorni kodovi od kojih se prave ulazi za treniranje su pokupljeni sa javno dostupnih repozitorijuma, što je dvostruko zgodno:
+velika količina datoteka se skupi na taj način, a pritom je moguće dobiti primere sa greškom i bez greške tako što se posmatraju različite verzije datoteka.
 
-Program CMore je generisao izlaz u ARFF formatu, ali on zapravo nema razumevanje šta je to greska, nego razume tok izvrsavanja i pruža podatke za dalje korake.
-Na prvi pogled je dovoljno uzeti izlaz programa CMore za datoteku sa greškom i bez nje, ali on nema uvid u to sta je greška nego analizira celu datoteku i zato
-generiše izlaze koji mogu imati vise hiljada linija od kojih je većina ispravna.
+Na prvi pogled je dovoljno uzeti izlaz programa CMore u ARFF formatu za datoteku sa greškom i bez nje, ali on nema uvid u to šta je greška nego analizira celu datoteku i zato
+generiše izlaze koji mogu imati više hiljada linija od kojih je većina nastala od ispravnih delova koda.
 Potrebno je izdvojiti samo one linije koda koje su dovele do greške i njihove parove bez te greške.
 
-Za tu svrhu se koristi program ``Holmes'' koji upoređuje dve ARFF datoteke i na izlazu se dobiju dve nove ARFF datoteke koje sadrže samo potrebne instance.
+Za tu svrhu se koristi program ``Holmes'' koji upoređuje dve ARFF datoteke i na izlazu se dobiju dve nove ARFF datoteke koje sadrže samo potrebne  instance.
 
-Nakon što se svi modeli mašinskog učenja istreniraju vrši se analiza pogodnosti
-koja vraća listu pogodnih modela tako što analizira njihovu preciznost, stopu lažnih pozitivnih i lažnih negativnih.
+Nakon što se svi modei mašinskog učenja istreniraju vrši se analiza pogodnosti
+koja vraća listu pogodnih modela tako što analizira njihovu preciznost, stopu lažno pozitivnih i lažno negativnih.
 
-U nastavku su prikazani rezultati poređenja oko 71 klasifikatora, a na slikama su prikazani samo oni koji su se najbolje pokazali. Cela procedura je urađena dva puta, s tim što je drugi put umanjen broj atributa uključenih u proces.
+U nastavku su prikazani rezultati poređenja 71 klasifikatora, a na slikama su prikazani samo oni koji su se najbolje pokazali. Cela procedura je urađena dva puta, s tim što je drugi put umanjen broj atributa uključenih u proces.
+
+Među 7 najboljih klasifikatora sa slike \ref{fig:acc} se nalaze tri zasnovana na najbližim susedima (``Ib1'', ``Ibk'', ``NNge''), tri zasovana na stablima
+(``LMT'', ``RotationForest'' i ``ADABoost'' primenjen na ``BFTree'') i jedan zasnovan na neuronskim mrežama (``MultiLayerPerceptron'').
 
 
 \begin{figure}[h!]
@@ -239,65 +247,71 @@ U nastavku su prikazani rezultati poređenja oko 71 klasifikatora, a na slikama 
 \caption{Preciznosti algoritama - sa svim atributima i bez}
 \label{fig:acc}
 \end{figure}
+
+Na slici  \ref{fig:falsePos} se vidi isti trend kao i na slici  \ref{fig:acc}: smanjenjem broja atributa algoritmi zasnovani na stablima se lošije ponašaju dok algoritmi najbližih suseda i ``MultiLayerPerceptron'' daju bolje rezultate.
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{false_positive.png}
-\caption{Lažni pozitivni - sa svim atributima i bez}
+\caption{Lažno pozitivni - sa svim atributima i bez}
 \label{fig:falsePos}
 \end{figure}
+
+Prema rezultatima dobijenim u  \cite{baca} vrlo je bitno da alat statičke analize ima malo lažno pozitivnih jer
+u slučaju mnogo pogrešnih uzbuna razvijaoci počinju da ignorišu te signale, ili još gore: kako bi izbegli upozorenja alata menjaju ispravan kod što dovodi do potencijalno
+ novih greškaka. Na slici \ref{fig:falseNeg} se vidi da je ``NNge'' najbolji, što je i očekivano s obzirom na prilično
+loše performanse što se tiče lažno pozitivnih.
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{false_negative.png}
-\caption{Lažni negativni - sa svim atributima i bez}
+\caption{Lažno negativni - sa svim atributima i bez}
 \label{fig:falseNeg}
 \end{figure}
-Među 7 najboljih klasifikatora sa slike \ref{fig:acc} se nalaze tri zasnovana na najbližim susedima (``Ib1'', ``Ibk'', ``NNge''), tri zasovana na stablima
-(``LMT'', ``RotationForest'' i ``ADABoost'' primenjen na ``BFTree'') i jedan zasnovan na neuronskim mrežama (``MultiLayerPerceptron'').
-
 
 
 \subsection{... podnaslov}
 \label{subsec:podnaslovM}
 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
 
 \section{Poslednji naslov}
 \label{sec:naslovM}
 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
+Ovde pišem tekst.
 
 \section{Zaključak}
 \label{sec:zakljucak}
 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
-Ovde pišem zaključak. 
+Ovde pišem zaključak.
+Ovde pišem zaključak.
+Ovde pišem zaključak.
+Ovde pišem zaključak.
+Ovde pišem zaključak.
+Ovde pišem zaključak.
+Ovde pišem zaključak.
+Ovde pišem zaključak.
+Ovde pišem zaključak.
+Ovde pišem zaključak.
+Ovde pišem zaključak.
+Ovde pišem zaključak.
 
 
 \addcontentsline{toc}{section}{Literatura}
 \appendix
-\bibliography{seminarski} 
+\bibliography{seminarski}
 \bibliographystyle{plain}
 
 
