@@ -104,17 +104,18 @@ Ovde pišem uvodni tekst.
 
 \par Dinamička verifikacija softvera zasnovana je na tome da se provera ispravnosti softvera vrši tokom njegovog izvršavanja. Najčešće se dinamička verifikacija softvera vrši testiranjem i ti pojmovi se poistovećuju, što nije sasvim ispravno.
 
-\par Testiranje je složen proces koji obuhvata pronalaženje što raznovrsnijeg skupa ulaza, definisanje očekivanih izlaza za svaki od tih ulaza, a zatim izvršavanje programa i provera da li je program za date ulaze vratio odgovarajuće izlaze.
+\par Testiranje je složen proces koji obuhvata pronalaženje što raznovrsnijeg skupa ulaza, definisanje očekivanih izlaza za svaki od tih ulaza, a zatim izvršavanje programa i provera da li je program za date ulaze vratio odgovarajuće izlaze. Postoje razne vrste i nivoi testova (da li imamo pristup izvornom kodu softvera ili ne, kao i da li testiramo jednu jedinicu koda ili više njih ili testiramo neku funkcionalnost softvera).
+
+\par Testiranje služi da nam u slučaju kada postoji greška u izvornom kodu softvera ukaže na njeno postojanje. U zavisnosti od vrste testa, kao i nivoa, može se otkriti gde se u kodu nalazi greška, ali to često nije slučaj. Umesto toga, testovi samo otkrivaju postojanje grešaka.
+
+\par Važno je imati na umu da testovi mogu dokazati isključivo neispravnost softvera, ali ne i njegovu (delimičnu) ispravnost. Da bi testiranje moglo dokazati delimičnu ili potpunu ispravnost softvera, neophodno bi bilo da skup ulaza bude jednak skupu svih teoretski dozvoljenih ulaza, a to, naravno, nije moguće, jer je taj skup beskonačan. Postavlja se pitanje zašto se onda uopšte testira. Odgovor je zato što se pažljivim odabirom skupa ulaza za koji će biti testirana ispravnost izlaza ne samo otklanjaju postojeće greške, nego i stiče sigurnost, odnosno poverenje u sam softver, tj. očekuje se da će broj neotkrivenih grešaka biti zanemarljiv.
+
+\par Kao što je rečeno, često se dinamička verifikacija softvera poistovećuje sa testiranjem, iako je testiranje samo jedan od metoda. Pored testiranja postoji i debagovanje i ono očigledno spada u vid dinamičke verifikacije softvera. Naime, debagovanjem se može prekinuti rad programa u bilo kom trenutku i utvrditi trenutno stanje programa, a samim tim i potencijalno postojanje greške. Za razliku od testiranja koje se može vršiti i bez posedovanja izvornog koda softvera, debagovanje se vrši isključivo uz posedovanje koda, a često se može pronaći i tačno mesto na kome se nalazi greška.
 
 \subsection{Statička verifikacija softvera}
 \label{subsec:staticka}
 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
-Ovde pišem tekst. 
+
 
 \section{ML, big data, vr, blockchain, IoT, ar, AI}
 \label{sec:naslov2}
@@ -153,94 +154,83 @@ Ovde pišem tekst.
 % mozda nista ovde?
 % *chapter.+1
 
-Rad \cite{staticFeatures} predlaze resenje za generisanje ulaznih podataka za algoritme masinskog ucenja na osnovu
-izvornog koda kako bi se napravio inteligentni metod detekcije gresaka.
+Rad \cite{staticFeatures} predlaže rešenje za generisanje ulaznih podataka za algoritme mašinskog učenja na osnovu izvornog koda kako bi se napravio inteligentni metod detekcije grešaka.
 
-Bitno je prvo definisati kakvim tipovima gresaka se posvecuje paznja u okviru metoda.
-Iako postoje drukcije greske, vrsena je selekcija prema vaznosti, odnosno prema tome
-koliku stetu mogu da uzrokuju i mogucnost da budu detektovane racunarskim alatom. Izabrani tipovi gresaka su:
+Bitno je prvo definisati kakvim tipovima grešaka se posvećuje pažnja u okviru metoda.
+Iako postoje drukčije greske, vršena je selekcija prema važnosti, odnosno prema tome
+koliku štetu mogu da uzrokuju i mogućnost da budu detektovane računarskim alatom. Izabrani tipovi grešaka su:
 % moze se navesti iz koje knjige su uzete !!!!
 \begin{itemize}
-\item Prekoracenje bafera
+\item Prekoračenje bafera
 
 \item Upravljanje memorijom
 
-\item Dereferenciranje Null pokazivaca
+\item Dereferenciranje Null pokazivača
 
 \item Kontrola toka
 
-\item Konverzija oznacene celobrojne vrednosti u neoznacenu
+\item Konverzija označene celobrojne vrednosti u neoznačenu
 \end{itemize}
 
 
-Koriscen je WEKA softver koji je kolekcija algoritama masinskog ucenja.
-Bogat skup funkcionalnosti koje pruza WEKA ukljucuje:
+Korišćen je WEKA softver koji je kolekcija algoritama mašinskog učenja.
+Bogat skup funkcionalnosti koje pruža WEKA uključuje:
 %lista
 \begin{itemize}
 \item Pretprocesiranje podataka i vizuelizacija
 \item Selekcija atributa
 \item Algoritmi klasifikacije
-\item Algoritmi predvidjanja
+\item Algoritmi predviđanja
 \item Algoritmi klasterovanja
 \item Pravila asocijacije
 \item Tehnike evaluacije
 \end{itemize}
 
 
-Za dati problem su najbitniji selekcija atributa i razni algoritmi klasifikacije i predvidjanja.
-Prvi prikazuju koji od brojnih elemenata ulaznog vektora su zapravo ukljuceni u proces donosenja odluke a koji nisu, dok
-drugi klasifikuju odnosno predvidjaju ispravnost na osnovu ulaza.
-Medjutim, najbitnija prednost koju pruza WAKA u odnosu na ostale dostupne alate je mogucnost da se koristi
-jedan standardizovani format ulaza za sve raspolozive algoritme ucenja. To omogucava da se koristi jedan ulaz kako bi se isprobale
-razne mogucnosti. Ulaz koji koristi WAKA je u formatu ARFF.
+Za dati problem su najbitniji selekcija atributa i razni algoritmi klasifikacije i predviđanja.
+Prvi prikazuju koji od brojnih elemenata ulaznog vektora su zapravo uključeni u proces donošenja odluke a koji nisu, dok drugi klasifikuju odnosno predviđaju ispravnost na osnovu ulaza.
+Međutim, najbitnija prednost koju pruža WAKA u odnosu na ostale dostupne alate je mogućnost da se koristi
+jedan standardizovani format ulaza za sve raspoložive algoritme učenja. To omogućava da se koristi jedan ulaz kako bi se isprobale
+razne mogućnosti. Ulaz koji koristi WAKA je u formatu ARFF.
 
-ARFF datoteke se sastoje od nabrajanja tipova atributa odnosno njihovih imena i tipova, a potom navodjenja svih instanci skupa koji se pohranjuje u algoritme.
+ARFF datoteke se sastoje od nabrajanja tipova atributa odnosno njihovih imena i tipova, a potom navođenja svih instanci skupa koji se pohranjuje u algoritme.
 
-Glavni problem koji se resava se moze podeliti u tri potproblema koji su:
+Glavni problem koji se rešava se može podeliti u tri potproblema koji su:
 %list
 \begin{enumerate}
-\item Kako transofmisati izvorni kod u odgovarajuci format za klasifikatore?
+\item Kako transofmisati izvorni kod u odgovarajući format za klasifikatore?
 \item Kako trenirati te klasifikatore i koje podatke treba koristiti?
 \item Koje su karakteristike potrebne algoritmu i koji je najbolji za dati problem?
 \end{enumerate}
 
 
-Odgovor na prvo pitanje je softver ``CMore'', program koji moze da pretvori izvorni kod programskog
-jezika C u ARFF datoteku. Glavna ideja je da treba da bude u mogucnosti da prati tok izvrsavanja programa
-i uhvati stanja svih ukljucenih promenljivih. Posto su zapamcena sva stanja moguce je otkriti vise vrsta 
-gresaka pristupa memoriji.
+Odgovor na prvo pitanje je softver ``CMore'', program koji može da pretvori izvorni kod programskog jezika C u ARFF datoteku. Glavna ideja je da treba da bude u mogućnosti da prati tok izvršavanja programa i uhvati stanja svih uključenih promenljivih. Pošto su zapamćena sva stanja moguće je otkriti više vrsta grešaka pristupa memoriji.
 %Na slici (slika) je prikazan osnovni tok izvrsavanja programa CMore.
 Prvi 
 %(levi) 
-deo izvrsavanja je ucitavanje datoteke u memoriju i njena obrada kako bi se izvukli
-razni elementi i ubacili u skladiste nazvano "Mozak".
-Mozak sadrzi listu svih poznatih tipova, struktura, konstanti, globalnih promenljivih unutar analizirane datoteke,
-ali najbitnije je sto prati sve funkcije i njihove parametre.
+deo izvršavanja je učitavanje datoteke u memoriju i njena obrada kako bi se izvukli
+razni elementi i ubacili u skladište nazvano "Mozak".
+Mozak sadrži listu svih poznatih tipova, struktura, konstanti, globalnih promenljivih unutar analizirane datoteke, ali najbitnije je što prati sve funkcije i njihove parametre.
 
-U drugom delu u se prati tok izvrsavanja i odredjuje
-priroda svake naredbe, sto bi moglo biti dodela, deklaracija, poziv funkcije ili nesto drugo.
-Sve vreme mora da se motri na sve sakupljene informacije i da se po potrebi dopisuju instance na kraj ARFF fajla
-(koji je ulaz za algoritme masinskog ucenja).
+U drugom delu se prati tok izvršavanja i određuje priroda svake naredbe, što bi moglo biti dodela, deklaracija, poziv funkcije ili nešto drugo. Sve vreme mora da se motri na sve sakupljene informacije i da se po potrebi dopisuju instance na kraj ARFF fajla (koji je ulaz za algoritme mašinskog učenja).
 
 % Slika primera izlaza ARFF mozda?
 
-Za treniranje je potreban veliki broj razlicitih izvornih kodova, a pritom je potrebno obeleziti greske i imati verzije koda kod kojih je uklonjena greska.
+Za treniranje je potreban veliki broj različitih izvornih kodova, a pritom je potrebno obeležiti greške i imati verzije koda kod kojih je uklonjena greška.
 
-Izvorni kodovi od kojih se prave ulazi za treniranje su pokupljeni sa javno dostupnih repozitorijuma, sto je dvostruko zgodno:
-velika kolicina datoteka se skupi na taj nacin, a pritom je moguce dobiti primere sa greskom i bez greske tako sto se posmatraju razlicite verzije datoteka.
+Izvorni kodovi od kojih se prave ulazi za treniranje su pokupljeni sa javno dostupnih repozitorijuma, što je dvostruko zgodno: velika količina datoteka se skupi na taj način, a pritom je moguće dobiti primere sa greškom i bez greške tako što se posmatraju različite verzije datoteka.
 
-Program CMore je generisao izlaz u ARFF formatu, ali on zapravo nema razumevanje sta je to greska, nego razume tok izvrsavanja i pruza podatke
-za dalje korake.
-Na prvi pogled je dovoljno uzeti izlaz programa CMore za datoteku sa greskom i bez nje, ali on nema uvid u to sta je greska nego analizira celu datoteku i zato
-generise izlaze koji mogu imati vise hiljada linija od koji je vecina ispravna.
-Potrebno je izdvojiti samo one linije koda koje su dovele do greske i njihove parove bez te greske.
+Program CMore je generisao izlaz u ARFF formatu, ali on zapravo nema razumevanje šta je to greska, nego razume tok izvrsavanja i pruža podatke za dalje korake.
+Na prvi pogled je dovoljno uzeti izlaz programa CMore za datoteku sa greškom i bez nje, ali on nema uvid u to sta je greška nego analizira celu datoteku i zato
+generiše izlaze koji mogu imati vise hiljada linija od kojih je većina ispravna.
+Potrebno je izdvojiti samo one linije koda koje su dovele do greške i njihove parove bez te greške.
 
-Za tu svrhu se koristi program ``Holmes'' koji uporedjuje dve ARFF datoteke i na izlazu se dobiju dve nove ARFF datoteke koje sadrze samo potrebne  instance.
+Za tu svrhu se koristi program ``Holmes'' koji upoređuje dve ARFF datoteke i na izlazu se dobiju dve nove ARFF datoteke koje sadrže samo potrebne instance.
 
-Nakon sto se svi modei masinskog ucenja istreniraju vrsi se analiza pogodnosti
-koja vraca listu pogodnih modela tako sto analizira njihovu preciznost, stopu laznih pozitivnih i laznih negativnih.
+Nakon što se svi modeli mašinskog učenja istreniraju vrši se analiza pogodnosti
+koja vraća listu pogodnih modela tako što analizira njihovu preciznost, stopu lažnih pozitivnih i lažnih negativnih.
 
-U nastavku su prikazani rezultati poredjenja oko 71 klasifikatora, a na slikama su prikazani samo oni koji su se najbolje pokazali. Cela procedura je uradjena dva puta, s tim sto je drugi put umanjen broj atributa ukljucenih u proces.
+U nastavku su prikazani rezultati poređenja oko 71 klasifikatora, a na slikama su prikazani samo oni koji su se najbolje pokazali. Cela procedura je urađena dva puta, s tim što je drugi put umanjen broj atributa uključenih u proces.
 
 
 \begin{figure}[h!]
@@ -252,17 +242,17 @@ U nastavku su prikazani rezultati poredjenja oko 71 klasifikatora, a na slikama 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{false_positive.png}
-\caption{Lazni pozitivni - sa svim atributima i bez}
+\caption{Lažni pozitivni - sa svim atributima i bez}
 \label{fig:falsePos}
 \end{figure}
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{false_negative.png}
-\caption{Lazni negativni - sa svim atributima i bez}
+\caption{Lažni negativni - sa svim atributima i bez}
 \label{fig:falseNeg}
 \end{figure}
-Medju 7 najboljih klasifikatora sa slike \ref{fig:acc} se nalaze tri zasnovana na najblizim susedima (``Ib1'', ``Ibk'', ``NNge''), tri zasovana na stablima
-(``LMT'', ``RotationForest'' i ``ADABoost'' primenjen na ``BFTree'') i jedan zasnovan na neuronskim mrezama (``MultiLayerPerceptron'').
+Među 7 najboljih klasifikatora sa slike \ref{fig:acc} se nalaze tri zasnovana na najbližim susedima (``Ib1'', ``Ibk'', ``NNge''), tri zasovana na stablima
+(``LMT'', ``RotationForest'' i ``ADABoost'' primenjen na ``BFTree'') i jedan zasnovan na neuronskim mrežama (``MultiLayerPerceptron'').
 
 
 
