@@ -162,7 +162,7 @@ Rad \cite{staticFeatures} predlaže rešenje za generisanje ulaznih podataka za 
 izvornog koda kako bi se napravio inteligentni metod detekcije grešaka.
 
 Bitno je prvo definisati kakvim tipovima grešaka se posvećuje pažnja u okviru metoda.
-Iako postoje drukčije greške, vršena je selekcija prema važnosti, odnosno prema tome
+Iako postoje drukčije greške selekcija je vršena prema važnosti, odnosno prema tome
 koliku štetu mogu da uzrokuju i mogućnost da budu detektovane računarskim alatom. Izabrani tipovi grešaka su:
 % može se navesti iz koje knjige su uzete !!!!
 
@@ -199,10 +199,10 @@ Za dati problem su najbitniji selekcija atributa i razni algoritmi klasifikacije
 Prvi prikazuju koji od brojnih elemenata ulaznog vektora su zapravo uključeni u proces donošenja odluke a koji nisu, dok
 drugi klasifikuju odnosno predviđaju ispravnost na osnovu ulaza.
 Međutim, najbitnija prednost koju pruža WAKA u odnosu na ostale dostupne alate je mogućnost da se koristi
-jedan standardizovani format ulaza za sve raspoložive algoritme učenja. To omogućava da se koristi jedan ulaz kako bi se isprobale
+jedan standardizovani format ulaza za sve raspoložive algoritme učenja što omogućava da se koristi jedan ulaz kako bi se isprobale
 razne mogućnosti. Ulaz koji koristi WAKA je u formatu ARFF.
 
-ARFF datoteke se sastoje od nabrajanja tipova atributa odnosno njihovih imena i tipova, a potom navođenja svih instanci skupa koji se pohranjuje u algoritme.
+ARFF datoteke se sastoje od nabrajanja atributa odnosno njihovih imena i tipova, a potom navođenja svih instanci koje se prosledjuju algoritmima.
 
 Glavni problem koji se rešava se može podeliti u tri potproblema koji su:
 %list
@@ -266,7 +266,7 @@ Na slici  \ref{fig:falsePos} se vidi isti trend kao i na slici  \ref{fig:acc}: s
 \end{figure}
 
 Prema rezultatima dobijenim u  \cite{baca} vrlo je bitno da alat statičke analize ima malo lažno pozitivnih jer
-u slučaju mnogo pogrešnih uzbuna razvijaoci počinju da ignorišu te signale, ili još gore: kako bi izbegli upozorenja alata menjaju ispravan kod što dovodi do potencijalno
+u slučaju mnogo pogrešnih uzbuna programeri počinju da ignorišu te signale, ili još gore: kako bi izbegli upozorenja alata menjaju ispravan kod što dovodi do potencijalno
  novih greškaka. Na slici \ref{fig:falseNeg} se vidi da je ``NNge'' najbolji, što je i očekivano s obzirom na prilično
 loše performanse što se tiče lažno pozitivnih.
 
