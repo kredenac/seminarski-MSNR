@@ -73,7 +73,7 @@ primena mašinskog učenja kako u statičkoj tako i u dinamičkoj verifikaciji s
 
 \par U savremenom dobu, računari i računarski sistemi predstavlju sastavni deo svakodnevice, kako u privatnom životu, tako i u poslovnom svetu, a i u državnoj administraciji. Zato je od izuzetnog značaja da softver koji se koristi bude pouzdan. Neispravan softver, u zavisnosti od toga gde se koristio i koliko je veliki bio propust, može izazvati male, ali i ogromne probleme sa teškim posledicama (čak i smrtnim). Oblast razvoja softvera koja se bavi proverom ispravnosti softvera, odnosno potvrđivanjem da softver radi u skladu sa zahtevima, naziva se \emph{verifikacija softvera}.
 
-\par Potrebno je precizirati šta se podrazumeva pod ispravnim softverom. Razlikujemo potpuno ispravan i delimično ispravan softver. Softver se smatra potpuno ispravnim ako se zaustavlja za svaki ulaz i na izlazu daje ispravan rezultat, dok se delimično ispravnim softverom smatra onaj koji za ulaz daje ispravan rezultat ako da se zaustavlja, a dozvoljeno je da se za neki ulaz program ne zaustavlja. Ne postoji algoritamski način da se proveri da li se neki program zaustavlja (tzv. Halting problem), pa se često ni ne ispituje potpuna, već samo delimična ispravnost softvera.
+\par Potrebno je precizirati šta se podrazumeva pod ispravnim softverom. Razlikuju se pojmovi potpuno ispravnog i delimično ispravnog softvera. Softver se smatra potpuno ispravnim ako se zaustavlja za svaki ulaz i na izlazu daje ispravan rezultat, dok se delimično ispravnim softverom smatra onaj koji za ulaz daje ispravan rezultat ako se zaustavlja, a dozvoljeno je da se za neki ulaz program ne zaustavlja. Ne postoji algoritamski način da se proveri da li se neki program zaustavlja (tzv. Halting problem), pa se često ni ne ispituje potpuna, već samo delimična ispravnost softvera.
 
 \par Postoje dve osnovne vrste verifikacije softvera. To su dinamička i statička verifikacija softvera.
 
@@ -84,7 +84,7 @@ primena mašinskog učenja kako u statičkoj tako i u dinamičkoj verifikaciji s
 
 \par Testiranje je složen proces koji obuhvata pronalaženje što raznovrsnijeg skupa ulaza, definisanje očekivanih izlaza za svaki od tih ulaza, a zatim izvršavanje programa i provera da li je program za date ulaze vratio odgovarajuće izlaze. Postoje razne vrste i nivoi testova (da li imamo pristup izvornom kodu softvera ili ne, kao i da li testiramo jednu jedinicu koda ili više njih ili testiramo neku funkcionalnost softvera).
 
-\par Testiranje služi da nam u slučaju kada postoji greška u izvornom kodu softvera ukaže na njeno postojanje. U zavisnosti od vrste testa, kao i nivoa, može se otkriti gde se u kodu nalazi greška, ali to često nije slučaj. Umesto toga, testovi samo otkrivaju postojanje grešaka.
+\par Testiranje služi da nam, u slučaju kada postoji greška u izvornom kodu softvera, ukaže na njeno postojanje. U zavisnosti od vrste testa, kao i nivoa, može se otkriti gde se u kodu nalazi greška, ali to često nije slučaj. Umesto toga, testovi samo otkrivaju postojanje grešaka.
 
 \par Važno je imati na umu da testovi mogu dokazati isključivo neispravnost softvera, ali ne i njegovu (delimičnu) ispravnost. Da bi testiranje moglo dokazati delimičnu ili potpunu ispravnost softvera, neophodno bi bilo da skup ulaza bude jednak skupu svih teoretski dozvoljenih ulaza, a to, naravno, nije moguće, jer je taj skup beskonačan. Postavlja se pitanje zašto se onda uopšte testira. Odgovor je zato što se pažljivim odabirom skupa ulaza za koji će biti testirana ispravnost izlaza ne samo otklanjaju postojeće greške, nego i stiče sigurnost, odnosno poverenje u sam softver, tj. očekuje se da će broj neotkrivenih grešaka biti zanemarljiv.
 
@@ -113,7 +113,7 @@ u odnosu na rezultate ljudskih eksperata.
 
 Mašinsko učenje je posebno pogodno za probleme koje je čoveku teško definisati a 
 izuzetno lako za rešiti i u kojima je prihvatljiva poneka greška. Zbog dopuštanja 
-povremenih greški u izvršavanju, ova oblast na prvi pogled izgledati kao nepogodna 
+povremenih greški u izvršavanju, ova oblast na prvi pogled izgleda kao nepogodna 
 za rešavanje problema statičke verifikacije softvera. Ipak u stanju je da doprinese 
 kao dodatni alat za rešavanje raznih problema koji se mogu naći u statičkoj 
 verifikaciji ako njime rukuje prava osoba, čak i ako ne može da obeća kompletno 
@@ -147,7 +147,7 @@ kako bi bilo olakšano razumevanje postignutih rezultata u ostatku rada.
 
 \textit{Evaluacija modela} predstavlja numeričko predstavljanje sposobnosti 
 predviđanja datog modela na određenoj skali i direktno se oslanja na mere 
-kvalitetaMere koje se najčešće sreću u klasifikaciji su \textit{tačnost}, 
+kvaliteta. Mere koje se najčešće sreću u klasifikaciji su \textit{tačnost}, 
 \textit{preciznost}, \textit{odziv} i \textit{F1 mera}. Sve navedene mere 
 izvedene su iz \textit{matrice konfuzije} \ref{table:matrica_konfuzije}.
 
@@ -168,7 +168,7 @@ izvedene su iz \textit{matrice konfuzije} \ref{table:matrica_konfuzije}.
 
 Stvarno pozitivne i stvarno negativne instance su one instance koje su ispravno 
 određene od strane modela. Lažno pozitivne instance su negativne instance za koje 
-je od strane modela predviđeno da su pozitivne. Dok su lažno negativne instance 
+je od strane modela predviđeno da su pozitivne, dok su lažno negativne instance 
 zapravo pozitivne instance koje je model loše klasifikovao kao negativne. 
 
 % TODO dodati šta koje mere zapravo rade, zašto tačnost nije savršena, napomenuti da ima još raznih
@@ -224,7 +224,7 @@ koliku štetu mogu da uzrokuju i mogućnost da budu detektovane računarskim ala
 \end{itemize}
 
 
-Korišcen je WEKA softver koji je kolekcija algoritama mašinskog učenja.
+Korišćen je WEKA softver koji je kolekcija algoritama mašinskog učenja.
 
 Bogat skup funkcionalnosti koje pruža WEKA uključuje:
 %lista
@@ -285,7 +285,7 @@ Potrebno je izdvojiti samo one linije koda koje su dovele do greške i njihove p
 
 Za tu svrhu se koristi program ``Holmes'' koji upoređuje dve ARFF datoteke i na izlazu se dobiju dve nove ARFF datoteke koje sadrže samo potrebne  instance.
 
-Nakon što se svi modei mašinskog učenja istreniraju vrši se analiza pogodnosti
+Nakon što se svi modeli mašinskog učenja istreniraju vrši se analiza pogodnosti
 koja vraća listu pogodnih modela tako što analizira njihovu preciznost, stopu lažno pozitivnih i lažno negativnih.
 
 U nastavku su prikazani rezultati poređenja 71 klasifikatora, a na slikama su prikazani samo oni koji su se najbolje pokazali. Cela procedura je urađena dva puta, s tim što je drugi put umanjen broj atributa uključenih u proces.
