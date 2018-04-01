@@ -33,14 +33,20 @@
     {\let\newpage\relax\maketitle}
 
 \abstract{
-U ovom tekstu je ukratko prikazana osnovna forma seminarskog rada. Obratite pažnju da je pored ove .pdf datoteke, u prilogu i odgovarajuća .tex datoteka, kao i .bib datoteka korišćena za generisanje literature. Na prvoj strani seminarskog rada su naslov, apstrakt i sadržaj, i to sve mora da stane na prvu stranu! Kako bi Vaš seminarski zadovoljio standarde i očekivanja, koristite uputstva i materijale sa predavanja na temu pisanja seminarskih radova. Ovo je samo šablon koji se odnosi na fizički izgled seminarskog rada (šablon koji \emph{morate} da ispoštujete!) kao i par tehničkih pomoćnih uputstava. Molim Vas da kada budete predavali seminarski rad, imenujete datoteke tako da sadrže temu seminarskog rada, kao i imena i prezimena članova grupe (ili samo temu i prezimena, ukoliko je sa imenima predugačko). Predaja seminarskih radova biće isključivo preko web forme, a NE slanjem mejla.
+U ovom tekstu je ukratko prikazana osnovna forma seminarskog rada. Obratite pažnju da je pored ove .pdf datoteke, u prilogu i odgovarajuća .tex datoteka, kao i .bib datoteka korišćena za generisanje literature. Na prvoj strani seminarskog rada su naslov, apstrakt i sadržaj, i to sve mora da stane na prvu stranu! Kako bi Vaš seminarski zadovoljio standarde i očekivanja, koristite uputstva i materijale sa predavanja na temu pisanja seminarskih radova. Ovo je samo šablon koji se odnosi na fizički izgled seminarskog rada (šablon koji \emph{morate} da ispoštujete!) kao i par tehničkih pomoćnih uputstava. Molim Vas da kada budete predavali seminarski rad, imenujete datoteke tako da sadrže temu seminarskog rada, kao i imena i prezimena članova grupe (ili samo temu i prezimena, ukoliko je sa imenima predugačko). Predaja seminarskih radova biće isključivo preko web forme, a NE slanjem mejla.}
 
 \tableofcontents
 
 \newpage
 
+
+
+% ==============================================================================
 \section{Uvod}
 \label{sec:uvod}
+% ==============================================================================
+
+
 
 Računarska rešenja se koriste za svemirske rakete, medicinsku opremu, samovozeće automobile i razne druge oblasti.
 Sve veća zastupljenost i složenost softvera dovodi do veće verovatnoće katastrofalnog ishoda u slučaju greške.
@@ -57,53 +63,13 @@ modela mašinskog učenja koji su dalje korišćeni u razmatranim radovima, i ko
 primena mašinskog učenja kako u statičkoj tako i u dinamičkoj verifikaciji softvera.
 
 
-KRAJ uvoda. ostavio sam ovo dole ako nekome znaci.
-\begin{primer}
-Problem zaustavljanja (eng.~{\em halting problem}) je neodlučiv \cite{haltingproblem}.
-\end{primer}
 
-\begin{primer}
-Za prevođenje programa napisanih u programskom jeziku C može se koristiti GCC kompajler \cite{gcc}.
-\end{primer}
-
-\begin{primer}
- Da bi se ispitivala ispravost softvera, najpre je potrebno precizno definisati njegovo ponašanje \cite{laski2009software}.
-\end{primer}
-
-Reference koje se koriste u ovom tekstu zadate su u datoteci {\em seminarski.bib}. Prevođenje u pdf format u Linux okruženju može se uraditi na sledeći način:
-\begin{verbatim}
-pdflatex TemaImePrezime.tex
-bibtex TemaImePrezime.aux
-pdflatex TemaImePrezime.tex
-pdflatex TemaImePrezime.tex
-\end{verbatim}
-Prvo latexovanje je neophodno da bi se generisao {\em .aux} fajl. {\em bibtex} proizvodi odgovarajući {\em .bbl} fajl koji se koristi za generisanje literature.
-Potrebna su dva prolaza (dva puta pdflatex) da bi se reference ubacile u tekst (tj da ne bi ostali znakovi pitanja umesto referenci). Dodavanjem novih referenci potrebno je ponoviti ceo postupak.
-
-
-Broj naslova i podnaslova je proizvoljan. Neophodni su samo Uvod i Zaključak. Na poglavlja unutar teksta referisati se po potrebi.
-\begin{primer}
-U odeljku \ref{sec:naslov1} precizirani su osnovni pojmovi, dok su zaključci dati u odeljku \ref{sec:zakljucak}.
-\end{primer}
-
-Još jednom da napomenem da nema razloga da pišete:
-\begin{verbatim}
-\v{s} i \v{c} i \'c ...
-\end{verbatim}
-Možete koristiti srpska slova
-\begin{verbatim}
-š i č i ć ...
-\end{verbatim}
-
-
-Ovde pišem uvodni tekst.
-Ovde pišem uvodni tekst.
-Ovde pišem uvodni tekst.
-Ovde pišem uvodni tekst.
-
-
+% ==============================================================================
 \section{Verifikacija softvera}
 \label{sec:verifikacija}
+% ==============================================================================
+
+
 
 \par U savremenom dobu, računari i računarski sistemi predstavlju sastavni deo svakodnevice, kako u privatnom životu, tako i u poslovnom svetu, a i u državnoj administraciji. Zato je od izuzetnog značaja da softver koji se koristi bude pouzdan. Neispravan softver, u zavisnosti od toga gde se koristio i koliko je veliki bio propust, može izazvati male, ali i ogromne probleme sa teškim posledicama (čak i smrtnim). Oblast razvoja softvera koja se bavi proverom ispravnosti softvera, odnosno potvrđivanjem da softver radi u skladu sa zahtevima, naziva se \emph{verifikacija softvera}.
 
@@ -128,32 +94,78 @@ Ovde pišem uvodni tekst.
 \label{subsec:staticka}
 
 
-\section{ML, big data, vr, blockchain, IoT, ar, AI}
-\label{sec:naslov2}
 
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
+% ==============================================================================
+\section{Mašinsko učenje}
+% ==============================================================================
 
-\subsection{... podnaslov}
-\label{subsec:podnaslovN}
 
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
 
-\section{Nase pricice koje smo izabrali}
+\textit{Mašinsko učenje} bavi se proučavanjem indukcije, odnosno generalizacije čime formalizuje uopštavanje od uzorka određene veličine ka univerzalnim zaključcima. U srcu novog zamaha veštačke inteligencije nalazi se oblast mašinskog učenja. U nekim domenima, kao na primer prepoznavanje lica, u kojima se računari nisu mogli porediti sa ljudima po uspešnosti, ova oblast postiže rezultate superiorne u odnosu na rezultate ljudskih eksperata.
+
+% TODO mozda ubaciti ovo, izbaciti nesto drugo
+% Mašinsko učenje predstavlja automatsku detekciju smislenih šablona u podacima.
+
+Mašinsko učenje je posebno pogodno za probleme koje je čoveku teško definisati a izuzetno lako za rešiti i u kojima je prihvatljiva poneka greška. Zbog dopuštanja povremenih greški u izvršavanju, ova oblast na prvi pogled izgledati kao nepogodna za rešavanje problema statičke verifikacije softvera. Ipak u stanju je da doprinese kao dodatni alat za rešavanje raznih problema koji se mogu naći u statičkoj verifikaciji ako njime rukuje prava osoba, čak i ako ne može da obeća kompletno rešenje svih problema.
+
+Obično se identifikuju dve oblasti mašinskog učenja: \textit{nadgledano učenje} i \textit{nenadgledano učenje}. Nadgledano učenje odlikuje da pored ulaznih podataka postoji i njemu odgovarajući željeni izlaz. Model je zadužen za učenje pravila nad datim parovima ulaza i izlaza. Sa druge strane, kod nenadgledanog učenja dati su samo ulazni podaci pri čemu na algoritmu ostaje da pronađe strukturu u podacima. 
+
+% TODO da li je naredna recenica suvisna
+Za oblast statičke verifikacije najrelevantniji su algoritmi nadgledanog učenja, tako da će u ostatku rada biti predstavljeni isključivo algoritmi koji pripadaju toj oblasti.
+
+Uobičajeni tok uspešne primene tehnika mašinskog učenja je sledeći. Nakon što se problem analizira, kao i podaci nad kojim će tehnike biti primenjene, potrebno je izabrati odgovarajući model. Nakon odabira modela, podaci se pretprocesiraju i izabrani model se trenira nad tako obrađenim podacima. Istrenirani model je dalje neophodno evaluirati kako bi bilo moguće znati u kojoj meri je koristan.
+
+\subsection{Odabrani algoritmi}
+
+
+
+\subsection{Evaluacija modela i mere kvaliteta}
+
+%TODO da li je naredna rečenica suvišna?
+Ukratko će biti predstavljeni termini vezani za \textit{meru kvaliteta} modela, kako bi bilo olakšano razumevanje postignutih rezultata u ostatku rada.
+
+\textit{Evaluacija modela} predstavlja numeričko predstavljanje sposobnosti predviđanja datog modela na određenoj skali i direktno se oslanja na mere kvalitetaMere koje se najčešće sreću u klasifikaciji su \textit{tačnost}, \textit{preciznost}, \textit{odziv} i \textit{F1 mera}. Sve navedene mere izvedene su iz \textit{matrice konfuzije} \ref{table:matrica_konfuzije}.
+
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ |c|cc| } 
+		\hline
+		Stvarno / Predviđeno & Pozitivno & Negativno \\ 
+		\hline
+		Pozitivno & Stvarno Pozitivno & Lažno Negativno \\ 
+		Negativno & Lažno Pozitivno & Stvarno Negativno \\ 
+		\hline
+	\end{tabular}
+	\caption{Matrica konfuzije}
+	\label{table:matrica_konfuzije}
+	%\caption{ tabelica stagod}
+\end{table}
+
+Stvarno pozitivne i stvarno negativne instance su one instance koje su ispravno određene od strane modela. Lažno pozitivne instance su negativne instance za koje je od strane modela predviđeno da su pozitivne. Dok su lažno negativne instance zapravo pozitivne instance koje je model loše klasifikovao kao negativne. 
+
+% TODO dodati šta koje mere zapravo rade, zašto tačnost nije savršena, napomenuti da ima još raznih
+Tačnost klasifikacije predstavlja procenat uspešno klasifikovanih instanci u odnosu na ukupan broj instanci. Preciznost je udeo ispravno pronađenih pozitivnih instanci u svim instancama koje su proglašene za pozitivne. Odziv je udeo ispravno pronađenih pozitivnih instanci u svim zaista pozitivnim instancama. Preciznost i odziv su dve mere koje najviše ima smisla razmatrati zajedno i način na koji se to najčešće radi je F1 mera, koja predstavlja njihovu harmonijsku sredinu.
+
+
+
+% ==============================================================================
+\section{Odabrani problemi statičke verifikacije}
 \label{sec:naslovN}
+% ==============================================================================
 
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
+
+
+% TODO srediti ovo, odgovoriti na postavljena pitanja, dopuniti nakon što odlučimo šta će biti sva 4 problema
+Predlozi za ovaj deo:
+
+Kratak opis problema sa kojima ćemo se susreti u narednom delu poglavlja. 
+
+Zašto su odabrani baš ovi problemi?
+
+Predstojeći problemi su uređeni po uticaju koji su imali na oblast statičke verifikacije softvera.
+
+Predlozi za dodatne baljezgarije kojima je mesto u ovom kutku rada su dobrodošli.
+
 
 \subsection{Od izvornog koda do istreniranih modela}
 \label{subsec:pregled}
@@ -202,7 +214,7 @@ Međutim, najbitnija prednost koju pruža WAKA u odnosu na ostale dostupne alate
 jedan standardizovani format ulaza za sve raspoložive algoritme učenja što omogućava da se koristi jedan ulaz kako bi se isprobale
 razne mogućnosti. Ulaz koji koristi WAKA je u formatu ARFF.
 
-ARFF datoteke se sastoje od nabrajanja atributa odnosno njihovih imena i tipova, a potom navođenja svih instanci koje se prosledjuju algoritmima.
+ARFF datoteke se sastoje od nabrajanja atributa odnosno njihovih imena i tipova, a potom navođenja svih instanci koje se prosleđuju algoritmima.
 
 Glavni problem koji se rešava se može podeliti u tri potproblema koji su:
 %list
@@ -278,8 +290,8 @@ loše performanse što se tiče lažno pozitivnih.
 \end{figure}
 
 
-\subsection{... podnaslov}
-\label{subsec:podnaslovM}
+
+\subsection{Problem 2 - Luka}
 
 Ovde pišem tekst.
 Ovde pišem tekst.
@@ -287,21 +299,34 @@ Ovde pišem tekst.
 Ovde pišem tekst.
 Ovde pišem tekst.
 
-\section{Poslednji naslov}
-\label{sec:naslovM}
+
+
+\subsection{Problem 3 - Dimitrije}
 
 Ovde pišem tekst.
 Ovde pišem tekst.
 Ovde pišem tekst.
 Ovde pišem tekst.
 Ovde pišem tekst.
+
+
+
+\subsection{Problem 4 - Rastko}
+
+Ovde pišem tekst.
 Ovde pišem tekst.
 Ovde pišem tekst.
 Ovde pišem tekst.
 Ovde pišem tekst.
 
+
+
+% ==============================================================================
 \section{Zaključak}
 \label{sec:zakljucak}
+% ==============================================================================
+
+
 
 Ovde pišem zaključak.
 Ovde pišem zaključak.
@@ -315,6 +340,51 @@ Ovde pišem zaključak.
 Ovde pišem zaključak.
 Ovde pišem zaključak.
 Ovde pišem zaključak.
+
+
+
+% ==============================================================================
+\section{DELETE ME - help koji je bio na pocetku}
+% ==============================================================================
+
+
+
+\begin{primer}
+	Problem zaustavljanja (eng.~{\em halting problem}) je neodlučiv \cite{haltingproblem}.
+\end{primer}
+
+\begin{primer}
+	Za prevođenje programa napisanih u programskom jeziku C može se koristiti GCC kompajler \cite{gcc}.
+\end{primer}
+
+\begin{primer}
+	Da bi se ispitivala ispravost softvera, najpre je potrebno precizno definisati njegovo ponašanje \cite{laski2009software}.
+\end{primer}
+
+Reference koje se koriste u ovom tekstu zadate su u datoteci {\em seminarski.bib}. Prevođenje u pdf format u Linux okruženju može se uraditi na sledeći način:
+\begin{verbatim}
+pdflatex TemaImePrezime.tex
+bibtex TemaImePrezime.aux
+pdflatex TemaImePrezime.tex
+pdflatex TemaImePrezime.tex
+\end{verbatim}
+Prvo latexovanje je neophodno da bi se generisao {\em .aux} fajl. {\em bibtex} proizvodi odgovarajući {\em .bbl} fajl koji se koristi za generisanje literature.
+Potrebna su dva prolaza (dva puta pdflatex) da bi se reference ubacile u tekst (tj da ne bi ostali znakovi pitanja umesto referenci). Dodavanjem novih referenci potrebno je ponoviti ceo postupak.
+
+
+Broj naslova i podnaslova je proizvoljan. Neophodni su samo Uvod i Zaključak. Na poglavlja unutar teksta referisati se po potrebi.
+\begin{primer}
+	U odeljku \ref{sec:naslov1} precizirani su osnovni pojmovi, dok su zaključci dati u odeljku \ref{sec:zakljucak}.
+\end{primer}
+
+Još jednom da napomenem da nema razloga da pišete:
+\begin{verbatim}
+\v{s} i \v{c} i \'c ...
+\end{verbatim}
+Možete koristiti srpska slova
+\begin{verbatim}
+š i č i ć ...
+\end{verbatim}
 
 
 \addcontentsline{toc}{section}{Literatura}
