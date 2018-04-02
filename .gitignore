@@ -12,8 +12,8 @@
 *.cb2
 *.pdf
 
-# za lukin mac:
-.DC_Store
+# za lukin mac (ty bro :D):
+.DS_Store
 
 ## Intermediate documents:
 *.dvi

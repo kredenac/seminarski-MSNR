@@ -93,7 +93,20 @@ primena mašinskog učenja kako u statičkoj tako i u dinamičkoj verifikaciji s
 \subsection{Statička verifikacija softvera}
 \label{subsec:staticka}
 
+\par Za razliku od dinamičke verifikacije softvera, \textit{statička verifikacija} podrazumeva analizu ispravnosti softvera bez njegovog pokretanja. Osnovna podela statičke verifikacije je na \textit{pregled koda (engl. code review)} i na \textit{automatizovanu verifikaciju}, koja će biti ključna za ostatak rada i biće podrazumevana kada se navodi pojam statička verifikacija.
 
+\par Kao što je već pomenuto, ne postoji način da se za svaki program utvrdi da li se on zaustavlja ili ne, tako da nam i statička verifikacija ne može uvek dati željeni odgovor. Ipak, statička verifikacija može da nam da uvid u kvalitet koda i njegove propuste za mnoge netrivijalne probleme i zbog toga se razvijaju tehnike kojim bi skup takvih problema rastao, a vreme obrade se smanjivalo. 
+\\\\
+
+Neke od bitnijih tehnika statičke verifikacije su:
+\begin{itemize}
+\item \textbf{Analiza toka podataka} (engl. data flow analysis)
+\item \textbf{Apstraktna interpretacija} (engl. abstract interpretation)
+\item \textbf{Simbolička analiza} (engl. symbolic analysis)
+\item \textbf{Proveravanje ograničenih modela} (engl. Bounded model checking), koja se najviše koristi za verifikaciju logičkih kola.
+\end{itemize}
+
+% TODO opisati tehnike koje smo koristili dole
 
 % ==============================================================================
 \section{Mašinsko učenje}
