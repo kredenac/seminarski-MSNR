@@ -337,13 +337,49 @@ loše performanse što se tiče lažno pozitivnih.
 
 
 
-\subsection{Problem 2 - Luka}
+\subsection{ONLINE testiranje REINFORCEMENT LEARNINGOM }
+%\label{subsec:pregled}
 
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
+%lista
+\begin{itemize}
+\item Lista
+\end{itemize}
+
+Programi koji su reaktivni, naročito ako su distribuirani, se mogu ponašati nedeterministički. Neki faktori, poput redosleda završavanja, niti nisu pod potpunom kontrolom testera, ali se njihovo ponašanje može modelovati stablom odlučivanja. Ipak, veličina tog stabla može da postane izuzetno velika, pa se pribegava tehnikama ONLINE testiranja.
+
+ONLINE testiranje može biti pogodnije od OFFLINE testiranja za reaktivne sisteme zato što se može dinamički prilagoditi za vreme izvršavanja, tako da pokrije samo POTREBNA ponašanja, umesto svih mogućih. Ono spada u skup testiranja baziranih na modelu (engl. model-based testing (MBT)), gde tester koristi model da detektuje razlike između impelementacije pod testom (engl. implementation under test (IUT)) i modela.
+
+I IUT i model posmatramo kao interfejs automate (engl. interface automata) kako bismo formalno uspostavili vezu između njih. %https://users.soe.ucsc.edu/~luca/papers/01/FSE01.pdf 
+
+Razlikovaćemo poteze testera od IUTa. Akcije testera ćemo nazivati kontrolisane akcije, dok ćemo akcije IUTa nazivati posmatrane akcije. Greška usklađenosti nastaje kada IUT odbije kontrolisanu akciju modela ili kada model odbije posmatranu akciju IUTa.
+
+Osnovni problem u ONLINE testiranju je izbor strategije za odabir sledeće akcije. Možemo da razmišljamo o tome na sledeći način: cena testa se povećava srazmerno broju koraka kako bi se pokrio zadati procenat svih ponašanja. Iscrpno pokrivanje svih ponašanja je najčešće nemoguće. Umesto da posmatramo minimizaciju cene, možemo pretpostaviti da imamo fiksne resurse i da maksimizujemo procenat pokrivenih ponašanja. Bitno je da minimizujemo broj vraćanja u početno stanje (engl. backtracking), zato što to može biti skupa operacija.
+
+Sledeću akciju možemo odabrati na više načina. 
+
+Najjeftiniji
+Biramo akciju koja najmanje košta, odnosno ima najveću nagradu.
+
+Nasumični
+Biramo akciju na nasumičan način
+
+Modifikovan
+Biramo akciju nasumično, ali najveću verovatnoću ima stanje koje je inverzno proporcionalno njegovoj ceni. To znači da su manje frekfentne akcije favorizovane.
+Drugim rečima, ako potencijalne sledeće akcije obeležimo sa ($a_i$) i manje od k za neko k, i cene ($c_i$) i manje od k, onda će verovatnoća za izbor akcije $a_i$ biti $c_i^{-1} / \sum_{j!=i}^{} c_j^{-1}$
+Algoritam za odabir akcije REINFORCEMENT LEARNING moramo modifikovati zbog problema sa nasumičnim odabirom. Modifikovan algoritam koristi delove anti-ant algoritma kako bi izbegao generacije redudantnih testova.%procitatj vise anti-ant
+
+Potrebno je da pamtimo istoriju poteza. To obezbeđujemo strukturom graf tragova testova (engl. Test-Trace Graph (TTG)) %vise na..
+
+Specifikacija modela
+
+% FIXME !! ! !
+%Stanja su memorijske lokacije preslikane u konačni skup vrednosti. 
+%Pravila ažuriranja su konačan skup funkcija koje preslikavaju vrednosti iz domena stanja u domen stanja. Pravilo ažuriranja p može biti parametrizovano parametrima X NADVUČENO.
+%Instanciranje p[X NADVUCENO] ulaznim vrednostima V NADVUCENO odgovarajuceg tipa, obelezava se p[V NADVUCENO].
+%Generalno, pravila azuriranja mogu biti nedeterministicka, tako da za isto ulazno stanje i vrednosti, moze da ima razlicita izlazna stanja. Da bismo to modelovali, uvodimo relaciju [[p]] <= Stanja x Vrednost^n x Stanja.
+%Kada je p deterministicko, [[p]] smatramo funkcijom [[p]]: Stanja x Vrednost^n => Stanja
+
+Čuvar phi je formula koja zavisi od stanja. Može sadržati slobodne logičke promenljive x nadvuceno = x1, x2,..xn i takvo označavamo sa phi(x nadvuceno). phi je zatvoreno ako nema slobodnih varijabli. Zatvorena formula fi ima istinitosnu interpretaciju u stanju s |= phi. Čuvano pravilo ažuriranja je par (phi, p) i ono limitira primenu p na stanja i argumente koji zadovoljavaju phi(V NADVUCENO).
 
 
 
