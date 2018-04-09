@@ -335,15 +335,18 @@ loše performanse što se tiče lažno pozitivnih.
 \label{fig:falseNeg}
 \end{figure}
 
-\subsection{Problem 3 - Dimitrije}
+\subsection{Formalna verifikacija softvera}
 
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
+\par Verifikaciji softvera može se pristupiti na strogo formalan matematički način. U ovom radu biće izložen pristup o kome se detaljnije može pročitati u radu \cite{verify}.
 
+\par Jedan od mogućih pristupa verifikaciji softvera, odnosno proveri ispravnosti softvera jeste sledeći. Ako je $T$ skup testova, onda je program $P$ ispravan u odnosu na datu specifikaciju $S$ ako i samo ako važi
+$$(\forall t\in T)\ [prolazi(P,t)\wedge S\models t]\Rightarrow P\equiv S,$$
+gde $prolazi(P,t)$ označava da program $P$ uspešno prolazi test $t$, $S\models t$ označava da je $t$ semantička posledica specifikacije $S$, odnosno da je test u skladu sa specifikacijom programa, a $P\equiv S$ označava da se program $P$ smatra ekvivalentnim specifikaciji $S$. Drugim rečima, program je ispravan u skladu sa specifikacijom $S$ ako i samo ako se iz činjenice da program zadovoljava svaki test koji je u skladu sa specifikacijom sledi da se program smatra ekvivalentnim specifikaciji.
 
+\par Jedan od problema jeste pronaći skup testova $T$ za koji važi prethodna implikacija. Takav skup testova naziva se \emph{adekvatnim} skupom testova. Naravno, trivijalan primer je iscrpan skup testova, tj. skup testova koji obuhvataju sve moguće ulaze. No, u praksi, taj skup je obično beskonačan, te je kao takav neupotrebljiv. Potrebno je da se skup testova ograniči. Jedan od pristupa jeste da se nekom apriori analiza specifikacije izvuče odgovarajući skup testova. Međutim, postoji mogućnost da se dobiju testovi koje nije moguće direktno proveriti u datom programu, što dovodi do drugog tipičnog problema.
+
+\par Problem pravljenja efikasne procedure da se proveri tačnost konjunkcije $prolazi(P,t)\wedge S\models t$ poznat je pod nazivom \emph{orakl problem}. Nije uvek lako proveriti tačnost od $prolazi(P,t)$, a pošto su program i njegova specifikacija zasnovani na drugačijim formalizmima, nije lako proveriti 
+%dovrsicu sutra, ne mogu vise...
 
 \subsection{Problem 4 - Rastko}
 
@@ -473,50 +476,6 @@ Ovde pišem zaključak.
 Ovde pišem zaključak.
 Ovde pišem zaključak.
 
-
-
-% ==============================================================================
-\section{DELETE ME - help koji je bio na pocetku}
-% ==============================================================================
-
-
-
-\begin{primer}
-	Problem zaustavljanja (eng.~{\em halting problem}) je neodlučiv \cite{haltingproblem}.
-\end{primer}
-
-\begin{primer}
-	Za prevođenje programa napisanih u programskom jeziku C može se koristiti GCC kompajler \cite{gcc}.
-\end{primer}
-
-\begin{primer}
-	Da bi se ispitivala ispravost softvera, najpre je potrebno precizno definisati njegovo ponašanje \cite{laski2009software}.
-\end{primer}
-
-Reference koje se koriste u ovom tekstu zadate su u datoteci {\em seminarski.bib}. Prevođenje u pdf format u Linux okruženju može se uraditi na sledeći način:
-\begin{verbatim}
-pdflatex TemaImePrezime.tex
-bibtex TemaImePrezime.aux
-pdflatex TemaImePrezime.tex
-pdflatex TemaImePrezime.tex
-\end{verbatim}
-Prvo latexovanje je neophodno da bi se generisao {\em .aux} fajl. {\em bibtex} proizvodi odgovarajući {\em .bbl} fajl koji se koristi za generisanje literature.
-Potrebna su dva prolaza (dva puta pdflatex) da bi se reference ubacile u tekst (tj da ne bi ostali znakovi pitanja umesto referenci). Dodavanjem novih referenci potrebno je ponoviti ceo postupak.
-
-
-Broj naslova i podnaslova je proizvoljan. Neophodni su samo Uvod i Zaključak. Na poglavlja unutar teksta referisati se po potrebi.
-\begin{primer}
-	U odeljku \ref{sec:naslov1} precizirani su osnovni pojmovi, dok su zaključci dati u odeljku \ref{sec:zakljucak}.
-\end{primer}
-
-Još jednom da napomenem da nema razloga da pišete:
-\begin{verbatim}
-\v{s} i \v{c} i \'c ...
-\end{verbatim}
-Možete koristiti srpska slova
-\begin{verbatim}
-š i č i ć ...
-\end{verbatim}
 
 
 \addcontentsline{toc}{section}{Literatura}
