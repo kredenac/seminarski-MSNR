@@ -137,8 +137,7 @@ Obično se identifikuju dve oblasti mašinskog učenja: \textit{nadgledano učen
 postoji i njemu odgovarajući željeni izlaz. Model je zadužen za učenje pravila nad 
 datim parovima ulaza i izlaza. Sa druge strane, kod nenadgledanog učenja dati su 
 samo ulazni podaci pri čemu na algoritmu ostaje da pronađe strukturu u podacima. 
-
-% TODO da li je naredna recenica suvisna
+% TODO da li je naredna recenica suvisna (ne sme pasus da ima samo jednu recenicu, zato spojih sa gornjim)
 Za oblast statičke verifikacije najrelevantniji su algoritmi nadgledanog učenja, 
 tako da će u ostatku rada biti predstavljeni isključivo algoritmi koji pripadaju toj oblasti.
 
@@ -154,9 +153,9 @@ neophodno evaluirati kako bi bilo moguće znati u kojoj meri je koristan.
 
 \subsection{Evaluacija modela i mere kvaliteta}
 
-%TODO da li je naredna rečenica suvišna?
-Ukratko će biti predstavljeni termini vezani za \textit{meru kvaliteta} modela, 
-kako bi bilo olakšano razumevanje postignutih rezultata u ostatku rada.
+%TODO da li je naredna rečenica suvišna? (ne sme pasus samo 1 recenicu)
+%Ukratko će biti predstavljeni termini vezani za \textit{meru kvaliteta} modela, 
+%kako bi bilo olakšano razumevanje postignutih rezultata u ostatku rada.
 
 \textit{Evaluacija modela} predstavlja numeričko predstavljanje sposobnosti 
 predviđanja datog modela na određenoj skali i direktno se oslanja na mere 
@@ -238,7 +237,6 @@ koliku štetu mogu da uzrokuju i mogućnost da budu detektovane računarskim ala
 
 
 Korišćen je WEKA softver koji je kolekcija algoritama mašinskog učenja.
-
 Bogat skup funkcionalnosti koje pruža WEKA uključuje:
 %lista
 \begin{itemize}
@@ -253,13 +251,13 @@ Bogat skup funkcionalnosti koje pruža WEKA uključuje:
 
 
 Za dati problem su najbitniji selekcija atributa i razni algoritmi klasifikacije i predviđanja.
-
 Prvi prikazuju koji od brojnih elemenata ulaznog vektora su zapravo uključeni u proces donošenja odluke a koji nisu, dok
 drugi klasifikuju odnosno predviđaju ispravnost na osnovu ulaza.
 Međutim, najbitnija prednost koju pruža WAKA u odnosu na ostale dostupne alate je mogućnost da se koristi
 jedan standardizovani format ulaza za sve raspoložive algoritme učenja što omogućava da se koristi jedan ulaz kako bi se isprobale
-razne mogućnosti. Ulaz koji koristi WAKA je u formatu ARFF.
+razne mogućnosti.
 
+Ulaz koji koristi WAKA je u formatu ARFF.
 ARFF datoteke se sastoje od nabrajanja atributa odnosno njihovih imena i tipova, a potom navođenja svih instanci koje se prosleđuju algoritmima.
 
 Glavni problem koji se rešava se može podeliti u tri potproblema koji su:
@@ -295,17 +293,15 @@ velika količina datoteka se skupi na taj način, a pritom je moguće dobiti pri
 Na prvi pogled je dovoljno uzeti izlaz programa CMore u ARFF formatu za datoteku sa greškom i bez nje, ali on nema uvid u to šta je greška nego analizira celu datoteku i zato
 generiše izlaze koji mogu imati više hiljada linija od kojih je većina nastala od ispravnih delova koda.
 Potrebno je izdvojiti samo one linije koda koje su dovele do greške i njihove parove bez te greške.
-
 Za tu svrhu se koristi program ``Holmes'' koji upoređuje dve ARFF datoteke i na izlazu se dobiju dve nove ARFF datoteke koje sadrže samo potrebne  instance.
 
 Nakon što se svi modeli mašinskog učenja istreniraju vrši se analiza pogodnosti
 koja vraća listu pogodnih modela tako što analizira njihovu preciznost, stopu lažno pozitivnih i lažno negativnih.
-
 U nastavku su prikazani rezultati poređenja 71 klasifikatora, a na slikama su prikazani samo oni koji su se najbolje pokazali. Cela procedura je urađena dva puta, s tim što je drugi put umanjen broj atributa uključenih u proces.
 
 Među 7 najboljih klasifikatora sa slike \ref{fig:acc} se nalaze tri zasnovana na najbližim susedima (``Ib1'', ``Ibk'', ``NNge''), tri zasovana na stablima
 (``LMT'', ``RotationForest'' i ``ADABoost'' primenjen na ``BFTree'') i jedan zasnovan na neuronskim mrežama (``MultiLayerPerceptron'').
-
+Na slici  \ref{fig:falsePos} se vidi isti trend kao i na slici  \ref{fig:acc}: smanjenjem broja atributa algoritmi zasnovani na stablima se lošije ponašaju dok algoritmi najbližih suseda i ``MultiLayerPerceptron'' daju bolje rezultate.
 
 \begin{figure}[h!]
 \centering
@@ -314,7 +310,7 @@ Među 7 najboljih klasifikatora sa slike \ref{fig:acc} se nalaze tri zasnovana n
 \label{fig:acc}
 \end{figure}
 
-Na slici  \ref{fig:falsePos} se vidi isti trend kao i na slici  \ref{fig:acc}: smanjenjem broja atributa algoritmi zasnovani na stablima se lošije ponašaju dok algoritmi najbližih suseda i ``MultiLayerPerceptron'' daju bolje rezultate.
+
 
 \begin{figure}[h!]
 \centering
@@ -395,15 +391,12 @@ Model programa P sadrži sledeće komponente
 	\item Arnost funkcije f je broj ulaznih parametara $p_f$
 	\item Arnost reset pravila je 0 i $[[p_{Reset}]](s) = s_0$ za sve $s \models \varphi_{Reset}$
 \end{itemize}
-
 P je determinističko, ako za svako $f \in \sigma, p_f$ je determinističko.
 
 
 Akcija $f$ ima oblik $f(v_1,...,v_n)$, gde je $f$ $n$-arni akcijski simbol a svako $v_i$ vrednost koja odgovara ulaznom parametru $p_f$. Kažemo da je akcija $f(\bar{v})$ dozvoljena u stanju $s$ ako $s \models \varphi(\bar{v})$. Primetimo dva specijanla slučaja: kada je reset uvek zabranjen $(\varphi_{Reset} = false)$, kada je definicija $p_{Reset}$ irelevantna, i slučaj kada je reset uvek dozvoljen $(\varphi_{Reset} = false)$, i tada $p_{Reset}$ mora da bude definisana tako da iz svakog stanja može da uspostavi početno stanje.
 
 I IUT i model posmatramo kao interfejs automate (engl. interface automata) kako bismo formalno uspostavili vezu između njih [?]. %https://users.soe.ucsc.edu/~luca/papers/01/FSE01.pdf 
-
-
 Interfejs automat M ima sledeće komponente:
 \begin{itemize}
 \item Skup stanja $S$
