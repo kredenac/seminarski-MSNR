@@ -4,6 +4,7 @@
 
 \usepackage{color}
 \usepackage{url}
+\usepackage{amsthm}
 \usepackage[T2A]{fontenc} % enable Cyrillic fonts
 \usepackage[utf8]{inputenc} % make weird characters work
 \usepackage{graphicx}
@@ -15,8 +16,11 @@
 \usepackage[unicode]{hyperref}
 \hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
 
+\newtheorem*{tvrdjenje}{Tvrđenje}
+\theoremstyle{definition}
 %\newtheorem{primer}{Пример}[section] %ćirilični primer
 \newtheorem{primer}{Primer}[section]
+
 
 \begin{document}
 
@@ -335,14 +339,84 @@ loše performanse što se tiče lažno pozitivnih.
 
 \par Verifikaciji softvera može se pristupiti na strogo formalan matematički način. U ovom radu biće izložen pristup o kome se detaljnije može pročitati u radu \cite{verify}.
 
-\par Jedan od mogućih pristupa verifikaciji softvera, odnosno proveri ispravnosti softvera jeste sledeći. Ako je $T$ skup testova, onda je program $P$ ispravan u odnosu na datu specifikaciju $S$ ako i samo ako važi
+\par Ako je $T$ skup testova, onda je program $P$ ispravan u odnosu na datu specifikaciju $S$ ako i samo ako važi
 $$(\forall t\in T)\ [prolazi(P,t)\wedge S\models t]\Rightarrow P\equiv S,$$
-gde $prolazi(P,t)$ označava da program $P$ uspešno prolazi test $t$, $S\models t$ označava da je $t$ semantička posledica specifikacije $S$, odnosno da je test u skladu sa specifikacijom programa, a $P\equiv S$ označava da se program $P$ smatra ekvivalentnim specifikaciji $S$. Drugim rečima, program je ispravan u skladu sa specifikacijom $S$ ako i samo ako se iz činjenice da program zadovoljava svaki test koji je u skladu sa specifikacijom sledi da se program smatra ekvivalentnim specifikaciji.
+gde $prolazi(P,t)$ označava da program $P$ uspešno prolazi test $t$, $S\models t$ označava da je $t$ semantička posledica specifikacije $S$, odnosno da je test u skladu sa specifikacijom programa, a $P\equiv S$ označava da se program $P$ smatra ekvivalentnim specifikaciji $S$. Drugim rečima, program je ispravan u skladu sa specifikacijom $S$ ako i samo ako se iz činjenice da program zadovoljava svaki test koji je u skladu sa specifikacijom može zaključiti da se program smatra ekvivalentnim specifikaciji.
 
 \par Jedan od problema jeste pronaći skup testova $T$ za koji važi prethodna implikacija. Takav skup testova naziva se \emph{adekvatnim} skupom testova. Naravno, trivijalan primer je iscrpan skup testova, tj. skup testova koji obuhvataju sve moguće ulaze. No, u praksi, taj skup je obično beskonačan, te je kao takav neupotrebljiv. Potrebno je da se skup testova ograniči. Jedan od pristupa jeste da se nekom apriori analiza specifikacije izvuče odgovarajući skup testova. Međutim, postoji mogućnost da se dobiju testovi koje nije moguće direktno proveriti u datom programu, što dovodi do drugog tipičnog problema.
 
-\par Problem pravljenja efikasne procedure da se proveri tačnost konjunkcije $prolazi(P,t)\wedge S\models t$ poznat je pod nazivom \emph{orakl problem}. Nije uvek lako proveriti tačnost od $prolazi(P,t)$, a pošto su program i njegova specifikacija zasnovani na drugačijim formalizmima, nije lako proveriti 
-%dovrsicu sutra, ne mogu vise...
+\par Problem pravljenja efikasne procedure da se proveri tačnost konjunkcije $prolazi(P,t)\wedge S\models t$ poznat je pod nazivom \emph{orakl problem} (eng.~{\em oracle problem}). Nije uvek lako proveriti tačnost od $prolazi(P,t)$, a pošto su program i njegova specifikacija zasnovani na drugačijim formalizmima, nije lako proveriti da li ova konjunkcija važi za svaki pojedinačni test. Zato je predložen pristup pokazivanja ispravnosti softvera u odnosu na specifikaciju pomoću testiranja zasnovanog na mašinskom učenju. Ukratko, postupak je zasnovan na sledećem. Ako je dat skup testova za konkretan program koji se sastoji od ulaznih i izlaznih vrednosti za svaki test, korišćenjem mašinskog učenja može se indukovati teorija koja odgovara datim podacima. Ta indukovana teorija apstraktno opisuje ulazno--izlazno ponašanje programa dato u testovima. Dokaz ispravnosti programa sledi iz dokaza da indukovana teorija ispunjava originalnu specifikaciju.
+
+\par Matematički pojmovi koji se koriste mogu se pronaći u \cite{verify} i \cite{equationaltheory} i opisuju tzv. teorije jendačina (eng.~{\em equational theory}). Oni su važni, jer predstavljaju formalnu osnovu za ovaj metod verifikacije softvera. Između ostalih, definisani su pojmovi \emph{$\Sigma$-algebre}, \emph{$\Sigma$-teorije}, tj. \emph{specifikacije}, \emph{osnovne jednačine}, zatim kada $\Sigma$-algebra \emph{zadovoljava} teoriju, odnosno specifikaciju, i kada je jednačina \emph{semantička posledica} specifikacije (tj. značenje simbola $\models$). Takođe, definisan je i pojam \emph{morfizma teorija}, koji predstavlja formalno preslikavanje između dveju teorija.
+
+\par Oblast mašinskog učenja se, između ostalog, bavi indukovanjem teorija prvog reda na osnovu pozitivnih i negativnih primera. Primena mašinskog učenja u indukovanju logike prvog reda je obimno izučavana i to pod imenom logičko programiranje, a u skorije vreme su se pojavili sistemi koji indukuju teorije jednačina prvog reda od osnovnih jednačina.
+
+\par Ako je $P$ skup pozitivnih primera, a $N$ skup negativnih primera, onda je indukovana teorija $H$ \emph{hipoteza} ako važi:
+\begin{eqnarray*}
+H\models p, & \mbox{ za svako } p\in P,\\
+H\not\models n, & \mbox{ za svako } n\in N.
+\end{eqnarray*}
+Prvi uslov govori da hipoteza zadovoljava sve pozitivne primere, a drugi uslov da ne zadovoljava nijedan negativan primer. Pozitivni i negativni primeri se, u kontekstu mašinskog učenja, zovu primerima za trening. U središtu mašinskog učenja jeste sledeća hipoteza induktivnog učenja:
+\begin{tvrdjenje}
+Ako indukovana teorija zadovoljava gornje uslove za dovoljno veliki skup primera za trening, onda će ta teorija s vremenom zadovoljiti i neviđene primere.
+\end{tvrdjenje}
+Dakle, mašinsko učenje nam dozvoljava da uopštavamo dalje od ko\-na\-čnog skupa primera za trening.
+
+\par Programi se, u formalnom smislu, posmatraju kao $\Sigma$-teorije koje zadovoljavaju neku teoriju jednačina, tj. specifikaciju. Program je ispravan u odnosu na specifikaciju ako je zadovoljava u smislu u kome $\Sigma$-algebra zadovoljava teoriju. Specifikacija $S$ zadovoljava skup testova T, u oznaci $S\models T$ ako $S\models t$ za svaki test $t\in T$. Skup testova $T$ je \emph{koherentan} ako je moguće indukovati teoriju $H$ takvu da $H\models T$. Skup testova $T$ je \emph{adekvatan} ako postoji morfizam teorija $\phi:S\models H$ gde je $S$ specifikacija programa, a $H$ je teorija indukovana iz skupa testova $T$. Finalni zaključak iznet je u sledećem tvrđenju.
+
+\begin{tvrdjenje}
+Ako je $S$ specifikacija, $P$ program i $T$ adekvatan i koherentan skup testova, onda je $P$ ispravan u odnosu na specifikaciju $S$.
+\end{tvrdjenje}
+
+Neka je data specifikacija steka. Koristi se OBJ sintaksa, u kojoj ključna reč \textbf{op} uvodi nove operacije, ključna reč \textbf{var} definiše promenljive, a ključna reč \textbf{eq} dozvoljava definisanje operatora s jednačinama.
+
+\begin{verbatim}
+	obj STACK is sorts Stack Element .
+	  op push : Stack Element -> Stack .
+	  op top  : Stack -> Element
+	  var X   : Element . var S : Stack .
+	  eq top(push(S,X)) = X .
+	endo
+\end{verbatim}
+
+\begin{primer}
+Ako se posmatra skup testova
+\begin{eqnarray*}T1 = \{&(\mbox{\textbf{top(push(v,a)),a}}),\\
+&(\mbox{\textbf{top(push(push(v,b),a)),a}})\}
+\end{eqnarray*}
+i indukovana teorija
+\begin{verbatim}
+	obj STACKI is sorts Stack Element .
+	  ops a b : -> Element .
+	  op v : -> Stack .
+	  op top : Stack -> Element .
+	  var X : Stack .
+	  eq top(X) = a .
+	endo	
+\end{verbatim}
+jednostavno se vidi da je skup testova koherentan, ali da indukovana teorija ne odgovara specifikaciji steka. Prema tome, skup testova $T1$ nije adekvatan za model steka. Problem je nastao zbog nedovoljne veličine skupa testa, pa hipoteza induktivnog učenja nije bila zadovoljena.
+\end{primer}
+
+\begin{primer}
+Za skup testova
+\begin{eqnarray*}T2 = \{&(\mbox{\textbf{top(push(v,a)),a}}),\\
+&(\mbox{\textbf{top(push(push(v,a),b)),b}}),\\
+&(\mbox{\textbf{top(push(push(v,b),a)),a}}),\\
+&(\mbox{\textbf{top(push(push(v,d),c)),c}})\},
+\end{eqnarray*}
+program za formalnu verifikaciju je indukovao sledeću teoriju.
+\begin{verbatim}
+	obj STACKI is sorts Stack Element .
+	  ops a b c d : -> Element .
+	  op v : -> Stack .
+	  op push : Stack Element -> Stack .
+	  op top  : Stack -> Element
+	  var X : Element . var S : Stack .
+	  eq top(push(S,X)) = X .
+	endo
+\end{verbatim}
+Jednostavno se vidi da je i skup testova $T2$ koherentan, pošto indukovana teorija zadovoljava sve testove, a takođe se jednostavno vidi da indukovana teorija odgovara početnoj specifikaciji. Prema tome, skup testova $T2$ je i adekvatan.
+\end{primer}
 
 \subsection{Problem 4 - Rastko}
 
