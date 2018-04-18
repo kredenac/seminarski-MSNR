@@ -307,7 +307,7 @@ sa ovim problemom \cite{statisticalLearningTheory}, kao što je regularizacija s
 nedovoljne u ovom slučaju. Osnovna ideja regularizacije je da pojednostavi skup 
 modela koji se mogu naučiti, što je u kontradikciji sa neophodnom osobinom 
 statičkog analizatora da ispravno kategoriše granični slučajeve. Ovaj problem 
-se rešava procedurom učenja vodjenog kontra-primerima koja generiše nove 
+se rešava procedurom učenja vodjenog kontraprimerima koja generiše nove 
 programe, koristeći programsku semantiku, za koje naučeni analizator daje 
 pogrešne rezultate i koji služe za dalje učenje. 
 
@@ -315,14 +315,14 @@ pogrešne rezultate i koji služe za dalje učenje.
 % detaljan opis rešenja drugog problema
 Ključna komponenta ovog pristupa je proročište(en. oracle) koje brzo može 
 testirati korektnost statičkog analizatora, i ako je analizator korektan 
-pronaći kontra-primere. Proročište kao ulaz uzima analizator $pa$ i skup 
+pronaći kontraprimere. Proročište kao ulaz uzima analizator $pa$ i skup 
 podataka $\mathcal{D}$ koji je korišćen prilikom učenja analizatora $pa$ 
-i kao izlaz vraća kontra-primere programa na kojima se analizator ne 
+i kao izlaz vraća kontraprimere programa na kojima se analizator ne 
 ponaša korektno.
 
-Najveći problem koji se mora rešiti je brz pronalazak kontra-primera u prostoru 
+Najveći problem koji se mora rešiti je brz pronalazak kontraprimera u prostoru 
 pretrage svih mogućih programa. Kao što je pokazano u radu \cite{staticAnalyzer} 
-nasumično generisanje kontra-primera ne funkcioniše usled prirode prostora 
+nasumično generisanje kontraprimera ne funkcioniše usled prirode prostora 
 pretrage koji može biti čak i beskonačan. Pretraga se ubrzava dizajnom 
 proročišta opšte namene koje je bazirano na idejama modernih tehnika testiranja 
 \cite{testing}. 
@@ -343,7 +343,7 @@ su Flow \cite{flow} koji koristi facebook, i TAJS \cite{tajs}.
 
 % doprinosi rada
 Glavni doprinosi opisanog rada su sledeći. Metod učenja pravila statičkih 
-analizatora koji dobro generalizuje zbog pažljivog generisanja kontra-primera 
+analizatora koji dobro generalizuje zbog pažljivog generisanja kontraprimera 
 nad pravilima koja su naučena u tom trenunku. Algoritam mašinskog učenja baziran 
 na drvetu odluke za učenje pravila analize iz podataka, koji uči da 
 pre-aproksimira kada skup podataka ne može da se obradi precizno. 
