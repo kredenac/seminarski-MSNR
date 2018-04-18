@@ -489,18 +489,18 @@ Kada je p determinističko, [[p]] smatramo funkcijom [[p]]: $Stanja \times Vredn
 
 Čuvar $\varphi$ je formula koja zavisi od stanja. Može sadržati slobodne logičke promenljive $\bar{x} = x_1, x_2,..., x_n$ i takvo označavamo sa $\varphi(\bar{x})$. $\varphi$ je zatvoreno ako nema slobodnih varijabli. Zatvorena formula $\varphi$ ima istinitosnu interpretaciju u stanju $s \models \varphi$. Čuvano pravilo ažuriranja je par $(\varphi, p)$ i ono limitira primenu p na stanja i argumente koji zadovoljavaju $\varphi(\bar{v})$.
 
-Model programa P sadrži sledeće komponente
-\begin{itemize}
-\item Prostor stanja $Stanja$
-\item Prostor vrednosti $Vrednosti$
-\item Inicijalno stanje $s_0 \in Stanja$
-\item Konačni skup simbola akcija $\Sigma$ podeljen u dva disjunktna podskupa
-	\item $\Sigma_c$ kontrolisanih akcija i
-	\item $\Sigma_o$ posmatranih akcija
-\item Familija $(\varphi_f, p_f) f \in \Sigma$ čuvanih pravila ažuriranja
-	\item Arnost funkcije f je broj ulaznih parametara $p_f$
-	\item Arnost reset pravila je 0 i $[[p_{Reset}]](s) = s_0$ za sve $s \models \varphi_{Reset}$
-\end{itemize}
+Model programa P sadrži sledeće komponente:
+%\begin{itemize}
+prostor stanja $Stanja$,
+prostor vrednosti $Vrednosti$,
+inicijalno stanje $s_0 \in Stanja$,
+konačni skup simbola akcija $\Sigma$ podeljen u dva disjunktna podskupa(
+$\Sigma_c$ kontrolisanih akcija i
+$\Sigma_o$ posmatranih akcija),
+familija $(\varphi_f, p_f) f \in \Sigma$ čuvanih pravila ažuriranja,
+arnost funkcije f je broj ulaznih parametara $p_f$ i
+arnost reset pravila je 0 i $[[p_{Reset}]](s) = s_0$ za sve $s \models \varphi_{Reset}$.
+%\end{itemize}
 P je determinističko, ako za svako $f \in \sigma, p_f$ je determinističko. \\
 
 Akcija $f$ ima oblik $f(v_1,...,v_n)$, gde je $f$ $n$-arni akcijski simbol a svako $v_i$ vrednost koja odgovara ulaznom parametru $p_f$. Kažemo da je akcija $f(\bar{v})$ dozvoljena u stanju $s$ ako $s \models \varphi(\bar{v})$. Primetimo dva specijanla slučaja: kada je reset uvek zabranjen $(\varphi_{Reset} = false)$, kada je definicija $p_{Reset}$ irelevantna, i slučaj kada je reset uvek dozvoljen $(\varphi_{Reset} = false)$, i tada $p_{Reset}$ mora da bude definisana tako da iz svakog stanja može da uspostavi početno stanje.
