@@ -85,7 +85,7 @@ Verifikacija softvera je izuzetno važna oblast računarstva. Softver polako usp
 \subsection{Statička verifikacija softvera}
 \label{subsec:staticka}
 
-\par Za razliku od dinamičke verifikacije softvera, \textit{statička verifikacija} podrazumeva analizu ispravnosti softvera bez njegovog pokretanja. Osnovna podela statičke verifikacije je na \textit{pregled koda (eng. code review)} i na \textit{automatizovanu verifikaciju}, koja će biti ključna za ostatak rada i biće podrazumevana kada se navodi pojam statička verifikacija.
+\par Za razliku od dinamičke verifikacije softvera, \textit{statička verifikacija} podrazumeva analizu ispravnosti softvera bez njegovog pokretanja. Osnovna podela statičke verifikacije je na \textit{pregled koda} (eng.~{\em code review}) i na \textit{automatizovanu verifikaciju}, koja će biti ključna za ostatak rada i biće podrazumevana kada se navodi pojam statička verifikacija.
 
 \par Kao što je već pomenuto, ne postoji način da se za svaki program utvrdi da li se on zaustavlja ili ne, tako da nam i statička verifikacija ne može uvek dati željeni odgovor. Ipak, statička verifikacija može da nam da uvid u kvalitet koda i njegove propuste za mnoge netrivijalne probleme i zbog toga se razvijaju tehnike kojim bi skup takvih problema rastao, a vreme obrade se smanjivalo. 
 
@@ -103,42 +103,18 @@ Verifikacija softvera je izuzetno važna oblast računarstva. Softver polako usp
 \section{Mašinsko učenje}
 % ==============================================================================
 
-\textit{Mašinsko učenje} bavi se proučavanjem indukcije, odnosno generalizacije 
-čime formalizuje uopštavanje od uzorka određene veličine ka univerzalnim zaključcima \cite{bishopML}.
-U srcu novog zamaha veštačke inteligencije nalazi se oblast mašinskog učenja. 
-U nekim domenima, kao na primer prepoznavanje lica, u kojima se računari nisu 
-mogli porediti sa ljudima po uspešnosti, ova oblast postiže rezultate superiorne 
-u odnosu na rezultate ljudskih eksperata.
+\par \textit{Mašinsko učenje} bavi se proučavanjem indukcije, odnosno generalizacije, čime formalizuje uopštavanje od uzorka određene veličine ka univerzalnim zaključcima \cite{bishopML}. U srcu novog zamaha veštačke inteligencije nalazi se oblast mašinskog učenja. U nekim domenima, kao na primer prepoznavanje lica, u kojima se računari nisu mogli porediti sa ljudima po uspešnosti, ova oblast postiže rezultate superiorne u odnosu na rezultate ljudskih eksperata.
 
 % TODO mozda ubaciti ovo, izbaciti nesto drugo
 % Mašinsko učenje predstavlja automatsku detekciju smislenih šablona u podacima.
 
-Mašinsko učenje je posebno pogodno za probleme koje je čoveku teško definisati a 
-izuzetno lako za rešiti i u kojima je prihvatljiva poneka greška. Zbog dopuštanja 
-povremenih greški u izvršavanju, ova oblast na prvi pogled izgleda kao nepogodna 
-za rešavanje problema statičke verifikacije softvera. Ipak u stanju je da doprinese 
-kao dodatni alat za rešavanje raznih problema koji se mogu naći u statičkoj 
-verifikaciji ako njime rukuje prava osoba, čak i ako ne može da obeća kompletno 
-rešenje svih problema.
+\par Mašinsko učenje je posebno pogodno za probleme koje je čoveku teško definisati a izuzetno lako za rešiti i u kojima je prihvatljiva poneka greška. Zbog dopuštanja povremenih grešaka u izvršavanju, ova oblast na prvi pogled izgleda kao nepogodna za rešavanje problema statičke verifikacije softvera. Ipak u stanju je da doprinese kao dodatni alat za rešavanje raznih problema koji se mogu naći u statičkoj verifikaciji ako njime rukuje prava osoba, čak i ako ne može da obeća kompletno rešenje svih problema.
 
-Obično se identifikuju tri oblasti mašinskog učenja: 
-\textit{nadgledano učenje} (eng. \emph{supervised learning}), 
-\textit{nenadgledano učenje} (eng. \emph{unsupervised learning}) i 
-\textit{učenje uslovljavanjem} (eng. \emph{reinforcement learning}). 
-Nadgledano učenje odlikuje da pored ulaznih podataka 
-postoji i njemu odgovarajući željeni izlaz. Model je zadužen za učenje pravila nad 
-datim parovima ulaza i izlaza. Sa druge strane, kod nenadgledanog učenja dati su 
-samo ulazni podaci pri čemu na algoritmu ostaje da pronađe strukturu u podacima. 
+\par Obično se identifikuju tri oblasti mašinskog učenja: \textit{nadgledano učenje} (eng. \emph{supervised learning}), \textit{nenadgledano učenje} (eng. \emph{unsupervised learning}) i \textit{učenje uslovljavanjem} (eng. \emph{reinforcement learning}). Nadgledano učenje odlikuje da pored ulaznih podataka postoji i njemu odgovarajući željeni izlaz. Model je zadužen za učenje pravila nad datim parovima ulaza i izlaza. Sa druge strane, kod nenadgledanog učenja dati su samo ulazni podaci pri čemu na algoritmu ostaje da pronađe strukturu u podacima. 
 % TODO da li je naredna recenica suvisna (ne sme pasus da ima samo jednu recenicu, zato spojih sa gornjim)
-Učenje uslovljavanjem se može videti kao oblast izmedju dve prethodno pomenute oblasti.
-U okviru učenja uslovljavanja mora se rešiti problem preduzimanjem niza akcija,
-koje su međusobno povezane, kako bi se maksimizovala konačna nagrada.
+Učenje uslovljavanjem se može videti kao oblast između dve pret\-hod\-no pomenute oblasti. U okviru učenja uslovljavanjem mora se rešiti problem preduzimanjem niza akcija, koje su međusobno povezane, kako bi se maksimizovala konačna nagrada.
 
-Uobičajeni tok uspešne primene tehnika mašinskog učenja je sledeći. Nakon što se 
-problem analizira, kao i podaci nad kojim će tehnike biti primenjene, potrebno je 
-izabrati odgovarajući model. Nakon odabira modela, podaci se pretprocesiraju i 
-izabrani model se trenira nad tako obrađenim podacima. Istrenirani model je dalje 
-neophodno evaluirati kako bi bilo moguće znati u kojoj meri je koristan.
+\par Uobičajeni tok uspešne primene tehnika mašinskog učenja je sledeći. Nakon što se problem analizira, kao i podaci nad kojim će tehnike biti primenjene, potrebno je izabrati odgovarajući model. Nakon odabira modela, podaci se pretprocesiraju i izabrani model se trenira nad tako obrađenim podacima. Istrenirani model je dalje neophodno evaluirati kako bi bilo moguće znati u kojoj meri je koristan.
 
 \subsection{Odabrani algoritmi}
 
@@ -150,11 +126,7 @@ neophodno evaluirati kako bi bilo moguće znati u kojoj meri je koristan.
 %Ukratko će biti predstavljeni termini vezani za \textit{meru kvaliteta} modela, 
 %kako bi bilo olakšano razumevanje postignutih rezultata u ostatku rada.
 
-\textit{Evaluacija modela} predstavlja numeričko predstavljanje sposobnosti 
-predviđanja datog modela na određenoj skali i direktno se oslanja na mere 
-kvaliteta. Mere koje se najčešće sreću u klasifikaciji su \textit{tačnost}, 
-\textit{preciznost}, \textit{odziv} i \textit{F1 mera}. Sve navedene mere 
-izvedene su iz \textit{matrice konfuzije} \ref{table:matrica_konfuzije}.
+\par \textit{Evaluacija modela} predstavlja numeričko predstavljanje sposobnosti predviđanja datog modela na određenoj skali i direktno se oslanja na mere kvaliteta. Mere koje se najčešće sreću u klasifikaciji su \textit{tačnost}, \textit{preciznost}, \textit{odziv} i \textit{F1 mera}. Sve navedene mere izvedene su iz \textit{matrice konfuzije} \ref{table:matrica_konfuzije}.
 
 \begin{table}[h]
 	\centering
@@ -171,35 +143,17 @@ izvedene su iz \textit{matrice konfuzije} \ref{table:matrica_konfuzije}.
 	%\caption{ tabelica stagod}
 \end{table}
 
-Stvarno pozitivne i stvarno negativne instance su one instance koje su ispravno 
-određene od strane modela. Lažno pozitivne instance su negativne instance za koje 
-je od strane modela predviđeno da su pozitivne, dok su lažno negativne instance 
-zapravo pozitivne instance koje je model loše klasifikovao kao negativne. 
+\par Stvarno pozitivne i stvarno negativne instance su one instance koje su ispravno određene od strane modela. Lažno pozitivne instance su negativne instance za koje je od strane modela predviđeno da su pozitivne, dok su lažno negativne instance zapravo pozitivne instance koje je model loše klasifikovao kao negativne. 
 
 % TODO dodati šta koje mere zapravo rade, zašto tačnost nije savršena, napomenuti da ima još raznih
-Tačnost klasifikacije predstavlja procenat uspešno klasifikovanih instanci u odnosu 
-na ukupan broj instanci. Preciznost je udeo ispravno pronađenih pozitivnih instanci 
-u svim instancama koje su proglašene za pozitivne. Odziv je udeo ispravno pronađenih 
-pozitivnih instanci u svim zaista pozitivnim instancama. Preciznost i odziv su dve 
-mere koje najviše ima smisla razmatrati zajedno i način na koji se to najčešće radi 
-je F1 mera, koja predstavlja njihovu harmonijsku sredinu.
-
-
+\par Tačnost klasifikacije predstavlja procenat uspešno klasifikovanih instanci u odnosu na ukupan broj instanci. Preciznost je udeo ispravno pronađenih pozitivnih instanci u svim instancama koje su proglašene za pozitivne. Odziv je udeo ispravno pronađenih pozitivnih instanci u svim zaista pozitivnim instancama. Preciznost i odziv su dve mere koje najviše ima smisla razmatrati zajedno i način na koji se to najčešće radi je F1 mera, koja predstavlja njihovu harmonijsku sredinu.
 
 % ==============================================================================
 \section{Odabrani problemi statičke verifikacije}
 \label{sec:naslovN}
 % ==============================================================================
 
-
-Iako na prvi pogled mašinsko učenje možda nije očigledan odgovor na probleme
-koje postavlja statička verifikacija, tokom prethodnih decenija su sa razvojom
-mašinskog učenja postignuti izuzetno značajni uspesi u spajanju ovih oblasti.
-U nastavku sledi opis nekih od tih uspeha. Od uvoda u formalnu verifikaciju koji 
-služi kao osnova mnogih daljih istraživanja, preko učenja statičkog analizatora u okviru
-kojeg se koriste najmodernije tehnike kako mašinskog učenja tako i testiranja,
-do pravljenja inteligentnog metoda detekcije grešaka koji obuhvata širok dijapazon
-tehnika mašinskog učenja.
+\par Iako na prvi pogled mašinsko učenje možda nije očigledan odgovor na probleme koje postavlja statička verifikacija, tokom prethodnih decenija su sa razvojom mašinskog učenja postignuti izuzetno značajni uspesi u spajanju ovih oblasti. U nastavku sledi opis nekih od tih uspeha. Od uvoda u formalnu verifikaciju koji služi kao osnova mnogih daljih istraživanja, preko učenja statičkog analizatora u okviru kojeg se koriste najmodernije tehnike kako mašinskog učenja tako i testiranja, do pravljenja inteligentnog metoda detekcije grešaka koji obuhvata širok dijapazon tehnika mašinskog učenja.
 
 
 \subsection{Od izvornog koda do istreniranih modela}
