@@ -153,7 +153,7 @@ Učenje uslovljavanjem se može videti kao oblast između dve pret\-hod\-no pome
 \label{sec:naslovN}
 % ==============================================================================
 
-\par Iako na prvi pogled mašinsko učenje možda nije očigledan odgovor na probleme koje postavlja statička verifikacija, tokom prethodnih decenija su sa razvojom mašinskog učenja postignuti izuzetno značajni uspesi u spajanju ovih oblasti. U nastavku sledi opis nekih od tih uspeha. Od uvoda u formalnu verifikaciju koji služi kao osnova mnogih daljih istraživanja, preko učenja statičkog analizatora u okviru kojeg se koriste najmodernije tehnike kako mašinskog učenja tako i testiranja, do pravljenja inteligentnog metoda detekcije grešaka koji obuhvata širok dijapazon tehnika mašinskog učenja.
+\par Iako na prvi pogled mašinsko učenje možda nije očigledan odgovor na probleme koje postavlja statička verifikacija, tokom prethodnih decenija su sa razvojom mašinskog učenja postignuti izuzetno značajni uspesi u spajanju ovih oblasti. U nastavku sledi opis nekih od tih uspeha, od uvoda u formalnu verifikaciju koji služi kao osnova mnogih daljih istraživanja, preko učenja statičkog analizatora u okviru kojeg se koriste najmodernije tehnike kako mašinskog učenja tako i testiranja, do pravljenja inteligentnog metoda detekcije grešaka koji obuhvata širok dijapazon tehnika mašinskog učenja.
 
 \subsection{Formalna verifikacija softvera}
 \label{subsec:formalna-verifikacija}
@@ -168,7 +168,7 @@ gde $prolazi(P,t)$ označava da program $P$ uspešno prolazi test $t$, $S\models
 
 \par Problem pravljenja efikasne procedure da se proveri tačnost konjunkcije $prolazi(P,t)\wedge S\models t$ poznat je pod nazivom \emph{problem proročišta} (eng.~{\em oracle problem}). Nije uvek lako proveriti tačnost od $prolazi(P,t)$, a pošto su program i njegova specifikacija zasnovani na drugačijim formalizmima, nije lako proveriti da li ova konjunkcija važi za svaki pojedinačni test. Zato je predložen pristup pokazivanja ispravnosti softvera u odnosu na specifikaciju pomoću testiranja zasnovanog na mašinskom učenju. Ukratko, postupak je zasnovan na sledećem. Ako je dat skup testova za konkretan program koji se sastoji od ulaznih i izlaznih vrednosti za svaki test, korišćenjem mašinskog učenja može se indukovati teorija koja odgovara datim podacima. Ta indukovana teorija apstraktno opisuje ulazno--izlazno ponašanje programa dato u testovima. Dokaz ispravnosti programa sledi iz dokaza da indukovana teorija ispunjava originalnu specifikaciju.
 
-\par Matematički pojmovi koji se koriste mogu se pronaći u \cite{verify} i \cite{equationaltheory} i opisuju tzv. teorije jendačina (eng.~{\em equational theory}). Oni su važni, jer predstavljaju formalnu osnovu za ovaj metod verifikacije softvera. Između ostalih, definisani su pojmovi \emph{$\Sigma$-algebre}, \emph{$\Sigma$-teorije}, tj. \emph{specifikacije}, \emph{osnovne jednačine}, zatim kada $\Sigma$-algebra \emph{zadovoljava} teoriju, odnosno specifikaciju, i kada je jednačina \emph{semantička posledica} specifikacije (tj. značenje simbola $\models$). Takođe, definisan je i pojam \emph{morfizma teorija}, koji predstavlja formalno preslikavanje između dveju teorija.
+\par Matematički pojmovi koji se koriste mogu se pronaći u \cite{verify} i \cite{equationaltheory} i opisuju tzv. teorije jednačina (eng.~{\em equational theory}). Oni su važni, jer pred\-stav\-lja\-ju formalnu osnovu za ovaj metod verifikacije softvera. Između ostalih, definisani su pojmovi \emph{$\Sigma$-algebre}, \emph{$\Sigma$-teorije}, tj. \emph{specifikacije}, \emph{osnovne jednačine}, zatim kada $\Sigma$-algebra \emph{zadovoljava} teoriju, odnosno specifikaciju, i kada je jednačina \emph{semantička posledica} specifikacije (tj. značenje simbola $\models$). Takođe, definisan je i pojam \emph{morfizma teorija}, koji pred\-stav\-lja formalno preslikavanje između dveju teorija.
 
 \par Oblast mašinskog učenja se, između ostalog, bavi indukovanjem teorija prvog reda na osnovu pozitivnih i negativnih primera. Primena mašinskog učenja u indukovanju logike prvog reda je obimno izučavana i to pod imenom logičko programiranje, a u skorije vreme su se pojavili sistemi koji indukuju teorije jednačina prvog reda od osnovnih jednačina.
 
@@ -216,7 +216,7 @@ i indukovana teorija
 	  eq top(X) = a .
 	endo	
 \end{verbatim}
-jednostavno se vidi da je skup testova koherentan, ali da indukovana teorija ne odgovara specifikaciji steka. Prema tome, skup testova $T_1$ nije adekvatan za model steka. Problem je nastao zbog nedovoljne veličine skupa testa, pa hipoteza induktivnog učenja nije bila zadovoljena.
+jednostavno se vidi da je skup testova koherentan, ali da indukovana teo\-ri\-ja ne odgovara specifikaciji steka. Prema tome, skup testova $T_1$ nije adekvatan za model steka. Problem je nastao zbog nedovoljne veličine skupa testa, pa hipoteza induktivnog učenja nije bila zadovoljena.
 \end{primer}
 
 \begin{primer}
@@ -251,9 +251,9 @@ Jednostavno se vidi da je i skup testova $T_2$ koherentan, pošto indukovana teo
 % šta su statički analizatori
 Da bi bili korisni u praksi, moderni statički analizatori moraju precizno 
 modelovati ne samo efekte naredbi programskog jezika, već i efekte biblioteka 
-i okvira(eng. \emph{frameworks}) koji mogu da se koriste. Ručno adresiranje ovih izazova 
+i okvira (eng. \emph{frameworks}) koji mogu da se koriste. Ručno adresiranje ovih izazova 
 je izuzetno teško zbog priliva novih biblioteka, kao i kompleksnosti i 
-ne-trivijalnosti sveobuhvatne analize. U ovoj sekciji biće opisan nov 
+netrivijalnosti sveobuhvatne analize. U ovoj sekciji biće opisan nov 
 automatski pristup za kreiranje statičkih analizatora koji se oslanja na 
 korišćenje tehnika mašinskog učenja. Detaljan prikaz pristupa se može naći 
 u radu \cite{staticAnalyzer}.
@@ -270,7 +270,7 @@ na $\alpha$.
 
 % prvi problem
 Postoje dva ključna izazova pri izgradi statičkog analizatora. Prvo, statički 
-analizatori su tipično opisani pomoću pravila, dok postojeće tehnike mašinskog 
+analizatori su tipično opisani pomoću pravila, dok postojeće te\-hni\-ke mašinskog 
 učenja kao rezultat daju kombinaciju postojećih pravila. Ako bi se ove tehnike 
 primenile na programsku analizu \cite{predictingProgramProperties} dobijena 
 pravila ne bi bila interesantna. Iz tog razloga uvodi se specifični domenski 
@@ -342,7 +342,7 @@ strane postojećih najmodernijih ručno podešenih statičkih analizatora kao š
 su Flow \cite{flow} koji koristi facebook, i TAJS \cite{tajs}.
 
 % doprinosi rada
-Glavni doprinosi opisanog rada su sledeći. Metod učenja pravila statičkih 
+Glavni doprinosi opisanog rada su sledeći. Metod učenja pravila sta\-ti\-čkih 
 analizatora koji dobro generalizuje zbog pažljivog generisanja kontraprimera 
 nad pravilima koja su naučena u tom trenunku. Algoritam mašinskog učenja baziran 
 na drvetu odluke za učenje pravila analize iz podataka, koji uči da 
@@ -371,8 +371,7 @@ koliku štetu mogu da uzrokuju i mogućnost da budu detektovane računarskim ala
 \item Konverzija označene celobrojne vrednosti u neoznačenu
 \end{itemize}
 
-
-Korišćen je WEKA softver koji je kolekcija algoritama mašinskog učenja.
+Korišćen je WEKA softver koji je kolekcija algoritama mašinskog u\-če\-nja.
 Bogat skup funkcionalnosti koje pruža WEKA uključuje:
 %lista
 \begin{itemize}
