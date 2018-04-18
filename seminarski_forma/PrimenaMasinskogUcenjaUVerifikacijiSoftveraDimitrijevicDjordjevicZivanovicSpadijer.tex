@@ -97,17 +97,17 @@ primena mašinskog učenja kako u statičkoj tako i u dinamičkoj verifikaciji s
 \subsection{Statička verifikacija softvera}
 \label{subsec:staticka}
 
-\par Za razliku od dinamičke verifikacije softvera, \textit{statička verifikacija} podrazumeva analizu ispravnosti softvera bez njegovog pokretanja. Osnovna podela statičke verifikacije je na \textit{pregled koda (engl. code review)} i na \textit{automatizovanu verifikaciju}, koja će biti ključna za ostatak rada i biće podrazumevana kada se navodi pojam statička verifikacija.
+\par Za razliku od dinamičke verifikacije softvera, \textit{statička verifikacija} podrazumeva analizu ispravnosti softvera bez njegovog pokretanja. Osnovna podela statičke verifikacije je na \textit{pregled koda (eng. code review)} i na \textit{automatizovanu verifikaciju}, koja će biti ključna za ostatak rada i biće podrazumevana kada se navodi pojam statička verifikacija.
 
 \par Kao što je već pomenuto, ne postoji način da se za svaki program utvrdi da li se on zaustavlja ili ne, tako da nam i statička verifikacija ne može uvek dati željeni odgovor. Ipak, statička verifikacija može da nam da uvid u kvalitet koda i njegove propuste za mnoge netrivijalne probleme i zbog toga se razvijaju tehnike kojim bi skup takvih problema rastao, a vreme obrade se smanjivalo. 
 \\\\
 
 Neke od bitnijih tehnika statičke verifikacije su:
 \begin{itemize}
-\item \textbf{Analiza toka podataka} (engl. data flow analysis)
-\item \textbf{Apstraktna interpretacija} (engl. abstract interpretation)
-\item \textbf{Simbolička analiza} (engl. symbolic analysis)
-\item \textbf{Proveravanje ograničenih modela} (engl. Bounded model checking), koja se najviše koristi za verifikaciju logičkih kola.
+\item \textbf{Analiza toka podataka} (eng. data flow analysis)
+\item \textbf{Apstraktna interpretacija} (eng. abstract interpretation)
+\item \textbf{Simbolička analiza} (eng. symbolic analysis)
+\item \textbf{Proveravanje ograničenih modela} (eng. Bounded model checking), koja se najviše koristi za verifikaciju logičkih kola.
 \end{itemize}
 
 % TODO opisati tehnike koje smo koristili dole
@@ -119,7 +119,7 @@ Neke od bitnijih tehnika statičke verifikacije su:
 
 
 \textit{Mašinsko učenje} bavi se proučavanjem indukcije, odnosno generalizacije 
-čime formalizuje uopštavanje od uzorka određene veličine ka univerzalnim zaključcima. 
+čime formalizuje uopštavanje od uzorka određene veličine ka univerzalnim zaključcima \cite{bishopML}.
 U srcu novog zamaha veštačke inteligencije nalazi se oblast mašinskog učenja. 
 U nekim domenima, kao na primer prepoznavanje lica, u kojima se računari nisu 
 mogli porediti sa ljudima po uspešnosti, ova oblast postiže rezultate superiorne 
@@ -343,9 +343,9 @@ loše performanse što se tiče lažno pozitivnih.
 $$(\forall t\in T)\ [prolazi(P,t)\wedge S\models t]\Rightarrow P\equiv S,$$
 gde $prolazi(P,t)$ označava da program $P$ uspešno prolazi test $t$, $S\models t$ označava da je $t$ semantička posledica specifikacije $S$, odnosno da je test u skladu sa specifikacijom programa, a $P\equiv S$ označava da se program $P$ smatra ekvivalentnim specifikaciji $S$. Drugim rečima, program je ispravan u skladu sa specifikacijom $S$ ako i samo ako se iz činjenice da program zadovoljava svaki test koji je u skladu sa specifikacijom može zaključiti da se program smatra ekvivalentnim specifikaciji.
 
-\par Jedan od problema jeste pronaći skup testova $T$ za koji važi prethodna implikacija. Takav skup testova naziva se \emph{adekvatnim} skupom testova. Naravno, trivijalan primer je iscrpan skup testova, tj. skup testova koji obuhvataju sve moguće ulaze. No, u praksi, taj skup je obično beskonačan, te je kao takav neupotrebljiv. Potrebno je da se skup testova ograniči. Jedan od pristupa jeste da se nekom apriori analiza specifikacije izvuče odgovarajući skup testova. Međutim, postoji mogućnost da se dobiju testovi koje nije moguće direktno proveriti u datom programu, što dovodi do drugog tipičnog problema.
+\par Jedan od problema jeste pronaći skup testova $T$ za koji važi prethodna implikacija. Takav skup testova naziva se \emph{adekvatnim} skupom testova. Naravno, trivijalan primer je iscrpan skup testova, tj. skup testova koji obuhvataju sve moguće ulaze. No, u praksi, taj skup je obično beskonačan, te je kao takav neupotrebljiv. Potrebno je da se skup testova ograniči. Jedan od pristupa jeste da se nekom apriori analizom specifikacije izvuče odgovarajući skup testova. Međutim, postoji mogućnost da se dobiju testovi koje nije moguće direktno proveriti u datom programu, što dovodi do drugog tipičnog problema.
 
-\par Problem pravljenja efikasne procedure da se proveri tačnost konjunkcije $prolazi(P,t)\wedge S\models t$ poznat je pod nazivom \emph{orakl problem} (eng.~{\em oracle problem}). Nije uvek lako proveriti tačnost od $prolazi(P,t)$, a pošto su program i njegova specifikacija zasnovani na drugačijim formalizmima, nije lako proveriti da li ova konjunkcija važi za svaki pojedinačni test. Zato je predložen pristup pokazivanja ispravnosti softvera u odnosu na specifikaciju pomoću testiranja zasnovanog na mašinskom učenju. Ukratko, postupak je zasnovan na sledećem. Ako je dat skup testova za konkretan program koji se sastoji od ulaznih i izlaznih vrednosti za svaki test, korišćenjem mašinskog učenja može se indukovati teorija koja odgovara datim podacima. Ta indukovana teorija apstraktno opisuje ulazno--izlazno ponašanje programa dato u testovima. Dokaz ispravnosti programa sledi iz dokaza da indukovana teorija ispunjava originalnu specifikaciju.
+\par Problem pravljenja efikasne procedure da se proveri tačnost konjunkcije $prolazi(P,t)\wedge S\models t$ poznat je pod nazivom \emph{problem proročišta} (eng.~{\em oracle problem}). Nije uvek lako proveriti tačnost od $prolazi(P,t)$, a pošto su program i njegova specifikacija zasnovani na drugačijim formalizmima, nije lako proveriti da li ova konjunkcija važi za svaki pojedinačni test. Zato je predložen pristup pokazivanja ispravnosti softvera u odnosu na specifikaciju pomoću testiranja zasnovanog na mašinskom učenju. Ukratko, postupak je zasnovan na sledećem. Ako je dat skup testova za konkretan program koji se sastoji od ulaznih i izlaznih vrednosti za svaki test, korišćenjem mašinskog učenja može se indukovati teorija koja odgovara datim podacima. Ta indukovana teorija apstraktno opisuje ulazno--izlazno ponašanje programa dato u testovima. Dokaz ispravnosti programa sledi iz dokaza da indukovana teorija ispunjava originalnu specifikaciju.
 
 \par Matematički pojmovi koji se koriste mogu se pronaći u \cite{verify} i \cite{equationaltheory} i opisuju tzv. teorije jendačina (eng.~{\em equational theory}). Oni su važni, jer predstavljaju formalnu osnovu za ovaj metod verifikacije softvera. Između ostalih, definisani su pojmovi \emph{$\Sigma$-algebre}, \emph{$\Sigma$-teorije}, tj. \emph{specifikacije}, \emph{osnovne jednačine}, zatim kada $\Sigma$-algebra \emph{zadovoljava} teoriju, odnosno specifikaciju, i kada je jednačina \emph{semantička posledica} specifikacije (tj. značenje simbola $\models$). Takođe, definisan je i pojam \emph{morfizma teorija}, koji predstavlja formalno preslikavanje između dveju teorija.
 
@@ -418,19 +418,117 @@ program za formalnu verifikaciju je indukovao sledeću teoriju.
 Jednostavno se vidi da je i skup testova $T2$ koherentan, pošto indukovana teorija zadovoljava sve testove, a takođe se jednostavno vidi da indukovana teorija odgovara početnoj specifikaciji. Prema tome, skup testova $T2$ je i adekvatan.
 \end{primer}
 
-\subsection{Problem 4 - Rastko}
+% ==============================================================================
+\subsection{Učenje statičkog analizatora iz podataka}
+% ==============================================================================
 
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
-Ovde pišem tekst.
+% šta su statički analizatori
+Da bi bili korisni u praksi, moderni statički analizatori moraju precizno 
+modelovati ne samo efekte naredbi programskog jezika, već i efekte biblioteka 
+i okvira(eng. \emph{frameworks}) koji mogu da se koriste. Ručno adresiranje ovih izazova 
+je izuzetno teško zbog priliva novih biblioteka, kao i kompleksnosti i 
+ne-trivijalnosti sveobuhvatne analize. U ovoj sekciji biće opisan nov 
+automatski pristup za kreiranje statičkih analizatora koji se oslanja na 
+korišćenje tehnika mašinskog učenja. Detaljan prikaz pristupa se može naći 
+u radu \cite{staticAnalyzer}.
+
+% formalan prikaz problema
+Formalan prikaz problema koji će biti obrađen u nastavku glasi: za dati 
+specifični domenski jezik $\mathcal{L}$, koji služi za opis pravila analize, 
+skup $\mathcal{D}$ programa u nekom programskom jeziku (npr. JavaScript), i 
+funkciju apstrakcije $\alpha$ koja definiše kako se konkretna ponašanja 
+apstrahuju, cilj je naučiti analizator $pa$ koji pripada skupu $\mathcal{L}$ 
+takav da se programi iz $\mathcal{D}$ analiziraju maksimalno precizno u odnosu 
+na $\alpha$.
+
+
+% prvi problem
+Postoje dva ključna izazova pri izgradi statičkog analizatora. Prvo, statički 
+analizatori su tipično opisani pomoću pravila, dok postojeće tehnike mašinskog 
+učenja kao rezultat daju kombinaciju postojećih pravila. Ako bi se ove tehnike 
+primenile na programsku analizu \cite{predictingProgramProperties} dobijena 
+pravila ne bi bila interesantna. Iz tog razloga uvodi se specifični domenski 
+jezik za opis pravila analize, nad kojim se mogu učiti zanimljiva pravila analize.
+
+
+% detaljan opis rešenja prvog problema
+Izuzetno važan problem prilikom učenja programskih analizatora je ogromna količina 
+programa nad L zato što je broj kombinacija grana i potprograma previše veliki. 
+Međutim, može se primetiti da se elementi skupa L mogu predstaviti kao drvo, čiji 
+unutrašnji čvorovi predstavljaju čuvare, koji su kondicionalne naredbe, a čiji 
+listovi predstavljaju akcije koje se mogu izvršiti. Koristeći ovo zapažanje problem 
+učenja analizatora u L se može predstaviti kao problem učenja stabla odlučivanja, 
+što omogućava korišćenje postojećih algoritama mašinskog učenja za 
+rešenje datog problema.
+
+Prema tome, ID3 \cite{id3} algoritam se proširuje kako bi mogao da obradi akcije 
+programa u listovima, i da obezbedi korektnost rezultujuće analize $pa$ nad 
+$\mathcal{L}$. Kao i ID3, njegova modifikacija je pohlepna procedura koja gradi 
+stablo odlučivanja odozgo-nadole, pritom lokalno maksimizujući metriku koja se 
+naziva informaciona dobit. Za dati predikat $g$, koji odgovara čuvaru, 
+informaciona dobit kvantifikuje koliko se popravlja procena svih programa u 
+skupu $\mathcal{D}$, ukoliko se analiza proširi deljenjem skupa podataka 
+pomoću predikata $g$.
+
+
+% drugi problem
+Drugi znatno izazovniji problem pri izgradi statičkog analizatora je 
+kako izbeći učenje statičkog analizatora koji se ponaša dobro 
+na podacima za treniranje $\mathcal{D}$, ali koji ne uspeva da 
+generalizuje na nove programe van skupa $\mathcal{D}$. Ovaj problem se u mašinskom 
+učenju naziva preprilagođavanje. Standardne tehnike koje se koriste za suočavanje 
+sa ovim problemom \cite{statisticalLearningTheory}, kao što je regularizacija su 
+nedovoljne u ovom slučaju. Osnovna ideja regularizacije je da pojednostavi skup 
+modela koji se mogu naučiti, što je u kontradikciji sa neophodnom osobinom 
+statičkog analizatora da ispravno kategoriše granični slučajeve. Ovaj problem 
+se rešava procedurom učenja vodjenog kontra-primerima koja generiše nove 
+programe, koristeći programsku semantiku, za koje naučeni analizator daje 
+pogrešne rezultate i koji služe za dalje učenje. 
+
+
+% detaljan opis rešenja drugog problema
+Ključna komponenta ovog pristupa je proročište(en. oracle) koje brzo može 
+testirati korektnost statičkog analizatora, i ako je analizator korektan 
+pronaći kontra-primere. Proročište kao ulaz uzima analizator $pa$ i skup 
+podataka $\mathcal{D}$ koji je korišćen prilikom učenja analizatora $pa$ 
+i kao izlaz vraća kontra-primere programa na kojima se analizator ne 
+ponaša korektno.
+
+Najveći problem koji se mora rešiti je brz pronalazak kontra-primera u prostoru 
+pretrage svih mogućih programa. Kao što je pokazano u radu \cite{staticAnalyzer} 
+nasumično generisanje kontra-primera ne funkcioniše usled prirode prostora 
+pretrage koji može biti čak i beskonačan. Pretraga se ubrzava dizajnom 
+proročišta opšte namene koje je bazirano na idejama modernih tehnika testiranja 
+\cite{testing}. 
+
+Novi programi se generišu izvođenjem modifikacija nad programima u skupu 
+$\mathcal{D}$. Ove modifikacije se pažljivo biraju eksploatisanjem strukture 
+trenutne analize $pa$ na dva načina: (i) da bi se izabrao određeni program i 
+pozicija za modifikaciju, i (ii) da bi se odredila modifikacija koja će se 
+izvršiti na toj poziciji.
+
+
+% primene
+Metoda je pokazana kroz implementaciju pristupa i evaluaciju na problemu analize 
+pravila jezika JavaScript. Naučena pravila za pokazuje-na analizu, kao i za 
+analizu alokacionih mesta, su ne samo interesantna, već su i propuštena od 
+strane postojećih najmodernijih ručno podešenih statičkih analizatora kao što 
+su Flow \cite{flow} koji koristi facebook, i TAJS \cite{tajs}.
+
+% doprinosi rada
+Glavni doprinosi opisanog rada su sledeći. Metod učenja pravila statičkih 
+analizatora koji dobro generalizuje zbog pažljivog generisanja kontra-primera 
+nad pravilima koja su naučena u tom trenunku. Algoritam mašinskog učenja baziran 
+na drvetu odluke za učenje pravila analize iz podataka, koji uči da 
+pre-aproksimira kada skup podataka ne može da se obradi precizno. 
+
 
 % ==============================================================================
 \section{Primena mašinskog učenja u dinamičkoj verifikaciji}
 \label{sec:dinamcikaPrimena}
 % ==============================================================================
 
+TODO ovde mora neki tekst, bar par recenica
 
 % ================================== LUKA ======================================
 \subsection{Onlajn testiranje reinforcement learningom } % ONLINE REINFORCEMENT LEARNING
@@ -440,7 +538,7 @@ Ovde pišem tekst.
 
 Programi koji su reaktivni, naročito ako su distribuirani, mogu se ponašati nedeterministički. Neki faktori, poput redosleda završavanja niti nisu pod potpunom kontrolom testera, ali se njihovo ponašanje može modelovati stablom odlučivanja. Ipak, veličina tog stabla može da postane izuzetno velika za pretragu, pa se pribegava tehnikama onlajn testiranja. %ONLINE
 
-Onlajn testiranje može biti pogodnije od oflajn testiranja za reaktivne sisteme zato što se može dinamički prilagoditi za vreme izvršavanja tako da pokrije najrelevantnija ponašanja, umesto svih mogućih, što je obično nemoguće. Onlajn testiranje spada u skup testiranja baziranih na modelu (engl. model-based testing), gde tester koristi model da detektuje razlike između impelementacije pod testom (engl. implementation under test (IUT)) i modela. % ONLINE OFFLINE IUT
+Onlajn testiranje može biti pogodnije od oflajn testiranja za reaktivne sisteme zato što se može dinamički prilagoditi za vreme izvršavanja tako da pokrije najrelevantnija ponašanja, umesto svih mogućih, što je obično nemoguće. Onlajn testiranje spada u skup testiranja baziranih na modelu (eng. model-based testing), gde tester koristi model da detektuje razlike između impelementacije pod testom (eng. implementation under test (IUT)) i modela. % ONLINE OFFLINE IUT
 
 Razlikovaćemo poteze testera od IUTa. Akcije testera ćemo nazivati kontrolisane akcije, dok ćemo akcije IUTa nazivati posmatrane akcije. Greška usklađenosti nastaje kada IUT odbije kontrolisanu akciju modela ili kada model odbije posmatranu akciju IUTa. % IUTa
 
@@ -470,7 +568,7 @@ P je determinističko, ako za svako $f \in \sigma, p_f$ je determinističko.
 
 Akcija $f$ ima oblik $f(v_1,...,v_n)$, gde je $f$ $n$-arni akcijski simbol a svako $v_i$ vrednost koja odgovara ulaznom parametru $p_f$. Kažemo da je akcija $f(\bar{v})$ dozvoljena u stanju $s$ ako $s \models \varphi(\bar{v})$. Primetimo dva specijanla slučaja: kada je reset uvek zabranjen $(\varphi_{Reset} = false)$, kada je definicija $p_{Reset}$ irelevantna, i slučaj kada je reset uvek dozvoljen $(\varphi_{Reset} = false)$, i tada $p_{Reset}$ mora da bude definisana tako da iz svakog stanja može da uspostavi početno stanje.
 
-I IUT i model posmatramo kao interfejs automate (engl. interface automata) kako bismo formalno uspostavili vezu između njih [?]. %https://users.soe.ucsc.edu/~luca/papers/01/FSE01.pdf 
+I IUT i model posmatramo kao interfejs automate (eng. interface automata) kako bismo formalno uspostavili vezu između njih [?]. %https://users.soe.ucsc.edu/~luca/papers/01/FSE01.pdf 
 Interfejs automat M ima sledeće komponente:
 \begin{itemize}
 \item Skup stanja $S$
@@ -504,7 +602,7 @@ Inače, izaberi između kontrolisane i posmatrane akcije.
 Algoritam prati težine transakcija u trenutnom testu. Sledeća kontrolisana akcija se bira iz nepraznog skupa dozvoljenih akcija koristeći datu strategiju:
 
 Za ovaj problem koristićemo algoritam mašinskog učenja reinforcement learning, o kome su osnove date ranije u radu. % OSNOVE RL
-Cena testa se povećava srazmerno broju koraka kako bi se pokrio zadati procenat svih ponašanja. Iscrpno pokrivanje svih ponašanja je najčešće nemoguće. Umesto da posmatramo minimizaciju cene, možemo pretpostaviti da imamo fiksne resurse i da maksimizujemo procenat pokrivenih ponašanja. Bitno je da minimizujemo broj vraćanja u početno stanje (engl. backtracking), zato što to može biti skupa operacija. %ONLINE
+Cena testa se povećava srazmerno broju koraka kako bi se pokrio zadati procenat svih ponašanja. Iscrpno pokrivanje svih ponašanja je najčešće nemoguće. Umesto da posmatramo minimizaciju cene, možemo pretpostaviti da imamo fiksne resurse i da maksimizujemo procenat pokrivenih ponašanja. Bitno je da minimizujemo broj vraćanja u početno stanje (eng. backtracking), zato što to može biti skupa operacija. %ONLINE
 
 Odabir sledeće akcije:
 
@@ -529,20 +627,9 @@ U radu [?] se mogu videti primeri ekspermineta sa sva tri pristupa. % https://ww
 % ==============================================================================
 
 
+Zakljucak bi trebalo da bude par recenica tako da cu skuckati ovde neku glupost, cisto da bismo imali na umu koliko nam prostora treba za ovo. Verujem da je dva pasusa od po 2-3 recenice i vise dovoljno da zaokruzi rad i da mu zadovoljavajuci zavrsetak.
 
-Ovde pišem zaključak.
-Ovde pišem zaključak.
-Ovde pišem zaključak.
-Ovde pišem zaključak.
-Ovde pišem zaključak.
-Ovde pišem zaključak.
-Ovde pišem zaključak.
-Ovde pišem zaključak.
-Ovde pišem zaključak.
-Ovde pišem zaključak.
-Ovde pišem zaključak.
-Ovde pišem zaključak.
-
+Pomenuti sve radove, kao i njihove rezultate i uspehe je definitivno nesto sto bi trebalo uraditi u ovom delu rada. Imamo 4 rada koja treba pomenuti tako da ce to uzeti finu kolicinu mesta. Ne zelim vise da punim ovo glupostima tako da cenim da bi bio red da prestanem sa ne prestajanjem uskoro. Sada je vreme za uskoro.
 
 
 \addcontentsline{toc}{section}{Literatura}
