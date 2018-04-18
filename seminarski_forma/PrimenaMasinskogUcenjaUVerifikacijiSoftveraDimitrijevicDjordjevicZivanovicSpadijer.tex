@@ -37,7 +37,7 @@
     {\let\newpage\relax\maketitle}
 
 \abstract{
-Verifikacija softvera je izuzetno važna oblast računarstva. Softver polako uspeva da se uplete u najneočekivanije aspekte naših života i kao takav njegova ispravnost postaje od sve većeg i većeg značaja. Neispravan softver moze da dovede do užasnih katastrofa, koje mogu rezultovati cak i izgubljenim ljudskim životima. Sa druge strane, tehnike mašinskog učenje se ubrzano usavršavaju i neprekidno uspevaju da ostvare iznenadjujuće dobre rezultate širom računarstva. U ovom radu biće predstavljeni neki od bitnijih pomaka u sudaru pomenutih oblasti sa ciljem da zainteresuje što veći broj ljudi da se pridruže pohodu za sprečavanje bagova korišćenjem modernih tehnika mašinskog učenja.
+Verifikacija softvera je izuzetno važna oblast računarstva. Softver polako uspeva da se uplete u najneočekivanije aspekte naših života i zbog toga njegova ispravnost postaje od sve većeg značaja. Neispravan softver može imati katastrofalne posledice, koje uključuju i izgubljene ljudske živote. Sa druge strane, tehnike mašinskog učenja se ubrzano u\-sa\-vr\-ša\-va\-ju i neprekidno uspevaju da ostvare iznenađujuće dobre rezultate u svim oblastima računarstva. U ovom radu biće predstavljeni neki od bitnijih pomaka u sudaru pomenutih oblasti sa ciljem da zainteresuje što veći broj ljudi da se pridruže pohodu za sprečavanje bagova korišćenjem modernih tehnika mašinskog učenja.
 
 %Molim Vas da kada budete predavali seminarski rad, imenujete datoteke tako da sadrže temu seminarskog rada, kao i imena i prezimena članova grupe (ili samo temu i prezimena, ukoliko je sa imenima predugačko). Predaja seminarskih radova biće isključivo preko web forme, a NE slanjem mejla.}
 
@@ -52,35 +52,22 @@ Verifikacija softvera je izuzetno važna oblast računarstva. Softver polako usp
 \label{sec:uvod}
 % ==============================================================================
 
+\par Računarska rešenja se koriste za svemirske rakete, medicinsku opremu, samovozeće automobile i u raznim drugim oblastima. Sve veća zastupljenost i složenost softvera dovodi do veće verovatnoće katastrofalnog ishoda u slučaju greške. Privremena nedostupnost vlastitog novca, pad satelita, prekomerno doziranje terapije pacijentima i puštanje nasilnih zatvorenika na slobodu su primeri stvarnih događaja usled grešaka u programima.
 
-Računarska rešenja se koriste za svemirske rakete, medicinsku opremu, samovozeće automobile i razne druge oblasti.
-Sve veća zastupljenost i složenost softvera dovodi do veće verovatnoće katastrofalnog ishoda u slučaju greške.
-Privremena nedostupnost vlastitog novca, pad satelita, prekomerno doziranje terapije pacijentima i puštanje nasilnih zatvorenika
-na slobodu su primeri stvarnih događaja usled grešaka u programima.
-Verifikacija softvera je oblast računarstva koja se bavi analizom softvera i ispitivanjem ispravnosti
-programskog koda. Postoje razni alati za verifikaciju koji se uspešno koriste, ali postoje i mnoga ograničenja
-u procesu analize koda koje je teško, a neke čak i nemoguće prevazići.
-Analiziranje programskog koda se zasniva na formalnim matematičkim modelima koje je teško automatizovati.
-Mašinsko učenje je postalo vrlo popularno i to sa pravom jer ima velike uspehe u raznim domenima,
-pa je i prirodno nalaziti primene u okviru verifikacije softvera. Ovaj rad se nastavlja na \cite{micovic}
-pa ovde neće biti prikazane već pomenute primene algoritama. U nastavku je dat opis verifikacije softvera,
- mašinskog učenja, i konačno pregled konkretnih
-primena mašinskog učenja kako u statičkoj tako i u dinamičkoj verifikaciji softvera.
+\par Verifikacija softvera je oblast računarstva koja se bavi analizom soft\-ve\-ra i ispitivanjem ispravnosti programskog koda. Postoje razni alati za verifikaciju koji se uspešno koriste, ali postoje i mnoga ograničenja u procesu analize koda koje je teško prevazići, a neke je čak i nemoguće prevazići. Analiziranje programskog koda se zasniva na formalnim matematičkim modelima koje je teško automatizovati. Mašinsko učenje je postalo vrlo popularno i to sa pravom, jer ima velike uspehe u raznim domenima, pa je i prirodno nalaziti njegove primene u okviru verifikacije softvera. Ovaj rad se nastavlja na \cite{micovic} pa ovde neće biti prikazane već pomenute primene algoritama mašinskog učenja.
 
-
+\par U nastavku je dat opis verifikacije soft\-ve\-ra, mašinskog učenja, i konačno pregled konkretnih primena mašinskog učenja, kako u statičkoj, tako i u dinamičkoj verifikaciji softvera.
 
 % ==============================================================================
 \section{Verifikacija softvera}
 \label{sec:verifikacija}
 % ==============================================================================
 
+\par U savremenom dobu, računari i računarski sistemi predstavlju sastavni deo svakodnevice, kako u privatnom životu, tako i u poslovnom svetu, a i u državnoj administraciji. Zato je od izuzetnog značaja da softver koji se koristi bude pouzdan. Neispravan softver, u zavisnosti od toga gde se koristio i koliko je veliki bio propust, može izazvati male probleme, ali i ogromne probleme sa teškim posledicama (čak i smrtnim). Oblast razvoja softvera koja se bavi proverom ispravnosti softvera, odnosno potvrđivanjem da softver radi u skladu sa zahtevima, naziva se \emph{verifikacija softvera}.
 
+\par Potrebno je precizirati šta se podrazumeva pod ispravnim softverom. Razlikuju se pojmovi potpuno ispravnog i delimično ispravnog softvera. Softver se smatra potpuno ispravnim ako se zaustavlja za svaki ulaz i na izlazu daje ispravan rezultat, dok se delimično ispravnim softverom smatra onaj koji za ulaz daje ispravan rezultat ako se zaustavlja, a dozvoljeno je da se za neki ulaz program ne zaustavlja. Ne postoji algoritamski način da se proveri da li se neki program zaustavlja (eng.~{\em halting problem}), pa se često ni ne ispituje potpuna, već samo delimična ispravnost softvera.
 
-\par U savremenom dobu, računari i računarski sistemi predstavlju sastavni deo svakodnevice, kako u privatnom životu, tako i u poslovnom svetu, a i u državnoj administraciji. Zato je od izuzetnog značaja da softver koji se koristi bude pouzdan. Neispravan softver, u zavisnosti od toga gde se koristio i koliko je veliki bio propust, može izazvati male, ali i ogromne probleme sa teškim posledicama (čak i smrtnim). Oblast razvoja softvera koja se bavi proverom ispravnosti softvera, odnosno potvrđivanjem da softver radi u skladu sa zahtevima, naziva se \emph{verifikacija softvera}.
-
-\par Potrebno je precizirati šta se podrazumeva pod ispravnim softverom. Razlikuju se pojmovi potpuno ispravnog i delimično ispravnog softvera. Softver se smatra potpuno ispravnim ako se zaustavlja za svaki ulaz i na izlazu daje ispravan rezultat, dok se delimično ispravnim softverom smatra onaj koji za ulaz daje ispravan rezultat ako se zaustavlja, a dozvoljeno je da se za neki ulaz program ne zaustavlja. Ne postoji algoritamski način da se proveri da li se neki program zaustavlja (tzv. Halting problem), pa se često ni ne ispituje potpuna, već samo delimična ispravnost softvera.
-
-\par Postoje dve osnovne vrste verifikacije softvera. To su dinamička i statička verifikacija softvera.
+\par Postoje dve osnovne vrste verifikacije softvera i to su dinamička i statička verifikacija softvera \cite{milena}.
 
 \subsection{Dinamička verifikacija softvera}
 \label{subsec:dinamicka}
@@ -89,7 +76,7 @@ primena mašinskog učenja kako u statičkoj tako i u dinamičkoj verifikaciji s
 
 \par Testiranje je složen proces koji obuhvata pronalaženje što raznovrsnijeg skupa ulaza, definisanje očekivanih izlaza za svaki od tih ulaza, a zatim izvršavanje programa i provera da li je program za date ulaze vratio odgovarajuće izlaze. Postoje razne vrste i nivoi testova (da li imamo pristup izvornom kodu softvera ili ne, kao i da li testiramo jednu jedinicu koda ili više njih ili testiramo neku funkcionalnost softvera).
 
-\par Testiranje služi da nam, u slučaju kada postoji greška u izvornom kodu softvera, ukaže na njeno postojanje. U zavisnosti od vrste testa, kao i nivoa, može se otkriti gde se u kodu nalazi greška, ali to često nije slučaj. Umesto toga, testovi samo otkrivaju postojanje grešaka.
+\par Testiranje služi da, u slučaju kada postoji greška u izvornom kodu softvera, ukaže na njeno postojanje. U zavisnosti od vrste testa, kao i nivoa, može se otkriti gde se u kodu nalazi greška, ali to često nije slučaj. Umesto toga, testovi samo otkrivaju postojanje grešaka.
 
 \par Važno je imati na umu da testovi mogu dokazati isključivo neispravnost softvera, ali ne i njegovu (delimičnu) ispravnost. Da bi testiranje moglo dokazati delimičnu ili potpunu ispravnost softvera, neophodno bi bilo da skup ulaza bude jednak skupu svih teoretski dozvoljenih ulaza, a to, naravno, nije moguće, jer je taj skup beskonačan. Postavlja se pitanje zašto se onda uopšte testira. Odgovor je zato što se pažljivim odabirom skupa ulaza za koji će biti testirana ispravnost izlaza ne samo otklanjaju postojeće greške, nego i stiče sigurnost, odnosno poverenje u sam softver, tj. očekuje se da će broj neotkrivenih grešaka biti zanemarljiv.
 
@@ -101,14 +88,13 @@ primena mašinskog učenja kako u statičkoj tako i u dinamičkoj verifikaciji s
 \par Za razliku od dinamičke verifikacije softvera, \textit{statička verifikacija} podrazumeva analizu ispravnosti softvera bez njegovog pokretanja. Osnovna podela statičke verifikacije je na \textit{pregled koda (eng. code review)} i na \textit{automatizovanu verifikaciju}, koja će biti ključna za ostatak rada i biće podrazumevana kada se navodi pojam statička verifikacija.
 
 \par Kao što je već pomenuto, ne postoji način da se za svaki program utvrdi da li se on zaustavlja ili ne, tako da nam i statička verifikacija ne može uvek dati željeni odgovor. Ipak, statička verifikacija može da nam da uvid u kvalitet koda i njegove propuste za mnoge netrivijalne probleme i zbog toga se razvijaju tehnike kojim bi skup takvih problema rastao, a vreme obrade se smanjivalo. 
-\\\\
 
-Neke od bitnijih tehnika statičke verifikacije su:
+\par Neke od bitnijih tehnika statičke verifikacije su:
 \begin{itemize}
-\item \textbf{Analiza toka podataka} (eng. data flow analysis)
-\item \textbf{Apstraktna interpretacija} (eng. abstract interpretation)
-\item \textbf{Simbolička analiza} (eng. symbolic analysis)
-\item \textbf{Proveravanje ograničenih modela} (eng. Bounded model checking), koja se najviše koristi za verifikaciju logičkih kola.
+\item \textbf{Analiza toka podataka} (eng.~{\em data flow analysis})
+\item \textbf{Apstraktna interpretacija} (eng.~{\em abstract interpretation})
+\item \textbf{Simbolička analiza} (eng.~{\em symbolic analysis})
+\item \textbf{Proveravanje ograničenih modela} (eng.~{\em Bounded model che\-cking}), koja se najviše koristi za verifikaciju logičkih kola.
 \end{itemize}
 
 % TODO opisati tehnike koje smo koristili dole
@@ -116,8 +102,6 @@ Neke od bitnijih tehnika statičke verifikacije su:
 % ==============================================================================
 \section{Mašinsko učenje}
 % ==============================================================================
-
-
 
 \textit{Mašinsko učenje} bavi se proučavanjem indukcije, odnosno generalizacije 
 čime formalizuje uopštavanje od uzorka određene veličine ka univerzalnim zaključcima \cite{bishopML}.
