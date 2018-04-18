@@ -156,6 +156,7 @@ Učenje uslovljavanjem se može videti kao oblast između dve pret\-hod\-no pome
 \par Iako na prvi pogled mašinsko učenje možda nije očigledan odgovor na probleme koje postavlja statička verifikacija, tokom prethodnih decenija su sa razvojom mašinskog učenja postignuti izuzetno značajni uspesi u spajanju ovih oblasti. U nastavku sledi opis nekih od tih uspeha. Od uvoda u formalnu verifikaciju koji služi kao osnova mnogih daljih istraživanja, preko učenja statičkog analizatora u okviru kojeg se koriste najmodernije tehnike kako mašinskog učenja tako i testiranja, do pravljenja inteligentnog metoda detekcije grešaka koji obuhvata širok dijapazon tehnika mašinskog učenja.
 
 \subsection{Formalna verifikacija softvera}
+\label{subsec:formalna-verifikacija}
 
 \par Verifikaciji softvera može se pristupiti na strogo formalan matematički način. U ovom radu biće izložen pristup o kome se detaljnije može pročitati u radu \cite{verify}.
 
@@ -244,7 +245,7 @@ Jednostavno se vidi da je i skup testova $T_2$ koherentan, pošto indukovana teo
 
 % ==============================================================================
 \subsection{Učenje statičkog analizatora iz podataka}
-\label{sec:staticki-analizator}
+\label{subsec:staticki-analizator}
 % ==============================================================================
 
 % šta su statički analizatori
@@ -479,17 +480,17 @@ primena, koja se oslanja na učenje uslovljavanjem.
 \subsection{Onlajn testiranje korišćenjem učenja uslovljavanjem }
 % ==============================================================================
 
-Programi koji su reaktivni, naročito ako su distribuirani, mogu se ponašati nedeterministički. Neki faktori, poput redosleda završavanja niti nisu pod potpunom kontrolom testera, ali se njihovo ponašanje može modelovati stablom odlučivanja. Ipak, veličina tog stabla može da postane izuzetno velika za pretragu, pa se pribegava tehnikama \emph{onlajn testiranja}.
+Programi koji su reaktivni, naročito ako su distribuirani, mogu se ponašati nedeterministički. Neki faktori, poput redosleda završavanja niti nisu pod potpunom kontrolom testera, ali se njihovo ponašanje može modelovati stablom odlučivanja. Ipak, veličina tog stabla može da postane izuzetno velika za pretragu, pa se pribegava tehnikama onlajn testiranja.
 
-\emph{Onlajn testiranje} je tehnika u kojoj se kreiranje testa i njegovo izvršavanje rade u istom algoritmu. Može biti pogodnije od klasičnog testiranja sa već predefinisanim testovima za reaktivne sisteme zato što se može dinamički prilagoditi za vreme izvršavanja tako da pokrije najrelevantnija ponašanja, umesto svih mogućih, što je obično nemoguće. \emph{Onlajn testiranje} spada u skup testiranja baziranih na modelu (eng. \emph{model-based testing}), gde tester koristi model da detektuje razlike između impelementacije pod testom (eng. \emph{implementation under test - IUT}) i modela.
+Onlajn testiranje je tehnika u kojoj se kreiranje testa i njegovo izvršavanje rade u istom algoritmu. Može biti pogodnije od oflajn testiranja za reaktivne sisteme zato što se može dinamički prilagoditi za vreme izvršavanja tako da pokrije najrelevantnija ponašanja, umesto svih mogućih, što je obično nemoguće. Onlajn testiranje spada u skup testiranja baziranih na modelu (eng. model-based testing), gde tester koristi model da detektuje razlike između impelementacije pod testom (eng. implementation under test - IUT) i modela.
 
-Akcije testera će se u daljem tekstu nazivati kontrolisane akcije, a akcije IUTa posmatrane akcije. Greška usklađenosti nastaje kada IUT odbije kontrolisanu akciju modela ili kada model odbije posmatranu akciju IUTa.
+Razlikovaćemo poteze testera od IUTa. Akcije testera ćemo nazivati kontrolisane akcije, dok ćemo akcije IUTa nazivati posmatrane akcije. Greška usklađenosti nastaje kada IUT odbije kontrolisanu akciju modela ili kada model odbije posmatranu akciju IUTa.
 
 Stanja modela su memorijske lokacije programa koje su preslikane u konačni skup vrednosti. 
 Pravila ažuriranja su konačan skup funkcija koje preslikavaju vrednosti iz domena stanja u domen stanja. Pravilo ažuriranja $p$ može biti parametrizovano parametrima $\bar{x}$.
 Instanciranje p[$\bar{x}$] ulaznim vrednostima $\bar{v}$ odgovarajućeg tipa, obeležava se p[$\bar{v}$].
-Generalno, pravila ažuriranja mogu biti nedeterministička, tako da za isto ulazno stanje i vrednosti, može da ima različita izlazna stanja. Za potrebe modelovanja, definisana je relacija $[[p]] \subseteq Stanja \times Vrednost^n \times Stanja$.
-Kada je p determinističko, [[p]] predstavlja funkciju [[p]]: $Stanja \times Vrednost^n  \rightarrow Stanja$
+Generalno, pravila ažuriranja mogu biti nedeterministička, tako da za isto ulazno stanje i vrednosti, može da ima različita izlazna stanja. Da bismo to modelovali, definišemo relaciju $[[p]] \subseteq Stanja \times Vrednost^n \times Stanja$.
+Kada je p determinističko, [[p]] smatramo funkcijom [[p]]: $Stanja \times Vrednost^n  \rightarrow Stanja$
 
 Čuvar $\varphi$ je formula koja zavisi od stanja. Može sadržati slobodne logičke promenljive $\bar{x} = x_1, x_2,..., x_n$ i takvo označavamo sa $\varphi(\bar{x})$. $\varphi$ je zatvoreno ako nema slobodnih varijabli. Zatvorena formula $\varphi$ ima istinitosnu interpretaciju u stanju $s \models \varphi$. Čuvano pravilo ažuriranja je par $(\varphi, p)$ i ono limitira primenu p na stanja i argumente koji zadovoljavaju $\varphi(\bar{v})$.
 
@@ -507,16 +508,16 @@ Model programa P sadrži sledeće komponente
 \end{itemize}
 P je determinističko, ako za svako $f \in \sigma, p_f$ je determinističko. \\
 
-Akcija $f$ ima oblik $f(v_1,...,v_n)$, gde je $f$ $n$-arni akcijski simbol a svako $v_i$ vrednost koja odgovara ulaznom parametru $p_f$. Akcija $f(\bar{v})$ je dozvoljena u stanju $s$ ako $s \models \varphi(\bar{v})$. Izdvajaju se dva specijanla slučaja: kada je reset uvek zabranjen $(\varphi_{Reset} = false)$, kada je definicija $p_{Reset}$ irelevantna, i slučaj kada je reset uvek dozvoljen $(\varphi_{Reset} = false)$, i tada $p_{Reset}$ mora da bude definisana tako da iz svakog stanja može da uspostavi početno stanje.
+Akcija $f$ ima oblik $f(v_1,...,v_n)$, gde je $f$ $n$-arni akcijski simbol a svako $v_i$ vrednost koja odgovara ulaznom parametru $p_f$. Kažemo da je akcija $f(\bar{v})$ dozvoljena u stanju $s$ ako $s \models \varphi(\bar{v})$. Primetimo dva specijanla slučaja: kada je reset uvek zabranjen $(\varphi_{Reset} = false)$, kada je definicija $p_{Reset}$ irelevantna, i slučaj kada je reset uvek dozvoljen $(\varphi_{Reset} = false)$, i tada $p_{Reset}$ mora da bude definisana tako da iz svakog stanja može da uspostavi početno stanje.
 
-I IUT i model su predstavljeni kao interfejs automati (eng. \emph{interface automata}) kako bi se uspostavila formalna vezu između njih \cite{interfaceAutomata}.
+I IUT i model posmatramo kao interfejs automate (eng. interface automata) kako bismo formalno uspostavili vezu između njih \cite{interfaceAutomata}.
 Interfejs automat M ima sledeće komponente:
 \begin{itemize}
 \item Skup stanja $S$
 \item Neprazan podskup početnih stanja $S_init$ skupa $S$
-\item Disjunktne skupove kontrolisanih akcija $A_c$ i posmatranih akcija $A_o$
+\item Disjunktni skupovi kontrolisanih akcija $A_c$ i posmatranih akcija $A_o$
 \item Dozvoljavajuće funkcije $\Gamma_c$ i $\Gamma_o$ podskupova $A_c$ i $A_o$, redom.
-\item Prelazne funkcije $\sigma$ koje slikaju ulazno stanje i dozvoljavajuću akciju u izlazno stanje
+\item Prelazna funkcija $\sigma$ koja slika ulazno stanje i dozvoljavajuću akciju u izlazno stanje
 \end{itemize}
 
 Neka je P deterministčki model $(Stanja, Vrednosti, s_0, \Sigma, \Sigma_c, \Sigma_0, Reset, (\varphi_f, p_f)f \in \Sigma)$. Prema prethodnoj definiciji, intefejs automat P izgleda:
@@ -532,10 +533,10 @@ Neka je P deterministčki model $(Stanja, Vrednosti, s_0, \Sigma, \Sigma_c, \Sig
 \end{itemize}
 
 \noindent
-\textbf{Algoritam:} 
+Algoritam:
 
 IUT I i model M, su oba predstavljeni kao interfejs automati.
-Kako su formalno definisane strukture modela, ostaje još da se opiše način izbora naredne akcije u algoritmu:
+Kako smo formalno definisali strukture modela, ostaje još da opišemo način izbora naredne akcije u algoritmu:
 \begin{itemize}
 \item Ukoliko nema mogućih akcija\\ prekini trenutni test. 
 \item Ukoliko nema mogućeg izbora za kontrolisanu akciju\\ vrati posmatranu.
@@ -543,22 +544,23 @@ Kako su formalno definisane strukture modela, ostaje još da se opiše način iz
 \item Inače\\ izaberi između kontrolisane i posmatrane akcije.
 \end{itemize}
 
-Za rešavanje ovog problema iskorišćen je algoritam mašinskog učenja koji spada u učenje uslovljavanjem, o kome su osnove date ranije u radu. 
-Cena testa se povećava srazmerno broju koraka kako bi se pokrio zadati procenat svih ponašanja. Iscrpno pokrivanje svih ponašanja je najčešće nemoguće.
-Umesto minimizacije cene, algoritam radi pod pretpostavkom da imamo ograničene i fiksne resurse i minimizuje procenat pokrivenih ponašanja. Bitna je minimzacija broja vraćanja u početno stanje  (eng. \emph{backtracking}), zato što to može biti skupa operacija.
-
 Algoritam prati težine transakcija u trenutnom testu. Sledeća kontrolisana akcija se bira iz nepraznog skupa dozvoljenih akcija koristeći datu strategiju:
+
+Za ovaj problem koristićemo algoritam mašinskog učenja koji spada u učenje uslovljavanjem, o kome su osnove date ranije u radu. 
+Cena testa se povećava srazmerno broju koraka kako bi se pokrio zadati procenat svih ponašanja. Iscrpno pokrivanje svih ponašanja je najčešće nemoguće. Umesto da posmatramo minimizaciju cene, možemo pretpostaviti da imamo fiksne resurse i da maksimizujemo procenat pokrivenih ponašanja. Bitno je da minimizujemo broj vraćanja u početno stanje (eng. backtracking), zato što to može biti skupa operacija. %ONLINE
+
+Odabir sledeće akcije:
 \begin{itemize}
-\item Najjeftinija akcija: \\
-Bira se akciju koja najmanje košta, odnosno ima najveću nagradu.
+\item Najjeftinija: \\
+Biramo akciju koja najmanje košta, odnosno ima najveću nagradu.
 
-\item Nasumična akcija: \\
-Akcija se bira na nasumičan način
+\item Nasumična: \\
+Biramo akciju na nasumičan način
 
-\item Najmanje frekventna akcija: \\
-Kako bi se izbeglo generisanje redudantnih testova, klasična implementacija familije algoritama učenja uslovljavanjem se modifikuje idejom anti-ant algoritma \cite{antiAnt}.
-Akciju se bira sa verovatnoćom koja je inverzno proporcionalno njegovoj ceni. To znači da su manje frekventne akcije favorizovane.
-Drugim rečima, ako su potencijalne sledeće akcije obeležene sa $(a_i)_{i < k}$ za neko k, i cene $(c_i)_{i < k}$, onda će verovatnoća za izbor akcije $a_i$ biti $c_i^{-1} / \sum_{j!=i}^{} c_j^{-1}$.
+\item Najmanje frekventna: \\
+Klasičnu implementaciju familije algoritama učenja uslovljavanjem modifikujemo idejom anti-ant algoritma \cite{antiAnt} kako bi se izbeglo generisanje generacija redudantnih testova.
+Akciju biramo nasumično, ali najveću verovatnoću ima stanje koje je inverzno proporcionalno njegovoj ceni. To znači da su manje frekventne akcije favorizovane.
+Drugim rečima, ako potencijalne sledeće akcije obeležimo sa $(a_i)_{i < k}$ za neko k, i cene $(c_i)_{i < k}$, onda će verovatnoća za izbor akcije $a_i$ biti $c_i^{-1} / \sum_{j!=i}^{} c_j^{-1}$.
 \end{itemize}
 
 U radu \cite{online-testing-with-reinforcement-learning} se mogu videti primeri eksperimenta sa sva tri pristupa.
@@ -569,15 +571,9 @@ U radu \cite{online-testing-with-reinforcement-learning} se mogu videti primeri 
 \label{sec:zakljucak}
 % ==============================================================================
 
-\par Verifikacija softvera je veoma važna, jer su moguće posledice neispravnog softvera ogromnih razmera. Tehnike mašinskog učenja se brzo usavršavaju i pokazuju izuzetno dobre rezultate, pa je prirodno razmišljati o njihovim mogućim primenama na verifikaciju softvera.
+\par Verifikacija softvera je veoma važna jer su moguće posledice neispravnog softvera ogromnih razmera. Tehnike mašinskog učenja se brzo u\-sa\-vr\-ša\-va\-ju i pokazuju izuzetno dobre rezultate, pa je prirodno razmišljati o njihovim mogućim primenama na verifikaciju softvera.
 
-\par Od primena mašinskog učenja na statičku verifikaciju softvera prikazane su tehnike formalne verifikacije, učenje statičkog analizatora i kako od izvornog koda doći do istreniranih modela, a od primena na dinamičku verifikaciju prikazana je tehnika učenja uslovljavanjem na onlajn testiranjima. U formalnoj verifikaciji se na osnovu skupa testova indukuju teorije koje bi trebalo da se poklapaju sa specifikacijom programa.
-%TODO Rastko - tldr
-Proces korišćenja generisanja kontraprimera, koji je obrađen u \ref{sec:staticki-analizator} je inovativan pristup regularizaciji modela mašinskog učenja koji se do sada nije javljao u naučnim radovima.
-%TODO Nikola - tldr
-U \ref{subsec:pregled} dat je primer prikupljanja podataka za trening i upoređivanje rezultata različitih algoritama koji imaju za cilj statičku detekciju grešaka.
-%TODO Luka - tldr
-Kod onlajn testiranja se u isto vreme kreira i izvršava test i treba pokriti što više ponašanja sa fiksnim resursima. Učenje uslovljavanjem navodi da se ide na nefrekventne testove, a uz to postoje dodatni parametri, kao što je kazna ako se vrati u početno stanje.
+\par Od primena mašinskog učenja na statičku verifikaciju softvera prikazane su tehnike formalne verifikacije, učenje statičkog analizatora i kako od izvornog koda doći do istreniranih modela, a od primena na dinamičku verifikaciju prikazana je tehnika učenja uslovljavanjem na onlajn testiranjima. U formalnoj verifikaciji se na osnovu skupa testova indukuju teorije koje bi trebalo da se poklapaju sa specifikacijom programa. Proces korišćenja generisanja kontraprimera, koji je obrađen u \ref{subsec:staticki-analizator} је inovativan pristup regularizaciji modela mašinskog učenja, koji se do sada nije javljao u naučnim radovima. U \ref{subsec:pregled} dat je primer prikupljanja podataka za trening i upoređivanje rezultata različitih algoritama koji imaju za cilj statičku detekciju grešaka. Kod onlajn testiranja se u isto vreme kreira i izvršava test i treba pokriti što više ponašanja sa fiksnim resursima. Učenje uslovljavanjem navodi da se ide na nefrekventne testove, a uz to postoje dodatni parametri, kao što je kazna ako se vrati u početno stanje.
 
 
 \addcontentsline{toc}{section}{Literatura}
