@@ -136,14 +136,18 @@ kao dodatni alat za rešavanje raznih problema koji se mogu naći u statičkoj
 verifikaciji ako njime rukuje prava osoba, čak i ako ne može da obeća kompletno 
 rešenje svih problema.
 
-Obično se identifikuju dve oblasti mašinskog učenja: \textit{nadgledano učenje} i 
-\textit{nenadgledano učenje}. Nadgledano učenje odlikuje da pored ulaznih podataka 
+Obično se identifikuju tri oblasti mašinskog učenja: 
+\textit{nadgledano učenje} (eng. \emph{supervised learning}), 
+\textit{nenadgledano učenje} (eng. \emph{unsupervised learning}) i 
+\textit{učenje uslovljavanjem} (eng. \emph{reinforcement learning}). 
+Nadgledano učenje odlikuje da pored ulaznih podataka 
 postoji i njemu odgovarajući željeni izlaz. Model je zadužen za učenje pravila nad 
 datim parovima ulaza i izlaza. Sa druge strane, kod nenadgledanog učenja dati su 
 samo ulazni podaci pri čemu na algoritmu ostaje da pronađe strukturu u podacima. 
 % TODO da li je naredna recenica suvisna (ne sme pasus da ima samo jednu recenicu, zato spojih sa gornjim)
-Za oblast statičke verifikacije najrelevantniji su algoritmi nadgledanog učenja, 
-tako da će u ostatku rada biti predstavljeni isključivo algoritmi koji pripadaju toj oblasti.
+Učenje uslovljavanjem se može videti kao oblast izmedju dve prethodno pomenute oblasti.
+U okviru učenja uslovljavanja mora se rešiti problem preduzimanjem niza akcija,
+koje su međusobno povezane, kako bi se maksimizovala konačna nagrada.
 
 Uobičajeni tok uspešne primene tehnika mašinskog učenja je sledeći. Nakon što se 
 problem analizira, kao i podaci nad kojim će tehnike biti primenjene, potrebno je 
@@ -202,18 +206,6 @@ je F1 mera, koja predstavlja njihovu harmonijsku sredinu.
 \label{sec:naslovN}
 % ==============================================================================
 
-
-
-% TODO srediti ovo, odgovoriti na postavljena pitanja, dopuniti nakon što odlučimo šta će biti sva 4 problema
-Predlozi za ovaj deo:
-
-Kratak opis problema sa kojima ćemo se susreti u narednom delu poglavlja. 
-
-Zašto su odabrani baš ovi problemi?
-
-Predstojeći problemi su uređeni po uticaju koji su imali na oblast statičke verifikacije softvera.
-
-Predlozi za dodatne baljezgarije kojima je mesto u ovom kutku rada su dobrodošli.
 
 
 \subsection{Od izvornog koda do istreniranih modela}
@@ -528,10 +520,14 @@ pre-aproksimira kada skup podataka ne može da se obradi precizno.
 \label{sec:dinamcikaPrimena}
 % ==============================================================================
 
-TODO ovde mora neki tekst, bar par recenica
+
+Priroda algoritama mašinskog učenja mnogo više odgovara problemima koji se sreću 
+u dinamičkoj verifikaciji softvera. Stoga može se naći pregršt primena mašinskog 
+učenja u ovoj oblasti. Radi potpunosti, u nastavku će biti opisana jedna od tih 
+primena, koja se oslanja na učenje uslovljavanjem.
 
 % ================================== LUKA ======================================
-\subsection{Onlajn testiranje reinforcement learningom } % ONLINE REINFORCEMENT LEARNING
+\subsection{Onlajn testiranje korišćenjem učenja uslovljavanjem } % ONLINE REINFORCEMENT LEARNING
 %\label{subsec:pregled}
 % ==============================================================================
 
@@ -601,7 +597,7 @@ Inače, izaberi između kontrolisane i posmatrane akcije.
 
 Algoritam prati težine transakcija u trenutnom testu. Sledeća kontrolisana akcija se bira iz nepraznog skupa dozvoljenih akcija koristeći datu strategiju:
 
-Za ovaj problem koristićemo algoritam mašinskog učenja reinforcement learning, o kome su osnove date ranije u radu. % OSNOVE RL
+Za ovaj problem koristićemo algoritam mašinskog učenja koji spada u učenje uslovljavanjem, o kome su osnove date ranije u radu. % OSNOVE RL
 Cena testa se povećava srazmerno broju koraka kako bi se pokrio zadati procenat svih ponašanja. Iscrpno pokrivanje svih ponašanja je najčešće nemoguće. Umesto da posmatramo minimizaciju cene, možemo pretpostaviti da imamo fiksne resurse i da maksimizujemo procenat pokrivenih ponašanja. Bitno je da minimizujemo broj vraćanja u početno stanje (eng. backtracking), zato što to može biti skupa operacija. %ONLINE
 
 Odabir sledeće akcije:
@@ -613,12 +609,12 @@ Nasumična:
 Biramo akciju na nasumičan način
 
 Najmanje frekfentna: 
-Klasičnu implementaciju familije algoritama reinforcement learning modifikujemo idejom anti-ant algoritma [?] kako bi se izbeglo generisanje generacija redudantnih testova. %RL
+Klasičnu implementaciju familije algoritama učenja uslovljavanjem modifikujemo idejom anti-ant algoritma [?] kako bi se izbeglo generisanje generacija redudantnih testova. %RL
 Akciju biramo nasumično, ali najveću verovatnoću ima stanje koje je inverzno proporcionalno njegovoj ceni. To znači da su manje frekfentne akcije favorizovane.
 Drugim rečima, ako potencijalne sledeće akcije obeležimo sa $(a_i)_{i < k}$ za neko k, i cene $(c_i)_{i < k}$, onda će verovatnoća za izbor akcije $a_i$ biti $c_i^{-1} / \sum_{j!=i}^{} c_j^{-1}$.
 %procitatj vise anti-ant
 
-U radu [?] se mogu videti primeri ekspermineta sa sva tri pristupa. % https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/online.pdf
+U radu [?] se mogu videti primeri eksperimenta sa sva tri pristupa. % https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/online.pdf
 
 
 % ==============================================================================
