@@ -554,7 +554,7 @@ P je determinističko, ako za svako $f \in \sigma, p_f$ je determinističko. \\
 
 Akcija $f$ ima oblik $f(v_1,...,v_n)$, gde je $f$ $n$-arni akcijski simbol a svako $v_i$ vrednost koja odgovara ulaznom parametru $p_f$. Kažemo da je akcija $f(\bar{v})$ dozvoljena u stanju $s$ ako $s \models \varphi(\bar{v})$. Primetimo dva specijanla slučaja: kada je reset uvek zabranjen $(\varphi_{Reset} = false)$, kada je definicija $p_{Reset}$ irelevantna, i slučaj kada je reset uvek dozvoljen $(\varphi_{Reset} = false)$, i tada $p_{Reset}$ mora da bude definisana tako da iz svakog stanja može da uspostavi početno stanje.
 
-I IUT i model posmatramo kao interfejs automate (eng. interface automata) kako bismo formalno uspostavili vezu između njih [?]. %https://users.soe.ucsc.edu/~luca/papers/01/FSE01.pdf 
+I IUT i model posmatramo kao interfejs automate (eng. interface automata) kako bismo formalno uspostavili vezu između njih \cite{interfaceAutomata}.
 Interfejs automat M ima sledeće komponente:
 \begin{itemize}
 \item Skup stanja $S$
@@ -576,7 +576,9 @@ Neka je P deterministčki model $(Stanja, Vrednosti, s_0, \Sigma, \Sigma_c, \Sig
 \item $\sigma_{[[P]]}(s, f(\bar{v})) = [[P_f]](s, \bar{v}) (for f \in \Sigma, s \in States, s \models \varphi_f(\bar{v}))$
 \end{itemize}
 
-Algoritam %TODO
+\noindent
+Algoritam:
+
 IUT I i model M, su oba predstavljeni kao interfejs automati.
 Kako smo formalno definisali strukture modela, ostaje još da opišemo način izbora naredne akcije u algoritmu:
 \begin{itemize}
@@ -600,13 +602,12 @@ Biramo akciju koja najmanje košta, odnosno ima najveću nagradu.
 Biramo akciju na nasumičan način
 
 \item Najmanje frekventna: \\
-Klasičnu implementaciju familije algoritama učenja uslovljavanjem modifikujemo idejom anti-ant algoritma [?] kako bi se izbeglo generisanje generacija redudantnih testova.
+Klasičnu implementaciju familije algoritama učenja uslovljavanjem modifikujemo idejom anti-ant algoritma \cite{antiAnt} kako bi se izbeglo generisanje generacija redudantnih testova.
 Akciju biramo nasumično, ali najveću verovatnoću ima stanje koje je inverzno proporcionalno njegovoj ceni. To znači da su manje frekventne akcije favorizovane.
 Drugim rečima, ako potencijalne sledeće akcije obeležimo sa $(a_i)_{i < k}$ za neko k, i cene $(c_i)_{i < k}$, onda će verovatnoća za izbor akcije $a_i$ biti $c_i^{-1} / \sum_{j!=i}^{} c_j^{-1}$.
-%procitatj vise anti-ant
 \end{itemize}
 
-U radu [?] se mogu videti primeri eksperimenta sa sva tri pristupa. % https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/online.pdf
+U radu \cite{online-testing-with-reinforcement-learning} se mogu videti primeri eksperimenta sa sva tri pristupa.
 
 
 % ==============================================================================
