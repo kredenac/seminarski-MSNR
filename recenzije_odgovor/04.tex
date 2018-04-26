@@ -1,0 +1,317 @@
+
+
+ % !TEX encoding = UTF-8 Unicode
+
+\documentclass[a4paper]{report}
+
+\usepackage[T2A]{fontenc} % enable Cyrillic fonts
+\usepackage[utf8x,utf8]{inputenc} % make weird characters work
+\usepackage[serbian]{babel}
+%\usepackage[english,serbianc]{babel}
+\usepackage{amssymb}
+
+\usepackage{color}
+\usepackage{url}
+\usepackage[unicode]{hyperref}
+\hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
+
+\newcommand{\odgovor}[1]{\textcolor{blue}{#1}}
+
+\begin{document}
+
+\title{Dopunite naslov svoga rada\\ \small{Dopunite autore rada}}
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Uputstva}
+\emph{Prilikom predavanja odgovora na recenziju, obrišite ovo poglavlje.}
+
+Neophodno je odgovoriti na sve zamerke koje su navedene u okviru recenzija. Svaki odgovor pišete u okviru okruženja \verb"\odgovor", \odgovor{kako bi vaši odgovori bili lakše uočljivi.} 
+\begin{enumerate}
+
+\item Odgovor treba da sadrži na koji način ste izmenili rad da bi adresirali problem koji je recenzent naveo. Na primer, to može biti neka dodata rečenica ili dodat pasus. Ukoliko je u pitanju kraći tekst onda ga možete navesti direktno u ovom dokumentu, ukoliko je u pitanju duži tekst, onda navedete samo na kojoj strani i gde tačno se taj novi tekst nalazi. Ukoliko je izmenjeno ime nekog poglavlja, navedite na koji način je izmenjeno, i slično, u zavisnosti od izmena koje ste napravili. 
+
+\item Ukoliko ništa niste izmenili povodom neke zamerke, detaljno obrazložite zašto zahtev recenzenta nije uvažen.
+
+\item Ukoliko ste napravili i neke izmene koje recenzenti nisu tražili, njih navedite u poslednjem poglavlju tj u poglavlju Dodatne izmene.
+\end{enumerate}
+
+Za svakog recenzenta dodajte ocenu od 1 do 5 koja označava koliko vam je recenzija bila korisna, odnosno koliko vam je pomogla da unapredite rad. Ocena 1 označava da vam recenzija nije bila korisna, ocena 5 označava da vam je recenzija bila veoma korisna. 
+
+NAPOMENA: Recenzije ce biti ocenjene nezavisno od vaših ocena. Na osnovu recenzije ja znam da li je ona korisna ili ne, pa na taj način vama idu negativni poeni ukoliko kažete da je korisno nešto što nije korisno. Vašim kolegama šteti da kažete da im je recenzija korisna jer će misliti da su je dobro uradili, iako to zapravo nisu. Isto važi i na drugu stranu, tj nemojte reći da nije korisno ono što jeste korisno. Prema tome, trudite se da budete objektivni. 
+\chapter{Recenzent \odgovor{--- ocena:} }
+
+
+\section{O čemu rad govori?}
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+
+Na početku rada imamo jasan pregled osnova verifikacije softvera i njenu podelu na statičku i dinamičku verifikaciju, kao i uvod u mašinsko učenje. U nastavku slede konkretni primeri primene mašinskog učenja u verifikaciji softvera: tehnike formalne verifikacije, učenje statičkog analizatora, kako od kako od izvornog koda doći do istreniranih modela i onlajn testiranje korišćenjem učenja u\-slo\-vlja\-va\-njem.
+
+
+\section{Krupne primedbe i sugestije}
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+
+Nema krupnijih primedbi na sam tekst rada. Međutim, rad ima nekoliko pre\-du\-ga\-čkih rečenica, što otežava razumevanje teksta. Rad bi bio jednostavniji za čitanje ako bi se te rečenice skratile ili podelile na više kraćih. Primer takve rečenice je u podnaslovu 4.3 i počinje sa "Na prvi pogled je dovoljno uzeti izlaz programa CMore ...".
+
+\section{Sitne primedbe}
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+
+\begin{itemize}
+	\item U podnaslovu 4.1, nedostaje znak : u rečenici koja glasi "Ukratko, postupak je zasnovan na sledećem".
+    \item U podnaslovu 4.1, drugačije sročiti rečenicu "Pozitivni i negativni primeri se, u kontekstu mašinskog učenja, zovu primerima za trening".
+    \item U podnaslovu 4.2, u rečenici koja počinje sa "Ključna komponenta ovog pristupa je proročište ...", je neodgovarajućem formatu napisan engleski termin "(en. oracle)".
+    \item U podnaslovu 4.2, nije dovoljno jasno napisana rečenica koja počinje sa "Naučena pravila za pokazuje-na analizu, ...".
+    \item U poslednjem pasusu podnaslova 4.2 nedostaje znak : nakon rečenice "Glavni doprinosi opisanog rada su sledeći.", i bolje rešenje bi bilo da doprinosi budu navedeni po tezama. 
+\end{itemize}
+
+
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu?
+
+Da, rad detaljno objašnjava četri primene mašinskog učenja u verifikaciji softvera, sa akcentom na primene u statičkoj verifikaciji, što je bila tema rada. 
+
+\item Da li je nešto važno propušteno?
+
+Ne, detaljno je pokriveno nekoliko primena mašinskog učenja u verifikaciji softvera, kao i kratak uvod u verifikaciju softvera i mašinsko učenje.
+
+\item Da li ima suštinskih grešaka i propusta?
+
+Nema suštnskih grešaka.
+
+\item Da li je naslov rada dobro izabran?
+
+Akcenat je stavljen na primene mašinskog učenja u verifikaciji softvera, što jeste naslov rada.
+
+\item Da li sažetak sadrži prave podatke o radu?
+
+Da, u nekoliko rečenica opisuje zašto je tema kojom se rad bavi zanimljiva i korisna, kao i šta se u nastavku teksta može očekivati.
+
+\item Da li je rad lak-težak za čitanje?
+
+Rad je pretežno lak za čitanje. Jedina zamerka je što ima više predugačkih rečenica što otežava razumevanje teksta, koje bi trebalo skratiti ili podeliti na više kraćih.
+
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?
+
+Potrebno je razumevanje matematičkih i informatičkih osnova, s obzirom da rad ima dosta matematičkih formula i primera koda. Međutim, nije potrebno veliko predznanje iz oblasti verifikacije softvera i mašinskog učenja, jer su u radu objašnjeni osnovni koncepti na vrlo jednostavan i razumljiv način.
+
+\item Da li je u radu navedena odgovarajuća literatura?
+
+Da, navedeno je više radova koji se bave sličnom ili istom temom, koji su korišćeni prilikom pisanja ovog rada.
+
+\item Da li su u radu reference korektno navedene?
+ 
+Da, reference su korektno navedene.
+
+\item Da li je struktura rada adekvatna?
+
+Rad ispunjava zahtevanu strukturu.
+
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?
+
+Ispunjeni su svi uslovi seminarskog rada.
+
+\item Da li su slike i tabele funkcionalne i adekvatne?
+
+Da, slike i tabele pomažu razumevanju teksta.
+
+\end{enumerate}
+
+\section{Ocenite sebe}
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+% c) srednje upućeni
+% d) malo upućeni 
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+
+U temu kojom se rad bavi sam srednje upućena. Trenutno slušam kurs mašinskog učenja na fakultetu, a za potrebe seminarskog rada sam se bavila metodom učenja vođenom kontraprimerima, koja je takođe obrađena u ovom radu.
+
+
+\chapter{Recenzent \odgovor{--- ocena:} }
+
+
+\section{O čemu rad govori?}
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+Rad govori o verifikaciji softvera kao veoma važnom koraku ka dobijanju validnog softvera.
+Govori o tehnikama mašinskog učenja i o mogućim primenama u verifikaciji softvera.
+Opisana je primena mašinskog učenja na statičku verifikaciju softvera i prikazane su
+tehnike formalne verifikacije, učenje statičkog analizatora i kako
+od izvornog koda doći do istreniranih modela, a od primena na dinamičku
+verifikaciju prikazano je tehnika učenja uslovljavanjem na onlajn testiranjima.
+Prikazan je inovativan pristup regularizaciji modela mašinskog učenja, koji se do sada nije javljao
+u naučnim radovima. 
+Prikazan je primer prikupljanja podataka za trening i upoređvanje rezultata različtih algoritama koji imaju za cilj
+statičku detekciju grešaka. 
+
+\section{Krupne primedbe i sugestije}
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+\begin{itemize}
+  \item U sažetku bi možda trebalo promeniti redosled rečenica tako da se prvo započne priča o softveru, njegovoj upletenosti u naše živote, posledicama njegove neispravnosti pa zatim naglasiti bitnost verifkacije softvere i uvesti nas u priču gde tu mašinsko učenje stupa na scenu.
+  \item U uvod bi možda korektnije bilo napisati ``Softverska rešenja se koriste...`` jer se kroz ceo tekst spominje ``softver``. Isto tako ``primeri stvarnih događaja usled grešaka u softveru``.
+  \item U sekciji 2 Verifikacija softvera - konstrukciju `` a i u državnoj administraciji `` izmeniti u možda ``i u državnoj administraciji`` ili izbaciti i smatrati da spada ``u poslovnom svetu``. 
+  \item U sekciji 3 Mašinsko učenje - ``ova oblast postiže rezultate superiorne u odnosu na rezultate ljudskih eksperata`` možda promeniti u ``superiornije rezultate...`` isto tako možda ubaciti primer rezultata u vidu nekog grafičkog prikaza ili referencu ka nekom radu na ovu temu.
+  \item U sekciji 3 Mašinsko učenje - Bilo bi zanimljivo videti grafičke razlike između tri oblasti mašinskog učenja kao i njihove oblasti primene ili referencu.
+  \item U sekciji 3 Mašinsko učenje - Možda bi ove bilo zanimljivo grafički u vidu slike prikazati sam tok uspešne primene tehnika mašinskog učenja.
+  \item U sekciji 4.1 Formalna verifikacija softvera - ubaciti referencu ka ``apriori analiza``.
+\end{itemize}
+\section{Sitne primedbe}
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+\begin{itemize}
+   \item Sažetak - `` pridruže u pohodu u sprečavanju ``.
+   \item U sekciji 2.1 Dinamička verifikacija softvera - ``Postoje razne vrste i nivoi testova..`` izbaciti zagrade i ubaciti ``poput ..`` jer se ovako gubi smisao rečenice.
+   \item U sekciji 4.2 Učenje statičkog analizatora iz podataka - ``Postoje dva ključna izazova pri izgradi statičkog analizatora`` - ``izradi ili izgradnji``.
+   \item U sekciji 4.2 Učenje statičkog analizatora iz podataka - U pasusu ``Izuzetno važan problem...`` skup L nije pisan kao $\mathcal{L}$
+   \item U sekciji 4.2 Učenje statičkog analizatora iz podataka - ``Drugi znatno izazovniji problem pri izgradi`` - ``izradi ili izgradnji``.
+   \item U sekciji 4.2 Učenje statičkog analizatora iz podataka - ``osobinom statičkog analizatora da ispravno kategoriše granični slučajeve.`` - ``granične``.
+   \item U sekciji 4.2 Učenje statičkog analizatora iz podataka - ``Ovaj problem se rešava procedurom učenja vodjenog`` - ``vođenog``.
+   \item U sekciji 4.2 Učenje statičkog analizatora iz podataka - ``nad pravilima koja su naučena u tom trenunku`` - ``trenutku``.
+   \item U sekciji 4.3 Od izvornog koda do istreniranih modela - ``algoritmi klasifikacije, algoritmi predvidanja, algoritmi klasterovanja, aravila asocijacije i tehnike evaluacije.`` -``pravila``.
+   \item U sekciji 4.3 Od izvornog koda do istreniranih modela - ``Kako transofmisati izvorni kod u odgovarajući format za klasifikatore?`` -``transformisati``. 	
+   \item U sekicji 6 Zaključak - nefrekventne - ne postoji reč.
+\end{itemize}
+
+
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu? Da.\\ 
+\item Da li je nešto važno propušteno? Ne.\\
+\item Da li ima suštinskih grešaka i propusta? Ne.\\
+\item Da li je naslov rada dobro izabran? Da.\\
+\item Da li sažetak sadrži prave podatke o radu?  Da.\\
+\item Da li je rad lak-težak za čitanje?  Srednje.\\
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?\\ Ne
+preterano mnogo znanja uglavnom matematička pismenost, ali bi neki delovi i bili razumljiviji ako bi se prvo pročitale reference. Za
+delove koji nisu detaljno opisani postoje odgovarajuće reference.\\
+\item Da li je u radu navedena odgovarajuća literatura?  Da.\\
+\item Da li su u radu reference korektno navedene?  Da.\\
+\item Da li je struktura rada adekvatna?  Da.\\
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\
+Upitna preglednost i vidljivost Slika 1, Slika 2 i Slika 3. Nema tabela. Ima broj strana\\
+\item Da li su slike i tabele funkcionalne i adekvatne? Da.\\
+\end{enumerate}
+
+\section{Ocenite sebe}
+Rekao bih da je moj nivo upućenosti u datu temu ”skoro neupućen”.
+Sa mašinskim učenjem upoznat u kratkim crtama. 
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+% c) srednje upućeni
+% d) malo upućeni 
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+
+
+\chapter{Recenzent \odgovor{--- ocena:} }
+
+\section{O čemu rad govori?}
+% Напишете један кратак пасус у којим ћете својим речима препричати суштину рада
+% (и тиме показати да сте рад пажљиво прочитали и разумели). Обим од 200 до 400 карактера.
+
+U radu se problemu verifikacije softvera prilazi metodama mašinskog učenja, što je veoma aktuelno.
+Razjašnjavaju se metode i algoritmi za statičku i dinamičku verifikaciju softvera.
+Detaljno je objašnjen matematički model formalne verifikacije.
+Posebno se ističe složenost onlajn pristupa.
+
+\section{Krupne primedbe i sugestije}
+% Напишете своја запажања и конструктивне идеје шта у раду недостаје
+% и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
+
+\begin{enumerate}
+\item Slike 1, 2 i 3 su nepregledne.
+Trebalo ih je staviti u landscape format, u Dodatak, čime bi bile preglednije.
+\item Takođe, treba preurediti potpise slika,
+jer završna reč (bez) ne ukazuje na stepen redukcije broja atributa.
+Predlog:
+Slika 1a) i Slika 1b), sa odgovarajućim potpisima.
+\item U spisku literature, potrebno je reference 7, 8, 9, 11, 15
+dopuniti odgovarajućim informacijama (izdavač, časopis, ustanova, država).
+\item Formula na strani 14: verovatnoća nije dobro izračunata,
+jer bi sabiranjem po "i" trebalo dobiti 1 (izvestan događaj), što ovde nije slučaj jer je j!=i.
+\item Autori i njihovi mejlovi bi mogli da se napišu preglednije.
+Na primer, e-mail adrese bi mogle da se prebace u footnote.
+Autore bi trebalo ili staviti u jedan red smanjivanjem veličine fonta
+ili ih navesti jednog ispod drugog.
+\end{enumerate}
+
+\section{Sitne primedbe}
+% Напишете своја запажања на тему штампарских-стилских-језичких грешки
+
+\begin{enumerate}
+\item Strana 2, red "U savremenom dobu,..." predstavlju $\rightarrow$ predstavljaju
+\item Strana 4, red "matrica konfuzije 1" zameniti sa "matrica konfuzije, tabela 1"
+\item Tabela 1, zameniti Stvarno / Predviđeno sa Stvarno $\backslash$ Predviđeno
+\item Strana 6, prvo tvrđenje treba preimenovati u hipotezu
+\item Strane 6 i 7, Primeri 4.1 i 4.2, levo poravnati elemente skupa,
+a zatvarajuću vitičastu zagradu razdvojiti belinom.
+\item Strane 6 i 7, OBJ primeri steka $\rightarrow$ uskladiti tačke na kraju naredbi "op top"
+\item Strana 8, prvi pasus, izgradi $\rightarrow$ izgradnji ili izradi
+\item Strana 8, četvrti pasus, izgradi $\rightarrow$ izgradnji ili izradi
+\item Strana 8, četvrti pasus, treći red, da SE generalizuje
+\item Strana 8, četvrti pasus, deveti red, granični $\rightarrow$ granične
+\item Strana 8, četvrti pasus, deseti red, vodjenog $\rightarrow$ vođenog
+\item Strana 8, peti pasus, proročište(en. oracle) $\rightarrow$ proročište (eng. oracle)
+\item Strana 9, prvi pasus, facebook $\rightarrow$ Facebook
+\item Strana 9, drugi pasus, trenunku $\rightarrow$ trenutku
+\item Strana 9, peti pasus, aravila $\rightarrow$ pravila
+\item Strana 9, poslednji pasus, referenca na CMore
+\item Strana 10, treći pasus, referenca na Holmes
+\item Strana 10, šesti pasus, zasovana $\rightarrow$ zasnovana
+\item Strana 11, prvi pasus, greškaka $\rightarrow$ grešaka
+\item Strane 12 i 13, termini na engleskom prikazati iskošeno
+\item Strana 12, četvrti pasus, su $\rightarrow$ čine
+\item Strana 12, šesti pasus, podskupa( $\Sigma \rightarrow$ podskupa ($\Sigma$
+\item Strana 12, sedmi pasus, specijanla $\rightarrow$ specijalna
+\item Strana 13, $S_init \rightarrow S_{init}$
+\item Strana 13, algoritam IUT I i model $\rightarrow$ IUT i model
+\item Strana 13, deterministčki $\rightarrow$ deterministički
+\item Strana 13, isti red kao i prethodni, izvršiti prelom reda na odgovarajućem mestu
+\end{enumerate}
+
+\section{Provera sadržajnosti i forme seminarskog rada}
+% Oдговорите на следећа питања --- уз сваки одговор дати и образложење
+
+\begin{enumerate}
+\item Da li rad dobro odgovara na zadatu temu?\\Da, sadržaj rada je u skladu sa zadatom temom.
+\item Da li je nešto važno propušteno?\\Ne, sva osnovna pitanja su obrađena.
+\item Da li ima suštinskih grešaka i propusta?\\Nema.
+\item Da li je naslov rada dobro izabran?\\Naslov rada je isti kao i tema.
+\item Da li sažetak sadrži prave podatke o radu?\\Da, sažetak potpuno odgovara sadržaju rada.
+\item Da li je rad lak-težak za čitanje?\\Rad je lak za čitanje, jer su pojmovi prvo definisani i zatim primenjivani.
+\item Da li je za razumevanje teksta potrebno predznanje i u kolikoj meri?\\Za razumevanje teksta su potrebna znanja iz oblasti mašinskog učenja i verifikacije softvera.
+\item Da li je u radu navedena odgovarajuća literatura?\\Literatura rada je relevantna i dobro izabrana.
+\item Da li su u radu reference korektno navedene?\\Jesu.
+\item Da li je struktura rada adekvatna?\\Jeste.
+\item Da li rad sadrži sve elemente propisane uslovom seminarskog rada (slike, tabele, broj strana...)?\\Rad sadrži sve propisane elemente. I više! Autori u zaključku tvrde da je u poglavlju 4.2 dat inovativan pristup regularizaciji modela mašinskog učenja, koji se do sada nije javljao u naučnim radovima. Ako je to tačno, rad se verovatno može dopuniti do forme za naučni časopis ili konferenciju.
+\item Da li su slike i tabele funkcionalne i adekvatne?\\Sugestije o slikama i tabelama su date u sekcijama krupnih i sitnih primedbi.
+\end{enumerate}
+
+\section{Ocenite sebe}
+% Napišite koliko ste upućeni u oblast koju recenzirate: 
+% a) ekspert u datoj oblasti
+% b) veoma upućeni u oblast
+% c) srednje upućeni
+% d) malo upućeni 
+% e) skoro neupućeni
+% f) potpuno neupućeni
+% Obrazložite svoju odluku
+
+d) malo upućen: Ne slušam (trenutno) kurseve Mašinsko učenje i Verifikacija softvera,
+ali neka znanja potrebna za ovu tematiku
+sam stekao u okviru kurseva Veštačka inteligencija i Istraživanje podataka.
+
+
+\chapter{Dodatne izmene}
+%Ovde navedite ukoliko ima izmena koje ste uradili a koje vam recenzenti nisu tražili. 
+
+\end{document}
