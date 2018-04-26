@@ -63,7 +63,7 @@ Verifikacija softvera je izuzetno važna oblast računarstva. Softver polako usp
 \label{sec:verifikacija}
 % ==============================================================================
 
-\par U savremenom dobu, računari i računarski sistemi predstavlju sastavni deo svakodnevice, kako u privatnom životu, tako i u poslovnom svetu, a i u državnoj administraciji. Zato je od izuzetnog značaja da softver koji se koristi bude pouzdan. Neispravan softver, u zavisnosti od toga gde se koristio i koliko je veliki bio propust, može izazvati male probleme, ali i ogromne probleme sa teškim posledicama (čak i smrtnim). Oblast razvoja softvera koja se bavi proverom ispravnosti softvera, odnosno potvrđivanjem da softver radi u skladu sa zahtevima, naziva se \emph{verifikacija softvera}.
+\par U savremenom dobu, računari i računarski sistemi predstavljaju sastavni deo svakodnevice, kako u privatnom životu, tako i u poslovnom svetu, a i u državnoj administraciji. Zato je od izuzetnog značaja da softver koji se koristi bude pouzdan. Neispravan softver, u zavisnosti od toga gde se koristio i koliko je veliki bio propust, može izazvati male probleme, ali i ogromne probleme sa teškim posledicama (čak i smrtnim). Oblast razvoja softvera koja se bavi proverom ispravnosti softvera, odnosno potvrđivanjem da softver radi u skladu sa zahtevima, naziva se \emph{verifikacija softvera}.
 
 \par Potrebno je precizirati šta se podrazumeva pod ispravnim softverom. Razlikuju se pojmovi potpuno ispravnog i delimično ispravnog softvera. Softver se smatra potpuno ispravnim ako se zaustavlja za svaki ulaz i na izlazu daje ispravan rezultat, dok se delimično ispravnim softverom smatra onaj koji za ulaz daje ispravan rezultat ako se zaustavlja, a dozvoljeno je da se za neki ulaz program ne zaustavlja. Ne postoji algoritamski način da se proveri da li se neki program zaustavlja (eng.~{\em halting problem}), pa se često ni ne ispituje potpuna, već samo delimična ispravnost softvera.
 
@@ -269,7 +269,7 @@ na $\alpha$.
 
 
 % prvi problem
-Postoje dva ključna izazova pri izgradi statičkog analizatora. Prvo, statički 
+Postoje dva ključna izazova pri izgradnji statičkog analizatora. Prvo, statički 
 analizatori su tipično opisani pomoću pravila, dok postojeće te\-hni\-ke mašinskog 
 učenja kao rezultat daju kombinaciju postojećih pravila. Ako bi se ove tehnike 
 primenile na programsku analizu \cite{predictingProgramProperties} dobijena 
@@ -298,7 +298,7 @@ pomoću predikata $g$.
 
 
 % drugi problem
-Drugi znatno izazovniji problem pri izgradi statičkog analizatora je 
+Drugi znatno izazovniji problem pri izgradnji statičkog analizatora je 
 kako izbeći učenje statičkog analizatora koji se ponaša dobro 
 na podacima za treniranje $\mathcal{D}$, ali koji ne uspeva da 
 generalizuje na nove programe van skupa $\mathcal{D}$. Ovaj problem se u mašinskom 
@@ -339,12 +339,12 @@ Metoda je pokazana kroz implementaciju pristupa i evaluaciju na problemu analize
 pravila jezika JavaScript. Naučena pravila za pokazuje-na analizu, kao i za 
 analizu alokacionih mesta, su ne samo interesantna, već su i propuštena od 
 strane postojećih najmodernijih ručno podešenih statičkih analizatora kao što 
-su Flow \cite{flow} koji koristi facebook, i TAJS \cite{tajs}.
+su Flow \cite{flow} koji koristi Facebook, i TAJS \cite{tajs}.
 
 % doprinosi rada
 Glavni doprinosi opisanog rada su sledeći. Metod učenja pravila sta\-ti\-čkih 
 analizatora koji dobro generalizuje zbog pažljivog generisanja kontraprimera 
-nad pravilima koja su naučena u tom trenunku. Algoritam mašinskog učenja baziran 
+nad pravilima koja su naučena u tom trenutnku. Algoritam mašinskog učenja baziran 
 na drvetu odluke za učenje pravila analize iz podataka, koji uči da 
 pre-aproksimira kada skup podataka ne može da se obradi precizno. 
 
@@ -375,7 +375,7 @@ selekcija atributa,
 algoritmi klasifikacije,
 algoritmi predviđanja,
 algoritmi klasterovanja,
-aravila asocijacije i
+pravila asocijacije i
 tehnike evaluacije.
 %\end{itemize}
 
@@ -429,7 +429,7 @@ Nakon što se svi modeli mašinskog učenja istreniraju vrši se analiza pogodno
 koja vraća listu pogodnih modela tako što analizira njihovu preciznost, stopu lažno pozitivnih i lažno negativnih.
 U nastavku su prikazani rezultati poređenja 71 klasifikatora, a na slikama su prikazani samo oni koji su se najbolje pokazali. Cela procedura je urađena dva puta, s tim što je drugi put umanjen broj atributa uključenih u proces.
 
-Među 7 najboljih klasifikatora sa slike \ref{fig:acc} se nalaze tri zasnovana na najbližim susedima (``Ib1'', ``Ibk'', ``NNge''), tri zasovana na stablima
+Među 7 najboljih klasifikatora sa slike \ref{fig:acc} se nalaze tri zasnovana na najbližim susedima (``Ib1'', ``Ibk'', ``NNge''), tri zasnovana na stablima
 (``LMT'', ``RotationForest'' i ``ADABoost'' primenjen na ``BFTree'') i jedan zasnovan na neuronskim mrežama (``MultiLayerPerceptron'').
 Na slici  \ref{fig:falsePos} se vidi isti trend kao i na slici  \ref{fig:acc}: smanjenjem broja atributa algoritmi zasnovani na stablima se lošije ponašaju dok algoritmi najbližih suseda i ``MultiLayerPerceptron'' daju bolje rezultate.
 
@@ -449,7 +449,7 @@ Na slici  \ref{fig:falsePos} se vidi isti trend kao i na slici  \ref{fig:acc}: s
 
 Prema rezultatima dobijenim u  \cite{baca} vrlo je bitno da alat statičke analize ima malo lažno pozitivnih jer
 u slučaju mnogo pogrešnih uzbuna programeri počinju da ignorišu te signale, ili još gore: kako bi izbegli upozorenja alata menjaju ispravan kod što dovodi do potencijalno
- novih greškaka. Na slici \ref{fig:falseNeg} se vidi da je ``NNge'' najbolji, što je i očekivano s obzirom na prilično
+ novih grešaka. Na slici \ref{fig:falseNeg} se vidi da je ``NNge'' najbolji, što je i očekivano s obzirom na prilično
 loše performanse što se tiče lažno pozitivnih.
 
 \begin{figure}[h!]
@@ -476,11 +476,11 @@ primena, koja se oslanja na učenje uslovljavanjem.
 
 Programi koji su reaktivni, naročito ako su distribuirani, mogu se ponašati nedeterministički. Neki faktori, poput redosleda završavanja niti nisu pod potpunom kontrolom testera, ali se njihovo ponašanje može modelovati stablom odlučivanja. Ipak, veličina tog stabla može da postane izuzetno velika za pretragu, pa se pribegava tehnikama onlajn testiranja.
 
-Onlajn testiranje je tehnika u kojoj se kreiranje testa i njegovo izvršavanje rade u istom algoritmu. Može biti pogodnije od oflajn testiranja za reaktivne sisteme zato što se može dinamički prilagoditi za vreme izvršavanja tako da pokrije najrelevantnija ponašanja, umesto svih mogućih, što je obično nemoguće. Onlajn testiranje spada u skup testiranja baziranih na modelu (eng. model-based testing), gde tester koristi model da detektuje razlike između impelementacije pod testom (eng. implementation under test - IUT) i modela.
+Onlajn testiranje je tehnika u kojoj se kreiranje testa i njegovo izvršavanje rade u istom algoritmu. Može biti pogodnije od oflajn testiranja za reaktivne sisteme zato što se može dinamički prilagoditi za vreme izvršavanja tako da pokrije najrelevantnija ponašanja, umesto svih mogućih, što je obično nemoguće. Onlajn testiranje spada u skup testiranja baziranih na modelu (eng. \emph{model-based testing}), gde tester koristi model da detektuje razlike između impelementacije pod testom (eng. \emph{implementation under test - IUT}) i modela.
 
 Razlikovaćemo poteze testera od IUTa. Akcije testera ćemo nazivati kontrolisane akcije, dok ćemo akcije IUTa nazivati posmatrane akcije. Greška usklađenosti nastaje kada IUT odbije kontrolisanu akciju modela ili kada model odbije posmatranu akciju IUTa.
 
-Stanja modela su memorijske lokacije programa koje su preslikane u konačni skup vrednosti. 
+Stanja modela čine memorijske lokacije programa koje su preslikane u konačni skup vrednosti. 
 Pravila ažuriranja su konačan skup funkcija koje preslikavaju vrednosti iz domena stanja u domen stanja. Pravilo ažuriranja $p$ može biti parametrizovano parametrima $\bar{x}$.
 Instanciranje p[$\bar{x}$] ulaznim vrednostima $\bar{v}$ odgovarajućeg tipa, obeležava se p[$\bar{v}$].
 Generalno, pravila ažuriranja mogu biti nedeterministička, tako da za isto ulazno stanje i vrednosti, može da ima različita izlazna stanja. Da bismo to modelovali, definišemo relaciju $[[p]] \subseteq Stanja \times Vrednost^n \times Stanja$.
@@ -493,28 +493,26 @@ Model programa P sadrži sledeće komponente:
 prostor stanja $Stanja$,
 prostor vrednosti $Vrednosti$,
 inicijalno stanje $s_0 \in Stanja$,
-konačni skup simbola akcija $\Sigma$ podeljen u dva disjunktna podskupa(
-$\Sigma_c$ kontrolisanih akcija i
-$\Sigma_o$ posmatranih akcija),
+konačni skup simbola akcija $\Sigma$ podeljen u dva disjunktna podskupa ($\Sigma_c$ kontrolisanih akcija i $\Sigma_o$ posmatranih akcija),
 familija $(\varphi_f, p_f) f \in \Sigma$ čuvanih pravila ažuriranja,
 arnost funkcije f je broj ulaznih parametara $p_f$ i
 arnost reset pravila je 0 i $[[p_{Reset}]](s) = s_0$ za sve $s \models \varphi_{Reset}$.
 %\end{itemize}
 P je determinističko, ako za svako $f \in \sigma, p_f$ je determinističko. \\
 
-Akcija $f$ ima oblik $f(v_1,...,v_n)$, gde je $f$ $n$-arni akcijski simbol a svako $v_i$ vrednost koja odgovara ulaznom parametru $p_f$. Kažemo da je akcija $f(\bar{v})$ dozvoljena u stanju $s$ ako $s \models \varphi(\bar{v})$. Primetimo dva specijanla slučaja: kada je reset uvek zabranjen $(\varphi_{Reset} = false)$, kada je definicija $p_{Reset}$ irelevantna, i slučaj kada je reset uvek dozvoljen $(\varphi_{Reset} = false)$, i tada $p_{Reset}$ mora da bude definisana tako da iz svakog stanja može da uspostavi početno stanje.
+Akcija $f$ ima oblik $f(v_1,...,v_n)$, gde je $f$ $n$-arni akcijski simbol a svako $v_i$ vrednost koja odgovara ulaznom parametru $p_f$. Kažemo da je akcija $f(\bar{v})$ dozvoljena u stanju $s$ ako $s \models \varphi(\bar{v})$. Primetimo dva specijalna slučaja: kada je reset uvek zabranjen $(\varphi_{Reset} = false)$, kada je definicija $p_{Reset}$ irelevantna, i slučaj kada je reset uvek dozvoljen $(\varphi_{Reset} = false)$, i tada $p_{Reset}$ mora da bude definisana tako da iz svakog stanja može da uspostavi početno stanje.
 
-I IUT i model posmatramo kao interfejs automate (eng. interface automata) kako bismo formalno uspostavili vezu između njih \cite{interfaceAutomata}.
+I IUT i model posmatramo kao interfejs automate (eng. \emph{interface automata}) kako bismo formalno uspostavili vezu između njih \cite{interfaceAutomata}.
 Interfejs automat M ima sledeće komponente:
 \begin{itemize}
 \item Skup stanja $S$
-\item Neprazan podskup početnih stanja $S_init$ skupa $S$
+\item Neprazan podskup početnih stanja $S_{init}$ skupa $S$
 \item Disjunktni skupovi kontrolisanih akcija $A_c$ i posmatranih akcija $A_o$
 \item Dozvoljavajuće funkcije $\Gamma_c$ i $\Gamma_o$ podskupova $A_c$ i $A_o$, redom.
 \item Prelazna funkcija $\sigma$ koja slika ulazno stanje i dozvoljavajuću akciju u izlazno stanje
 \end{itemize}
 
-Neka je P deterministčki model $(Stanja, Vrednosti, s_0, \Sigma, \Sigma_c, \Sigma_0, Reset, (\varphi_f, p_f)f \in \Sigma)$. Prema prethodnoj definiciji, intefejs automat P izgleda:
+Neka je P deterministički model $(Stanja, Vrednosti, s_0, \Sigma, \Sigma_c, \Sigma_0, Reset, (\varphi_f, p_f)f \in \Sigma)$. Prema prethodnoj definiciji, intefejs automat P izgleda:
 
 \begin{itemize}
 \item $S_{[[P]]} = States$
@@ -529,7 +527,7 @@ Neka je P deterministčki model $(Stanja, Vrednosti, s_0, \Sigma, \Sigma_c, \Sig
 \noindent
 Algoritam:
 
-IUT I i model M, su oba predstavljeni kao interfejs automati.
+IUT i model, su oba predstavljeni kao interfejs automati.
 Kako smo formalno definisali strukture modela, ostaje još da opišemo način izbora naredne akcije u algoritmu:
 \begin{itemize}
 \item Ukoliko nema mogućih akcija\\ prekini trenutni test. 
@@ -541,7 +539,7 @@ Kako smo formalno definisali strukture modela, ostaje još da opišemo način iz
 Algoritam prati težine transakcija u trenutnom testu. Sledeća kontrolisana akcija se bira iz nepraznog skupa dozvoljenih akcija koristeći datu strategiju:
 
 Za ovaj problem koristićemo algoritam mašinskog učenja koji spada u učenje uslovljavanjem, o kome su osnove date ranije u radu. 
-Cena testa se povećava srazmerno broju koraka kako bi se pokrio zadati procenat svih ponašanja. Iscrpno pokrivanje svih ponašanja je najčešće nemoguće. Umesto da posmatramo minimizaciju cene, možemo pretpostaviti da imamo fiksne resurse i da maksimizujemo procenat pokrivenih ponašanja. Bitno je da minimizujemo broj vraćanja u početno stanje (eng. backtracking), zato što to može biti skupa operacija. %ONLINE
+Cena testa se povećava srazmerno broju koraka kako bi se pokrio zadati procenat svih ponašanja. Iscrpno pokrivanje svih ponašanja je najčešće nemoguće. Umesto da posmatramo minimizaciju cene, možemo pretpostaviti da imamo fiksne resurse i da maksimizujemo procenat pokrivenih ponašanja. Bitno je da minimizujemo broj vraćanja u početno stanje (eng. \emph{backtracking}), zato što to može biti skupa operacija. %ONLINE
 
 Odabir sledeće akcije:
 \begin{itemize}
