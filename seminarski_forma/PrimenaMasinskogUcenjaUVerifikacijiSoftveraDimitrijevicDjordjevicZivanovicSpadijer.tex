@@ -2,6 +2,7 @@
 
 \documentclass[a4paper]{article}
 
+
 \usepackage{color}
 \usepackage{url}
 \usepackage{amsthm}
@@ -22,22 +23,24 @@
 \newtheorem{primer}{Primer}[section]
 
 
+
 \begin{document}
 
 %\renewcommand{\abstractname}{Apstrakt} %pisace Sazetak ako se ne ukljuci ova naredba
 
 \title{Primena mašinskog učenja u verifikaciji softvera\\ \small{Seminarski rad u okviru kursa\\Metodologija stručnog i naučnog rada\\ Matematički fakultet}}
 
-\author{Nikola Dimitrijević, Rastko Đorđević,\\
- Luka Živanović, Dimitrije Špadijer\\
- nikoladim95@gmail.com, mi14078@alas.matf.bg.ac.rs,\\
-  mi14164@alas.matf.bg.ac.rs, mm11021@alas.matf.bg.ac.rs}
+\author{Nikola Dimitrijević \footnote{nikoladim95@gmail.com}\\
+        Rastko Đorđević \footnote{mi14078@alas.matf.bg.ac.rs}\\
+        Luka Živanović \footnote{mi14164@alas.matf.bg.ac.rs}\\
+        Dimitrije Špadijer \footnote{mm11021@alas.matf.bg.ac.rs}\\
+ }
 %\date{9.~april 2015.}
 \vspace*{-3cm}
     {\let\newpage\relax\maketitle}
 
 \abstract{
-Verifikacija softvera je izuzetno važna oblast računarstva. Softver polako uspeva da se uplete u najneočekivanije aspekte naših života i zbog toga njegova ispravnost postaje od sve većeg značaja. Neispravan softver može imati katastrofalne posledice, koje uključuju i izgubljene ljudske živote. Sa druge strane, tehnike mašinskog učenja se ubrzano u\-sa\-vr\-ša\-va\-ju i neprekidno uspevaju da ostvare iznenađujuće dobre rezultate u svim oblastima računarstva. U ovom radu biće predstavljeni neki od bitnijih pomaka u sudaru pomenutih oblasti sa ciljem da zainteresuje što veći broj ljudi da se pridruže pohodu za sprečavanje bagova korišćenjem modernih tehnika mašinskog učenja.
+Softver polako uspeva da se uplete u najneočekivanije aspekte naših života i zbog toga njegova ispravnost postaje od sve većeg značaja. Neispravan softver može imati katastrofalne posledice, koje uključuju i izgubljene ljudske živote. Zbog toga je verifikacija softvera izuzetno važna oblast računarstva. Sa druge strane, tehnike mašinskog učenja se ubrzano u\-sa\-vr\-ša\-va\-ju i neprekidno uspevaju da ostvare iznenađujuće dobre rezultate u svim oblastima računarstva. U ovom radu biće predstavljeni neki od bitnijih pomaka u sudaru pomenutih oblasti sa ciljem da zainteresuje što veći broj ljudi da se pridruže u pohodu u sprečavanju bagova korišćenjem modernih tehnika mašinskog učenja.
 
 %Molim Vas da kada budete predavali seminarski rad, imenujete datoteke tako da sadrže temu seminarskog rada, kao i imena i prezimena članova grupe (ili samo temu i prezimena, ukoliko je sa imenima predugačko). Predaja seminarskih radova biće isključivo preko web forme, a NE slanjem mejla.}
 
@@ -52,7 +55,7 @@ Verifikacija softvera je izuzetno važna oblast računarstva. Softver polako usp
 \label{sec:uvod}
 % ==============================================================================
 
-\par Računarska rešenja se koriste za svemirske rakete, medicinsku opremu, samovozeće automobile i u raznim drugim oblastima. Sve veća zastupljenost i složenost softvera dovodi do veće verovatnoće katastrofalnog ishoda u slučaju greške. Privremena nedostupnost vlastitog novca, pad satelita, prekomerno doziranje terapije pacijentima i puštanje nasilnih zatvorenika na slobodu su primeri stvarnih događaja usled grešaka u programima.
+\par Softverska rešenja se koriste za svemirske rakete, medicinsku opremu, samovozeće automobile i u raznim drugim oblastima. Sve veća zastupljenost i složenost softvera dovodi do veće verovatnoće katastrofalnog ishoda u slučaju greške. Privremena nedostupnost vlastitog novca, pad satelita, prekomerno doziranje terapije pacijentima i puštanje nasilnih zatvorenika na slobodu su primeri stvarnih događaja usled grešaka u softveru.
 
 \par Verifikacija softvera je oblast računarstva koja se bavi analizom soft\-ve\-ra i ispitivanjem ispravnosti programskog koda. Postoje razni alati za verifikaciju koji se uspešno koriste, ali postoje i mnoga ograničenja u procesu analize koda koje je teško prevazići, a neke je čak i nemoguće prevazići. Analiziranje programskog koda se zasniva na formalnim matematičkim modelima koje je teško automatizovati. Mašinsko učenje je postalo vrlo popularno i to sa pravom, jer ima velike uspehe u raznim domenima, pa je i prirodno nalaziti njegove primene u okviru verifikacije softvera. Ovaj rad se nastavlja na \cite{micovic} pa ovde neće biti prikazane već pomenute primene algoritama mašinskog učenja.
 
@@ -87,7 +90,7 @@ Verifikacija softvera je izuzetno važna oblast računarstva. Softver polako usp
 
 \par Za razliku od dinamičke verifikacije softvera, \textit{statička verifikacija} podrazumeva analizu ispravnosti softvera bez njegovog pokretanja. Osnovna podela statičke verifikacije je na \textit{pregled koda} (eng.~{\em code review}) i na \textit{automatizovanu verifikaciju}, koja će biti ključna za ostatak rada i biće podrazumevana kada se navodi pojam statička verifikacija.
 
-\par Kao što je već pomenuto, ne postoji način da se za svaki program utvrdi da li se on zaustavlja ili ne, tako da nam i statička verifikacija ne može uvek dati željeni odgovor. Ipak, statička verifikacija može da nam da uvid u kvalitet koda i njegove propuste za mnoge netrivijalne probleme i zbog toga se razvijaju tehnike kojim bi skup takvih problema rastao, a vreme obrade se smanjivalo. 
+\par Kao što je već pomenuto, ne postoji način da se za svaki program utvrdi da li se on zaustavlja ili ne, tako da nam i statička verifikacija ne može uvek dati željeni odgovor. Ipak, statička verifikacija može da nam da uvid u kvalitet koda i njegove propuste za mnoge netrivijalne probleme i zbog toga se razvijaju tehnike kojim bi skup takvih problema rastao, a vreme obrade se smanjivalo.
 
 \par Neke od bitnijih tehnika statičke verifikacije su:
 \begin{itemize}
@@ -110,7 +113,7 @@ Verifikacija softvera je izuzetno važna oblast računarstva. Softver polako usp
 
 \par Mašinsko učenje je posebno pogodno za probleme koje je čoveku teško definisati a izuzetno lako za rešiti i u kojima je prihvatljiva poneka greška. Zbog dopuštanja povremenih grešaka u izvršavanju, ova oblast na prvi pogled izgleda kao nepogodna za rešavanje problema statičke verifikacije softvera. Ipak u stanju je da doprinese kao dodatni alat za rešavanje raznih problema koji se mogu naći u statičkoj verifikaciji ako njime rukuje prava osoba, čak i ako ne može da obeća kompletno rešenje svih problema.
 
-\par Obično se identifikuju tri oblasti mašinskog učenja: \textit{nadgledano učenje} (eng. \emph{supervised learning}), \textit{nenadgledano učenje} (eng. \emph{unsupervised learning}) i \textit{učenje uslovljavanjem} (eng. \emph{reinforcement learning}). Nadgledano učenje odlikuje da pored ulaznih podataka postoji i njemu odgovarajući željeni izlaz. Model je zadužen za učenje pravila nad datim parovima ulaza i izlaza. Sa druge strane, kod nenadgledanog učenja dati su samo ulazni podaci pri čemu na algoritmu ostaje da pronađe strukturu u podacima. 
+\par Obično se identifikuju tri oblasti mašinskog učenja: \textit{nadgledano učenje} (eng. \emph{supervised learning}), \textit{nenadgledano učenje} (eng. \emph{unsupervised learning}) i \textit{učenje uslovljavanjem} (eng. \emph{reinforcement learning}). Nadgledano učenje odlikuje da pored ulaznih podataka postoji i njemu odgovarajući željeni izlaz. Model je zadužen za učenje pravila nad datim parovima ulaza i izlaza. Sa druge strane, kod nenadgledanog učenja dati su samo ulazni podaci pri čemu na algoritmu ostaje da pronađe strukturu u podacima.
 % TODO da li je naredna recenica suvisna (ne sme pasus da ima samo jednu recenicu, zato spojih sa gornjim)
 Učenje uslovljavanjem se može videti kao oblast između dve pret\-hod\-no pomenute oblasti. U okviru učenja uslovljavanjem mora se rešiti problem preduzimanjem niza akcija, koje su međusobno povezane, kako bi se maksimizovala konačna nagrada.
 
@@ -123,19 +126,19 @@ Učenje uslovljavanjem se može videti kao oblast između dve pret\-hod\-no pome
 \subsection{Evaluacija modela i mere kvaliteta}
 
 %TODO da li je naredna rečenica suvišna? (ne sme pasus samo 1 recenicu)
-%Ukratko će biti predstavljeni termini vezani za \textit{meru kvaliteta} modela, 
+%Ukratko će biti predstavljeni termini vezani za \textit{meru kvaliteta} modela,
 %kako bi bilo olakšano razumevanje postignutih rezultata u ostatku rada.
 
 \par \textit{Evaluacija modela} predstavlja numeričko predstavljanje sposobnosti predviđanja datog modela na određenoj skali i direktno se oslanja na mere kvaliteta. Mere koje se najčešće sreću u klasifikaciji su \textit{tačnost}, \textit{preciznost}, \textit{odziv} i \textit{F1 mera}. Sve navedene mere izvedene su iz \textit{matrice konfuzije} \ref{table:matrica_konfuzije}.
 
 \begin{table}[h]
 	\centering
-	\begin{tabular}{ |c|cc| } 
+	\begin{tabular}{ |c|cc| }
 		\hline
-		Stvarno / Predviđeno & Pozitivno & Negativno \\ 
+		Stvarno / Predviđeno & Pozitivno & Negativno \\
 		\hline
-		Pozitivno & Stvarno Pozitivno & Lažno Negativno \\ 
-		Negativno & Lažno Pozitivno & Stvarno Negativno \\ 
+		Pozitivno & Stvarno Pozitivno & Lažno Negativno \\
+		Negativno & Lažno Pozitivno & Stvarno Negativno \\
 		\hline
 	\end{tabular}
 	\caption{Matrica konfuzije}
@@ -143,7 +146,7 @@ Učenje uslovljavanjem se može videti kao oblast između dve pret\-hod\-no pome
 	%\caption{ tabelica stagod}
 \end{table}
 
-\par Stvarno pozitivne i stvarno negativne instance su one instance koje su ispravno određene od strane modela. Lažno pozitivne instance su negativne instance za koje je od strane modela predviđeno da su pozitivne, dok su lažno negativne instance zapravo pozitivne instance koje je model loše klasifikovao kao negativne. 
+\par Stvarno pozitivne i stvarno negativne instance su one instance koje su ispravno određene od strane modela. Lažno pozitivne instance su negativne instance za koje je od strane modela predviđeno da su pozitivne, dok su lažno negativne instance zapravo pozitivne instance koje je model loše klasifikovao kao negativne.
 
 % TODO dodati šta koje mere zapravo rade, zašto tačnost nije savršena, napomenuti da ima još raznih
 \par Tačnost klasifikacije predstavlja procenat uspešno klasifikovanih instanci u odnosu na ukupan broj instanci. Preciznost je udeo ispravno pronađenih pozitivnih instanci u svim instancama koje su proglašene za pozitivne. Odziv je udeo ispravno pronađenih pozitivnih instanci u svim zaista pozitivnim instancama. Preciznost i odziv su dve mere koje najviše ima smisla razmatrati zajedno i način na koji se to najčešće radi je F1 mera, koja predstavlja njihovu harmonijsku sredinu.
@@ -214,7 +217,7 @@ i indukovana teorija
 	  op top : Stack -> Element .
 	  var X : Stack .
 	  eq top(X) = a .
-	endo	
+	endo
 \end{verbatim}
 jednostavno se vidi da je skup testova koherentan, ali da indukovana teo\-ri\-ja ne odgovara specifikaciji steka. Prema tome, skup testova $T_1$ nije adekvatan za model steka. Problem je nastao zbog nedovoljne veličine skupa testa, pa hipoteza induktivnog učenja nije bila zadovoljena.
 \end{primer}
@@ -249,104 +252,104 @@ Jednostavno se vidi da je i skup testova $T_2$ koherentan, pošto indukovana teo
 % ==============================================================================
 
 % šta su statički analizatori
-Da bi bili korisni u praksi, moderni statički analizatori moraju precizno 
-modelovati ne samo efekte naredbi programskog jezika, već i efekte biblioteka 
-i okvira (eng. \emph{frameworks}) koji mogu da se koriste. Ručno adresiranje ovih izazova 
-je izuzetno teško zbog priliva novih biblioteka, kao i kompleksnosti i 
-netrivijalnosti sveobuhvatne analize. U ovoj sekciji biće opisan nov 
-automatski pristup za kreiranje statičkih analizatora koji se oslanja na 
-korišćenje tehnika mašinskog učenja. Detaljan prikaz pristupa se može naći 
+Da bi bili korisni u praksi, moderni statički analizatori moraju precizno
+modelovati ne samo efekte naredbi programskog jezika, već i efekte biblioteka
+i okvira (eng. \emph{frameworks}) koji mogu da se koriste. Ručno adresiranje ovih izazova
+je izuzetno teško zbog priliva novih biblioteka, kao i kompleksnosti i
+netrivijalnosti sveobuhvatne analize. U ovoj sekciji biće opisan nov
+automatski pristup za kreiranje statičkih analizatora koji se oslanja na
+korišćenje tehnika mašinskog učenja. Detaljan prikaz pristupa se može naći
 u radu \cite{staticAnalyzer}.
 
 % formalan prikaz problema
-Formalan prikaz problema koji će biti obrađen u nastavku glasi: za dati 
-specifični domenski jezik $\mathcal{L}$, koji služi za opis pravila analize, 
-skup $\mathcal{D}$ programa u nekom programskom jeziku (npr. JavaScript), i 
-funkciju apstrakcije $\alpha$ koja definiše kako se konkretna ponašanja 
-apstrahuju, cilj je naučiti analizator $pa$ koji pripada skupu $\mathcal{L}$ 
-takav da se programi iz $\mathcal{D}$ analiziraju maksimalno precizno u odnosu 
+Formalan prikaz problema koji će biti obrađen u nastavku glasi: za dati
+specifični domenski jezik $\mathcal{L}$, koji služi za opis pravila analize,
+skup $\mathcal{D}$ programa u nekom programskom jeziku (npr. JavaScript), i
+funkciju apstrakcije $\alpha$ koja definiše kako se konkretna ponašanja
+apstrahuju, cilj je naučiti analizator $pa$ koji pripada skupu $\mathcal{L}$
+takav da se programi iz $\mathcal{D}$ analiziraju maksimalno precizno u odnosu
 na $\alpha$.
 
 
 % prvi problem
-Postoje dva ključna izazova pri izgradnji statičkog analizatora. Prvo, statički 
-analizatori su tipično opisani pomoću pravila, dok postojeće te\-hni\-ke mašinskog 
-učenja kao rezultat daju kombinaciju postojećih pravila. Ako bi se ove tehnike 
-primenile na programsku analizu \cite{predictingProgramProperties} dobijena 
-pravila ne bi bila interesantna. Iz tog razloga uvodi se specifični domenski 
+Postoje dva ključna izazova pri izgradnji statičkog analizatora. Prvo, statički
+analizatori su tipično opisani pomoću pravila, dok postojeće te\-hni\-ke mašinskog
+učenja kao rezultat daju kombinaciju postojećih pravila. Ako bi se ove tehnike
+primenile na programsku analizu \cite{predictingProgramProperties} dobijena
+pravila ne bi bila interesantna. Iz tog razloga uvodi se specifični domenski
 jezik za opis pravila analize, nad kojim se mogu učiti zanimljiva pravila analize.
 
 
 % detaljan opis rešenja prvog problema
-Izuzetno važan problem prilikom učenja programskih analizatora je ogromna količina 
-programa nad L zato što je broj kombinacija grana i potprograma previše veliki. 
-Međutim, može se primetiti da se elementi skupa L mogu predstaviti kao drvo, čiji 
-unutrašnji čvorovi predstavljaju čuvare, koji su kondicionalne naredbe, a čiji 
-listovi predstavljaju akcije koje se mogu izvršiti. Koristeći ovo zapažanje problem 
-učenja analizatora u L se može predstaviti kao problem učenja stabla odlučivanja, 
-što omogućava korišćenje postojećih algoritama mašinskog učenja za 
+Izuzetno važan problem prilikom učenja programskih analizatora je ogromna količina
+programa nad $\mathcal{L}$ zato što je broj kombinacija grana i potprograma previše veliki.
+Međutim, može se primetiti da se elementi skupa L mogu predstaviti kao drvo, čiji
+unutrašnji čvorovi predstavljaju čuvare, koji su kondicionalne naredbe, a čiji
+listovi predstavljaju akcije koje se mogu izvršiti. Koristeći ovo zapažanje problem
+učenja analizatora u L se može predstaviti kao problem učenja stabla odlučivanja,
+što omogućava korišćenje postojećih algoritama mašinskog učenja za
 rešenje datog problema.
 
-Prema tome, ID3 \cite{id3} algoritam se proširuje kako bi mogao da obradi akcije 
-programa u listovima, i da obezbedi korektnost rezultujuće analize $pa$ nad 
-$\mathcal{L}$. Kao i ID3, njegova modifikacija je pohlepna procedura koja gradi 
-stablo odlučivanja odozgo-nadole, pritom lokalno maksimizujući metriku koja se 
-naziva informaciona dobit. Za dati predikat $g$, koji odgovara čuvaru, 
-informaciona dobit kvantifikuje koliko se popravlja procena svih programa u 
-skupu $\mathcal{D}$, ukoliko se analiza proširi deljenjem skupa podataka 
+Prema tome, ID3 \cite{id3} algoritam se proširuje kako bi mogao da obradi akcije
+programa u listovima, i da obezbedi korektnost rezultujuće analize $pa$ nad
+$\mathcal{L}$. Kao i ID3, njegova modifikacija je pohlepna procedura koja gradi
+stablo odlučivanja odozgo-nadole, pritom lokalno maksimizujući metriku koja se
+naziva informaciona dobit. Za dati predikat $g$, koji odgovara čuvaru,
+informaciona dobit kvantifikuje koliko se popravlja procena svih programa u
+skupu $\mathcal{D}$, ukoliko se analiza proširi deljenjem skupa podataka
 pomoću predikata $g$.
 
 
 % drugi problem
-Drugi znatno izazovniji problem pri izgradnji statičkog analizatora je 
-kako izbeći učenje statičkog analizatora koji se ponaša dobro 
-na podacima za treniranje $\mathcal{D}$, ali koji ne uspeva da 
-generalizuje na nove programe van skupa $\mathcal{D}$. Ovaj problem se u mašinskom 
-učenju naziva preprilagođavanje. Standardne tehnike koje se koriste za suočavanje 
-sa ovim problemom \cite{statisticalLearningTheory}, kao što je regularizacija su 
-nedovoljne u ovom slučaju. Osnovna ideja regularizacije je da pojednostavi skup 
-modela koji se mogu naučiti, što je u kontradikciji sa neophodnom osobinom 
-statičkog analizatora da ispravno kategoriše granični slučajeve. Ovaj problem 
-se rešava procedurom učenja vodjenog kontraprimerima koja generiše nove 
-programe, koristeći programsku semantiku, za koje naučeni analizator daje 
-pogrešne rezultate i koji služe za dalje učenje. 
+Drugi znatno izazovniji problem pri izgradnji statičkog analizatora je
+kako izbeći učenje statičkog analizatora koji se ponaša dobro
+na podacima za treniranje $\mathcal{D}$, ali koji ne uspeva da
+generalizuje na nove programe van skupa $\mathcal{D}$. Ovaj problem se u mašinskom
+učenju naziva preprilagođavanje. Standardne tehnike koje se koriste za suočavanje
+sa ovim problemom \cite{statisticalLearningTheory}, kao što je regularizacija su
+nedovoljne u ovom slučaju. Osnovna ideja regularizacije je da pojednostavi skup
+modela koji se mogu naučiti, što je u kontradikciji sa neophodnom osobinom
+statičkog analizatora da ispravno kategoriše granične slučajeve. Ovaj problem
+se rešava procedurom učenja vođenog kontraprimerima koja generiše nove
+programe, koristeći programsku semantiku, za koje naučeni analizator daje
+pogrešne rezultate i koji služe za dalje učenje.
 
 
 % detaljan opis rešenja drugog problema
-Ključna komponenta ovog pristupa je proročište(en. oracle) koje brzo može 
-testirati korektnost statičkog analizatora, i ako je analizator korektan 
-pronaći kontraprimere. Proročište kao ulaz uzima analizator $pa$ i skup 
-podataka $\mathcal{D}$ koji je korišćen prilikom učenja analizatora $pa$ 
-i kao izlaz vraća kontraprimere programa na kojima se analizator ne 
+Ključna komponenta ovog pristupa je proročište (eng. \emph{oracle}) koje brzo može
+testirati korektnost statičkog analizatora, i ako je analizator korektan
+pronaći kontraprimere. Proročište kao ulaz uzima analizator $pa$ i skup
+podataka $\mathcal{D}$ koji je korišćen prilikom učenja analizatora $pa$
+i kao izlaz vraća kontraprimere programa na kojima se analizator ne
 ponaša korektno.
 
-Najveći problem koji se mora rešiti je brz pronalazak kontraprimera u prostoru 
-pretrage svih mogućih programa. Kao što je pokazano u radu \cite{staticAnalyzer} 
-nasumično generisanje kontraprimera ne funkcioniše usled prirode prostora 
-pretrage koji može biti čak i beskonačan. Pretraga se ubrzava dizajnom 
-proročišta opšte namene koje je bazirano na idejama modernih tehnika testiranja 
-\cite{testing}. 
+Najveći problem koji se mora rešiti je brz pronalazak kontraprimera u prostoru
+pretrage svih mogućih programa. Kao što je pokazano u radu \cite{staticAnalyzer}
+nasumično generisanje kontraprimera ne funkcioniše usled prirode prostora
+pretrage koji može biti čak i beskonačan. Pretraga se ubrzava dizajnom
+proročišta opšte namene koje je bazirano na idejama modernih tehnika testiranja
+\cite{testing}.
 
-Novi programi se generišu izvođenjem modifikacija nad programima u skupu 
-$\mathcal{D}$. Ove modifikacije se pažljivo biraju eksploatisanjem strukture 
-trenutne analize $pa$ na dva načina: (i) da bi se izabrao određeni program i 
-pozicija za modifikaciju, i (ii) da bi se odredila modifikacija koja će se 
+Novi programi se generišu izvođenjem modifikacija nad programima u skupu
+$\mathcal{D}$. Ove modifikacije se pažljivo biraju eksploatisanjem strukture
+trenutne analize $pa$ na dva načina: (i) da bi se izabrao određeni program i
+pozicija za modifikaciju, i (ii) da bi se odredila modifikacija koja će se
 izvršiti na toj poziciji.
 
 
 % primene
-Metoda je pokazana kroz implementaciju pristupa i evaluaciju na problemu analize 
-pravila jezika JavaScript. Naučena pravila za pokazuje-na analizu, kao i za 
-analizu alokacionih mesta, su ne samo interesantna, već su i propuštena od 
-strane postojećih najmodernijih ručno podešenih statičkih analizatora kao što 
+Metoda je pokazana kroz implementaciju pristupa i evaluaciju na problemu analize
+pravila jezika JavaScript. Naučena pravila za pokazuje-na analizu, kao i za
+analizu alokacionih mesta, su ne samo interesantna, već su i propuštena od
+strane postojećih najmodernijih ručno podešenih statičkih analizatora kao što
 su Flow \cite{flow} koji koristi Facebook, i TAJS \cite{tajs}.
 
 % doprinosi rada
-Glavni doprinosi opisanog rada su sledeći. Metod učenja pravila sta\-ti\-čkih 
-analizatora koji dobro generalizuje zbog pažljivog generisanja kontraprimera 
-nad pravilima koja su naučena u tom trenutnku. Algoritam mašinskog učenja baziran 
-na drvetu odluke za učenje pravila analize iz podataka, koji uči da 
-pre-aproksimira kada skup podataka ne može da se obradi precizno. 
+Glavni doprinosi opisanog rada su sledeći. Metod učenja pravila sta\-ti\-čkih
+analizatora koji dobro generalizuje zbog pažljivog generisanja kontraprimera
+nad pravilima koja su naučena u tom trenutku. Algoritam mašinskog učenja baziran
+na drvetu odluke za učenje pravila analize iz podataka, koji uči da
+pre-aproksimira kada skup podataka ne može da se obradi precizno.
 
 \subsection{Od izvornog koda do istreniranih modela}
 \label{subsec:pregled}
@@ -393,7 +396,7 @@ ARFF datoteke se sastoje od nabrajanja atributa odnosno njihovih imena i tipova,
 Glavni problem koji se rešava se može podeliti u tri potproblema koji su:
 %list
 \begin{enumerate}
-\item Kako transofmisati izvorni kod u odgovarajući format za klasifikatore?
+\item Kako transformisati izvorni kod u odgovarajući format za klasifikatore?
 \item Kako trenirati te klasifikatore i koje podatke treba koristiti?
 \item Koje su karakteristike potrebne algoritmu i koji je najbolji za dati problem?
 \end{enumerate}
@@ -420,8 +423,9 @@ Za treniranje je potreban veliki broj različitih izvornih kodova, a pritom je p
 Izvorni kodovi od kojih se prave ulazi za treniranje su pokupljeni sa javno dostupnih repozitorijuma, što je dvostruko zgodno:
 velika količina datoteka se skupi na taj način, a pritom je moguće dobiti primere sa greškom i bez greške tako što se posmatraju različite verzije datoteka.
 
-Na prvi pogled je dovoljno uzeti izlaz programa CMore u ARFF formatu za datoteku sa greškom i bez nje, ali on nema uvid u to šta je greška nego analizira celu datoteku i zato
-generiše izlaze koji mogu imati više hiljada linija od kojih je većina nastala od ispravnih delova koda.
+Na prvi pogled je dovoljno uzeti izlaz programa CMore u ARFF formatu za datoteku sa greškom i bez nje.
+Međutim, CMore nema uvid u to šta je greška nego analizira celu datoteku.
+Zbog toga generiše izlaze koji mogu imati više hiljada linija od kojih je većina nastala od ispravnih delova koda.
 Potrebno je izdvojiti samo one linije koda koje su dovele do greške i njihove parove bez te greške.
 Za tu svrhu se koristi program ``Holmes'' koji upoređuje dve ARFF datoteke i na izlazu se dobiju dve nove ARFF datoteke koje sadrže samo potrebne  instance.
 
@@ -464,9 +468,9 @@ loše performanse što se tiče lažno pozitivnih.
 \label{sec:dinamcikaPrimena}
 % ==============================================================================
 
-Priroda algoritama mašinskog učenja mnogo više odgovara problemima koji se sreću 
-u dinamičkoj verifikaciji softvera. Stoga može se naći pregršt primena mašinskog 
-učenja u ovoj oblasti. Radi potpunosti, u nastavku će biti opisana jedna od tih 
+Priroda algoritama mašinskog učenja mnogo više odgovara problemima koji se sreću
+u dinamičkoj verifikaciji softvera. Stoga može se naći pregršt primena mašinskog
+učenja u ovoj oblasti. Radi potpunosti, u nastavku će biti opisana jedna od tih
 primena, koja se oslanja na učenje uslovljavanjem.
 
 
@@ -480,7 +484,7 @@ Onlajn testiranje je tehnika u kojoj se kreiranje testa i njegovo izvršavanje r
 
 Razlikovaćemo poteze testera od IUTa. Akcije testera ćemo nazivati kontrolisane akcije, dok ćemo akcije IUTa nazivati posmatrane akcije. Greška usklađenosti nastaje kada IUT odbije kontrolisanu akciju modela ili kada model odbije posmatranu akciju IUTa.
 
-Stanja modela čine memorijske lokacije programa koje su preslikane u konačni skup vrednosti. 
+Stanja modela čine memorijske lokacije programa koje su preslikane u konačni skup vrednosti.
 Pravila ažuriranja su konačan skup funkcija koje preslikavaju vrednosti iz domena stanja u domen stanja. Pravilo ažuriranja $p$ može biti parametrizovano parametrima $\bar{x}$.
 Instanciranje p[$\bar{x}$] ulaznim vrednostima $\bar{v}$ odgovarajućeg tipa, obeležava se p[$\bar{v}$].
 Generalno, pravila ažuriranja mogu biti nedeterministička, tako da za isto ulazno stanje i vrednosti, može da ima različita izlazna stanja. Da bismo to modelovali, definišemo relaciju $[[p]] \subseteq Stanja \times Vrednost^n \times Stanja$.
@@ -517,9 +521,9 @@ Neka je P deterministički model $(Stanja, Vrednosti, s_0, \Sigma, \Sigma_c, \Si
 \begin{itemize}
 \item $S_{[[P]]} = States$
 \item $S^{init}_{[[P]]} = \{s_0\}$
-\item $A^c_{[[P]]} = \{ f(\bar{v}) | f \in \Sigma^c, \bar{v} \subseteq Values \}$ 
+\item $A^c_{[[P]]} = \{ f(\bar{v}) | f \in \Sigma^c, \bar{v} \subseteq Values \}$
 \item $A^o_{[[P]]} = \{ f(\bar{v}) | f \in \Sigma^o, \bar{v} \subseteq Values \}$
-\item $\Gamma^c_{[[P]]} = \{ f(\bar{v}) \in A^c_{[[P]]} | s \models \varphi_f(\bar{v}) \}$ 
+\item $\Gamma^c_{[[P]]} = \{ f(\bar{v}) \in A^c_{[[P]]} | s \models \varphi_f(\bar{v}) \}$
 \item $\Gamma^o_{[[P]]} = \{ f(\bar{v}) \in A^o_{[[P]]} | s \models \varphi_f(\bar{v}) \}$
 \item $\sigma_{[[P]]}(s, f(\bar{v})) = [[P_f]](s, \bar{v}) (for f \in \Sigma, s \in States, s \models \varphi_f(\bar{v}))$
 \end{itemize}
@@ -530,7 +534,7 @@ Algoritam:
 IUT i model, su oba predstavljeni kao interfejs automati.
 Kako smo formalno definisali strukture modela, ostaje još da opišemo način izbora naredne akcije u algoritmu:
 \begin{itemize}
-\item Ukoliko nema mogućih akcija\\ prekini trenutni test. 
+\item Ukoliko nema mogućih akcija\\ prekini trenutni test.
 \item Ukoliko nema mogućeg izbora za kontrolisanu akciju\\ vrati posmatranu.
 \item Ukoliko nema mogućeg izbora za posmatranu akciju\\ vrati kontrolisanu.
 \item Inače\\ izaberi između kontrolisane i posmatrane akcije.
@@ -538,7 +542,7 @@ Kako smo formalno definisali strukture modela, ostaje još da opišemo način iz
 
 Algoritam prati težine transakcija u trenutnom testu. Sledeća kontrolisana akcija se bira iz nepraznog skupa dozvoljenih akcija koristeći datu strategiju:
 
-Za ovaj problem koristićemo algoritam mašinskog učenja koji spada u učenje uslovljavanjem, o kome su osnove date ranije u radu. 
+Za ovaj problem koristićemo algoritam mašinskog učenja koji spada u učenje uslovljavanjem, o kome su osnove date ranije u radu.
 Cena testa se povećava srazmerno broju koraka kako bi se pokrio zadati procenat svih ponašanja. Iscrpno pokrivanje svih ponašanja je najčešće nemoguće. Umesto da posmatramo minimizaciju cene, možemo pretpostaviti da imamo fiksne resurse i da maksimizujemo procenat pokrivenih ponašanja. Bitno je da minimizujemo broj vraćanja u početno stanje (eng. \emph{backtracking}), zato što to može biti skupa operacija. %ONLINE
 
 Odabir sledeće akcije:
