@@ -135,7 +135,7 @@ Učenje uslovljavanjem se može videti kao oblast između dve pret\-hod\-no pome
 	\centering
 	\begin{tabular}{ |c|cc| }
 		\hline
-		Stvarno / Predviđeno & Pozitivno & Negativno \\
+		Stvarno $\backslash$  Predviđeno & Pozitivno & Negativno \\
 		\hline
 		Pozitivno & Stvarno Pozitivno & Lažno Negativno \\
 		Negativno & Lažno Pozitivno & Stvarno Negativno \\
@@ -303,7 +303,7 @@ pomoću predikata $g$.
 % drugi problem
 Drugi znatno izazovniji problem pri izgradnji statičkog analizatora je
 kako izbeći učenje statičkog analizatora koji se ponaša dobro
-na podacima za treniranje $\mathcal{D}$, ali koji ne uspeva da
+na podacima za treniranje $\mathcal{D}$, ali koji ne uspeva da se
 generalizuje na nove programe van skupa $\mathcal{D}$. Ovaj problem se u mašinskom
 učenju naziva preprilagođavanje. Standardne tehnike koje se koriste za suočavanje
 sa ovim problemom \cite{statisticalLearningTheory}, kao što je regularizacija su
@@ -403,7 +403,7 @@ Glavni problem koji se rešava se može podeliti u tri potproblema koji su:
 
 
 
-Odgovor na prvo pitanje je softver ``CMore'', program koji može da pretvori izvorni kod programskog
+Odgovor na prvo pitanje je softver ``CMore'' \cite{staticFeatures}, program koji može da pretvori izvorni kod programskog
 jezika C u ARFF datoteku. Glavna ideja je da treba da bude u mogućnosti da prati tok izvršavanja programa
 i uhvati stanja svih uključenih promenljivih. Pošto su zapamćena sva stanja moguće je otkriti više vrsta
 grešaka pristupa memoriji.
@@ -427,7 +427,7 @@ Na prvi pogled je dovoljno uzeti izlaz programa CMore u ARFF formatu za datoteku
 Međutim, CMore nema uvid u to šta je greška nego analizira celu datoteku.
 Zbog toga generiše izlaze koji mogu imati više hiljada linija od kojih je većina nastala od ispravnih delova koda.
 Potrebno je izdvojiti samo one linije koda koje su dovele do greške i njihove parove bez te greške.
-Za tu svrhu se koristi program ``Holmes'' koji upoređuje dve ARFF datoteke i na izlazu se dobiju dve nove ARFF datoteke koje sadrže samo potrebne  instance.
+Za tu svrhu se koristi program ``Holmes'' \cite{staticFeatures} koji upoređuje dve ARFF datoteke i na izlazu se dobiju dve nove ARFF datoteke koje sadrže samo potrebne  instance.
 
 Nakon što se svi modeli mašinskog učenja istreniraju vrši se analiza pogodnosti
 koja vraća listu pogodnih modela tako što analizira njihovu preciznost, stopu lažno pozitivnih i lažno negativnih.
@@ -571,6 +571,12 @@ U radu \cite{online-testing-with-reinforcement-learning} se mogu videti primeri 
 
 \par Od primena mašinskog učenja na statičku verifikaciju softvera prikazane su tehnike formalne verifikacije, učenje statičkog analizatora i kako od izvornog koda doći do istreniranih modela, a od primena na dinamičku verifikaciju prikazana je tehnika učenja uslovljavanjem na onlajn testiranjima. U formalnoj verifikaciji se na osnovu skupa testova indukuju teorije koje bi trebalo da se poklapaju sa specifikacijom programa. Proces korišćenja generisanja kontraprimera, koji je obrađen u \ref{subsec:staticki-analizator} је inovativan pristup regularizaciji modela mašinskog učenja, koji se do sada nije javljao u naučnim radovima. U \ref{subsec:pregled} dat je primer prikupljanja podataka za trening i upoređivanje rezultata različitih algoritama koji imaju za cilj statičku detekciju grešaka. Kod onlajn testiranja se u isto vreme kreira i izvršava test i treba pokriti što više ponašanja sa fiksnim resursima. Učenje uslovljavanjem navodi da se ide na nefrekventne testove, a uz to postoje dodatni parametri, kao što je kazna ako se vrati u početno stanje.
 
+% ==============================================================================
+\section{Dodatni materijali}
+\label{sec:dodatno}
+% ==============================================================================
+
+hi :)
 
 \addcontentsline{toc}{section}{Literatura}
 \appendix
