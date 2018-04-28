@@ -9,6 +9,8 @@
 \usepackage[T2A]{fontenc} % enable Cyrillic fonts
 \usepackage[utf8]{inputenc} % make weird characters work
 \usepackage{graphicx}
+\usepackage{subcaption}
+
 \graphicspath{ {img/} }
 
 \usepackage[english,serbian]{babel}
@@ -437,31 +439,14 @@ Među 7 najboljih klasifikatora sa slike \ref{fig:acc} se nalaze tri zasnovana n
 (``LMT'', ``RotationForest'' i ``ADABoost'' primenjen na ``BFTree'') i jedan zasnovan na neuronskim mrežama (``MultiLayerPerceptron'').
 Na slici  \ref{fig:falsePos} se vidi isti trend kao i na slici  \ref{fig:acc}: smanjenjem broja atributa algoritmi zasnovani na stablima se lošije ponašaju dok algoritmi najbližih suseda i ``MultiLayerPerceptron'' daju bolje rezultate.
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.85\textwidth]{accuracy.png}
-\caption{Preciznosti algoritama - sa svim atributima i bez}
-\label{fig:acc}
-\end{figure}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.85\textwidth]{false_positive.png}
-\caption{Lažno pozitivni - sa svim atributima i bez}
-\label{fig:falsePos}
-\end{figure}
 
 Prema rezultatima dobijenim u  \cite{baca} vrlo je bitno da alat statičke analize ima malo lažno pozitivnih jer
 u slučaju mnogo pogrešnih uzbuna programeri počinju da ignorišu te signale, ili još gore: kako bi izbegli upozorenja alata menjaju ispravan kod što dovodi do potencijalno
  novih grešaka. Na slici \ref{fig:falseNeg} se vidi da je ``NNge'' najbolji, što je i očekivano s obzirom na prilično
 loše performanse što se tiče lažno pozitivnih.
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.85\textwidth]{false_negative.png}
-\caption{Lažno negativni - sa svim atributima i bez}
-\label{fig:falseNeg}
-\end{figure}
+
 
 % ==============================================================================
 \section{Primena mašinskog učenja u dinamičkoj verifikaciji}
@@ -575,8 +560,68 @@ U radu \cite{online-testing-with-reinforcement-learning} se mogu videti primeri 
 \section{Dodatni materijali}
 \label{sec:dodatno}
 % ==============================================================================
+\newlength{\figWidth}
+\setlength{\figWidth}{0.45\textwidth}
+%accuracy
+\begin{figure}[h!]
+\centering
+\begin{subfigure}[t]{\figWidth}
+    \includegraphics[width=1\textwidth]{accuracy_a.png}
+    \caption{Sa svim atributima}
 
-hi :)
+\end{subfigure}
+~
+\begin{subfigure}[t]{\figWidth}
+    \includegraphics[width=1\textwidth]{accuracy_b.png}
+    \caption{Sa redukovanim skupom atributa}
+
+\end{subfigure}
+
+\caption{Preciznosti algoritama}
+
+\label{fig:acc}
+\end{figure}
+
+% false negative
+\begin{figure}[h!]
+\centering
+\begin{subfigure}[t]{\figWidth}
+    \includegraphics[width=1\textwidth]{false_pos_a.png}
+    \caption{Sa svim atributima}
+
+\end{subfigure}
+~
+\begin{subfigure}[t]{\figWidth}
+    \includegraphics[width=1\textwidth]{false_pos_b.png}
+    \caption{Sa redukovanim skupom atributa}
+
+\end{subfigure}
+
+\caption{Lažno pozitivni}
+
+\label{fig:falsePos}
+\end{figure}
+
+% false positive
+\begin{figure}[h!]
+\centering
+\begin{subfigure}[t]{\figWidth}
+    \includegraphics[width=1\textwidth]{false_neg_a.png}
+    \caption{Sa svim atributima}
+
+\end{subfigure}
+~
+\begin{subfigure}[t]{\figWidth}
+    \includegraphics[width=1\textwidth]{false_neg_b.png}
+    \caption{Sa redukovanim skupom atributa}
+
+\end{subfigure}
+
+\caption{Lažno negativni}
+
+\label{fig:falseNeg}
+\end{figure}
+
 
 \addcontentsline{toc}{section}{Literatura}
 \appendix
