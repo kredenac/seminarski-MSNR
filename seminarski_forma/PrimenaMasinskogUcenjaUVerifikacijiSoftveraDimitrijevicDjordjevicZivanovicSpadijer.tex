@@ -68,7 +68,7 @@ Softver polako uspeva da se uplete u najneočekivanije aspekte naših života i 
 \label{sec:verifikacija}
 % ==============================================================================
 
-\par U savremenom dobu, računari i računarski sistemi predstavljaju sastavni deo svakodnevice, kako u privatnom životu, tako i u poslovnom svetu, a i u državnoj administraciji. Zato je od izuzetnog značaja da softver koji se koristi bude pouzdan. Neispravan softver, u zavisnosti od toga gde se koristio i koliko je veliki bio propust, može izazvati male probleme, ali i ogromne probleme sa teškim posledicama (čak i smrtnim). Oblast razvoja softvera koja se bavi proverom ispravnosti softvera, odnosno potvrđivanjem da softver radi u skladu sa zahtevima, naziva se \emph{verifikacija softvera}.
+\par U savremenom dobu, računari i računarski sistemi predstavljaju sastavni deo svakodnevice, kako u privatnom životu, tako i u poslovnom svetu. Zato je od izuzetnog značaja da softver koji se koristi bude pouzdan. Neispravan softver, u zavisnosti od toga gde se koristio i koliko je veliki bio propust, može izazvati male probleme, ali i ogromne probleme sa teškim posledicama (čak i smrtnim). Oblast razvoja softvera koja se bavi proverom ispravnosti softvera, odnosno potvrđivanjem da softver radi u skladu sa zahtevima, naziva se \emph{verifikacija softvera}.
 
 \par Potrebno je precizirati šta se podrazumeva pod ispravnim softverom. Razlikuju se pojmovi potpuno ispravnog i delimično ispravnog softvera. Softver se smatra potpuno ispravnim ako se zaustavlja za svaki ulaz i na izlazu daje ispravan rezultat, dok se delimično ispravnim softverom smatra onaj koji za ulaz daje ispravan rezultat ako se zaustavlja, a dozvoljeno je da se za neki ulaz program ne zaustavlja. Ne postoji algoritamski način da se proveri da li se neki program zaustavlja (eng.~{\em halting problem}), pa se često ni ne ispituje potpuna, već samo delimična ispravnost softvera.
 
@@ -131,7 +131,7 @@ Učenje uslovljavanjem se može videti kao oblast između dve pret\-hod\-no pome
 %Ukratko će biti predstavljeni termini vezani za \textit{meru kvaliteta} modela,
 %kako bi bilo olakšano razumevanje postignutih rezultata u ostatku rada.
 
-\par \textit{Evaluacija modela} predstavlja numeričko predstavljanje sposobnosti predviđanja datog modela na određenoj skali i direktno se oslanja na mere kvaliteta. Mere koje se najčešće sreću u klasifikaciji su \textit{tačnost}, \textit{preciznost}, \textit{odziv} i \textit{F1 mera}. Sve navedene mere izvedene su iz \textit{matrice konfuzije} \ref{table:matrica_konfuzije}.
+\par \textit{Evaluacija modela} predstavlja numeričko predstavljanje sposobnosti predviđanja datog modela na određenoj skali i direktno se oslanja na mere kvaliteta. Mere koje se najčešće sreću u klasifikaciji su \textit{tačnost}, \textit{preciznost}, \textit{odziv} i \textit{F1 mera}. Sve navedene mere izvedene su iz \textit{matrice konfuzije}, tabela \ref{table:matrica_konfuzije}.
 
 \begin{table}[h]
 	\centering
@@ -169,7 +169,7 @@ Učenje uslovljavanjem se može videti kao oblast između dve pret\-hod\-no pome
 $$(\forall t\in T)\ [prolazi(P,t)\wedge S\models t]\Rightarrow P\equiv S,$$
 gde $prolazi(P,t)$ označava da program $P$ uspešno prolazi test $t$, $S\models t$ označava da je $t$ semantička posledica specifikacije $S$, odnosno da je test u skladu sa specifikacijom programa, a $P\equiv S$ označava da se program $P$ smatra ekvivalentnim specifikaciji $S$. Drugim rečima, program je ispravan u skladu sa specifikacijom $S$ ako i samo ako se iz činjenice da program zadovoljava svaki test koji je u skladu sa specifikacijom može zaključiti da se program smatra ekvivalentnim specifikaciji.
 
-\par Jedan od problema jeste pronaći skup testova $T$ za koji važi prethodna implikacija. Takav skup testova naziva se \emph{adekvatnim} skupom testova. Naravno, trivijalan primer je iscrpan skup testova, tj. skup testova koji obuhvataju sve moguće ulaze. No, u praksi, taj skup je obično beskonačan, te je kao takav neupotrebljiv. Potrebno je da se skup testova ograniči. Jedan od pristupa jeste da se nekom apriori analizom specifikacije izvuče odgovarajući skup testova. Međutim, postoji mogućnost da se dobiju testovi koje nije moguće direktno proveriti u datom programu, što dovodi do drugog tipičnog problema.
+\par Jedan od problema jeste pronaći skup testova $T$ za koji važi prethodna implikacija. Takav skup testova naziva se \emph{adekvatnim} skupom testova. Naravno, trivijalan primer je iscrpan skup testova, tj. skup testova koji obuhvataju sve moguće ulaze. No, u praksi, taj skup je obično beskonačan, te je kao takav neupotrebljiv. Potrebno je da se skup testova ograniči. Jedan od pristupa jeste da se nekom apriori analizom \cite{aprioriAnaliza} specifikacije izvuče odgovarajući skup testova. Međutim, postoji mogućnost da se dobiju testovi koje nije moguće direktno proveriti u datom programu, što dovodi do drugog tipičnog problema.
 
 \par Problem pravljenja efikasne procedure da se proveri tačnost konjunkcije $prolazi(P,t)\wedge S\models t$ poznat je pod nazivom \emph{problem proročišta} (eng.~{\em oracle problem}). Nije uvek lako proveriti tačnost od $prolazi(P,t)$, a pošto su program i njegova specifikacija zasnovani na drugačijim formalizmima, nije lako proveriti da li ova konjunkcija važi za svaki pojedinačni test. Zato je predložen pristup pokazivanja ispravnosti softvera u odnosu na specifikaciju pomoću testiranja zasnovanog na mašinskom učenju. Ukratko, postupak je zasnovan na sledećem. Ako je dat skup testova za konkretan program koji se sastoji od ulaznih i izlaznih vrednosti za svaki test, korišćenjem mašinskog učenja može se indukovati teorija koja odgovara datim podacima. Ta indukovana teorija apstraktno opisuje ulazno--izlazno ponašanje programa dato u testovima. Dokaz ispravnosti programa sledi iz dokaza da indukovana teorija ispunjava originalnu specifikaciju.
 
@@ -342,7 +342,7 @@ izvršiti na toj poziciji.
 % primene
 Metoda je pokazana kroz implementaciju pristupa i evaluaciju na problemu analize
 pravila jezika JavaScript. Naučena pravila za pokazuje-na analizu, kao i za
-analizu alokacionih mesta, su ne samo interesantna, već su i propuštena od
+analizu alokacionih mesta, su izuzetno interesantna. Neka od naučenih pravila su propuštena od
 strane postojećih najmodernijih ručno podešenih statičkih analizatora kao što
 su Flow \cite{flow} koji koristi Facebook, i TAJS \cite{tajs}.
 
@@ -501,7 +501,7 @@ Interfejs automat M ima sledeće komponente:
 \item Prelazna funkcija $\sigma$ koja slika ulazno stanje i dozvoljavajuću akciju u izlazno stanje
 \end{itemize}
 
-Neka je P deterministički model $(Stanja, Vrednosti, s_0, \Sigma, \Sigma_c, \Sigma_0, Reset, (\varphi_f, p_f)f \in \Sigma)$. Prema prethodnoj definiciji, intefejs automat P izgleda:
+Neka je P deterministički model $(Stanja, Vrednosti, s_0, \Sigma, \Sigma_c, \Sigma_0, Reset,\\ (\varphi_f, p_f)f \in \Sigma)$. Prema prethodnoj definiciji, intefejs automat P izgleda:
 
 \begin{itemize}
 \item $S_{[[P]]} = States$
@@ -622,7 +622,7 @@ U radu \cite{online-testing-with-reinforcement-learning} se mogu videti primeri 
 \label{fig:falseNeg}
 \end{figure}
 
-
+\appendix
 \addcontentsline{toc}{section}{Literatura}
 \appendix
 \bibliography{seminarski}

@@ -17,6 +17,9 @@
 
 \newcommand{\odgovor}[1]{\textcolor{blue}{#1}}
 
+\newcommand{\todo}[1]{\textcolor{red}{#1}}
+
+
 \begin{document}
 
 \title{Primena mašinskog učenja u verifikaciji softvera\\ \small{Nikola Dimitrijević, Rastko Đorđević, Luka Živanović, Dimitrije Špadijer}}
@@ -41,7 +44,7 @@ Neophodno je odgovoriti na sve zamerke koje su navedene u okviru recenzija. Svak
 Za svakog recenzenta dodajte ocenu od 1 do 5 koja označava koliko vam je recenzija bila korisna, odnosno koliko vam je pomogla da unapredite rad. Ocena 1 označava da vam recenzija nije bila korisna, ocena 5 označava da vam je recenzija bila veoma korisna.
 
 NAPOMENA: Recenzije ce biti ocenjene nezavisno od vaših ocena. Na osnovu recenzije ja znam da li je ona korisna ili ne, pa na taj način vama idu negativni poeni ukoliko kažete da je korisno nešto što nije korisno. Vašim kolegama šteti da kažete da im je recenzija korisna jer će misliti da su je dobro uradili, iako to zapravo nisu. Isto važi i na drugu stranu, tj nemojte reći da nije korisno ono što jeste korisno. Prema tome, trudite se da budete objektivni.
-\chapter{Recenzent \odgovor{--- ocena:4} }
+\chapter{Recenzent \odgovor{--- ocena:3.5} }
 
 
 \section{O čemu rad govori?}
@@ -53,18 +56,34 @@ Na početku rada imamo jasan pregled osnova verifikacije softvera i njenu podelu
 % Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
 
 Nema krupnijih primedbi na sam tekst rada. Međutim, rad ima nekoliko pre\-du\-ga\-čkih rečenica, što otežava razumevanje teksta. Rad bi bio jednostavniji za čitanje ako bi se te rečenice skratile ili podelile na više kraćih. Primer takve rečenice je u podnaslovu 4.3 i počinje sa "Na prvi pogled je dovoljno uzeti izlaz programa CMore ...".
-\odgovor{(TODO: naci ostale) popravljen je primer naveden kao zamerka.}
+\\\odgovor{ Popravljen je primer naveden kao zamerka.}
+\\\todo{ naci ostale }
 
 \section{Sitne primedbe}
 % Напишете своја запажања на тему штампарских-стилских-језичких грешки
 
 \begin{itemize}
 	\item U podnaslovu 4.1, nedostaje znak : u rečenici koja glasi "Ukratko, postupak je zasnovan na sledećem".
+	\\\odgovor{Ispravno je i bez dvotačke.}
+	\\\todo{Luka, Dimitrije napišite u nastavku ovog todo-a dal mislite da je ovo iznad ok odgovor.}
+	
     \item U podnaslovu 4.1, drugačije sročiti rečenicu "Pozitivni i negativni primeri se, u kontekstu mašinskog učenja, zovu primerima za trening".
+    \\\todo{TODO}
+    	
     \item U podnaslovu 4.2, u rečenici koja počinje sa "Ključna komponenta ovog pristupa je proročište ...", je neodgovarajućem formatu napisan engleski termin "(en. oracle)".
-    \odgovor{Popravljeno.}
+    \\\odgovor{Popravljeno.}
+    
     \item U podnaslovu 4.2, nije dovoljno jasno napisana rečenica koja počinje sa "Naučena pravila za pokazuje-na analizu, ...".
+    \\\odgovor{Rečenica je prelomljena sa namerom da bude čitkija, sada glasi:\\
+    	"Naučena pravila za pokazuje-na analizu, kao i za
+    	analizu alokacionih mesta, su izuzetno interesantna. Neka od naučenih pravila su propuštena od
+    	strane postojećih najmodernijih ručno podešenih statičkih analizatora kao što
+    	su Flow koji koristi Facebook, i TAJS".
+    }
+     
     \item U poslednjem pasusu podnaslova 4.2 nedostaje znak : nakon rečenice "Glavni doprinosi opisanog rada su sledeći.", i bolje rešenje bi bilo da doprinosi budu navedeni po tezama.
+    \\\odgovor{Ispravno je i bez dvotačke.}
+    \\\todo{Luka, Dimitrije napišite u nastavku ovog todo-a dal mislite da je ovo iznad ok odgovor.}
 \end{itemize}
 
 
@@ -135,7 +154,7 @@ Da, slike i tabele pomažu razumevanju teksta.
 U temu kojom se rad bavi sam srednje upućena. Trenutno slušam kurs mašinskog učenja na fakultetu, a za potrebe seminarskog rada sam se bavila metodom učenja vođenom kontraprimerima, koja je takođe obrađena u ovom radu.
 
 
-\chapter{Recenzent \odgovor{--- ocena:5} }
+\chapter{Recenzent \odgovor{--- ocena:4} }
 
 
 \section{O čemu rad govori?}
@@ -155,37 +174,64 @@ statičku detekciju grešaka.
 % Напишете своја запажања и конструктивне идеје шта у раду недостаје и шта би требало да се промени-измени-дода-одузме да би рад био квалитетнији.
 \begin{itemize}
   \item U sažetku bi možda trebalo promeniti redosled rečenica tako da se prvo započne priča o softveru, njegovoj upletenosti u naše živote, posledicama njegove neispravnosti pa zatim naglasiti bitnost verifkacije softvere i uvesti nas u priču gde tu mašinsko učenje stupa na scenu.
-  \odgovor{Popravljeno po preporuci.}
+  \\\odgovor{Popravljeno po preporuci.}
+  
   \item U uvod bi možda korektnije bilo napisati ``Softverska rešenja se koriste...`` jer se kroz ceo tekst spominje ``softver``. Isto tako ``primeri stvarnih događaja usled grešaka u softveru``.
-  \odgovor{Izmenjeno po preporuci.}
+  \\\odgovor{Izmenjeno po preporuci.}
+  
   \item U sekciji 2 Verifikacija softvera - konstrukciju `` a i u državnoj administraciji `` izmeniti u možda ``i u državnoj administraciji`` ili izbaciti i smatrati da spada ``u poslovnom svetu``.
+  \\\odgovor{Izbačeno po preporuci.}
+  
   \item U sekciji 3 Mašinsko učenje - ``ova oblast postiže superiorne rezultate  u odnosu na rezultate ljudskih eksperata`` možda promeniti u ``superiornije rezultate...`` isto tako možda ubaciti primer rezultata u vidu nekog grafičkog prikaza ili referencu ka nekom radu na ovu temu.
-  \odgovor{Promejeno po preporuci.}
+  \\\odgovor{Izmena bi bila neprikladna. Referenca na početku oblasti ima detaljne opise navedenih činjenica.}
+  
   \item U sekciji 3 Mašinsko učenje - Bilo bi zanimljivo videti grafičke razlike između tri oblasti mašinskog učenja kao i njihove oblasti primene ili referencu.
+  \\\odgovor{Referenca se nalazi na početku oblasti. U navedenoj knjizi je detaljno opisana podela zajedno sa primerima primena svake od oblasti. Zbog mnogobrojnih algoritama koji spadaju u navedene oblasti, razlike između njih nije lako predstaviti grafički. Jedino što bi imalo smisla je da se uvede po jedan reprezentativni algoritam iz svake oblasti. Nakon čega bi se mogli grafički porediti. Budući da je akcenat rada na primenama, nemamo mesta za ovako detaljan opis 3 algoritma, tako da ćemo ipak uskratiti čitalace grafičkih prikaza razlika oblasti. Detaljni prikazi velikog broja algoritama se mogu naći u knjizi na koju je referisano na početku sekcije. }
+  
   \item U sekciji 3 Mašinsko učenje - Možda bi ove bilo zanimljivo grafički u vidu slike prikazati sam tok uspešne primene tehnika mašinskog učenja.
+  \\\odgovor{Iako bi možda bilo interesantno videti dijagram primene mašinskog učenja, opis koji se nalazi je adekvatno deskriptivan. Uzimajući u obzir da imamo ograničen broj strana, odlučili smo da prioritet damo ostalim stvarima, za koje smatramo da su važnije.}
+  \\\todo{Luka, Dimitrije, Dimi. Da li je ok ovaj odgovor?}
+
+  
   \item U sekciji 4.1 Formalna verifikacija softvera - ubaciti referencu ka ``apriori analiza``.
+  \\\odgovor{Dodata referenca.}
+  
 \end{itemize}
 \section{Sitne primedbe}
 % Напишете своја запажања на тему штампарских-стилских-језичких грешки
 \begin{itemize}
    \item Sažetak - `` pridruže u pohodu u sprečavanju ``.
-   \odgovor{Ispravljeno. (Je l vama ovo izgleda ok?)}
+   \\\odgovor{Ispravljeno. (Je l vama ovo izgleda ok?)}
+   
    \item U sekciji 2.1 Dinamička verifikacija softvera - ``Postoje razne vrste i nivoi testova..`` izbaciti zagrade i ubaciti ``poput ..`` jer se ovako gubi smisao rečenice.
+   \\\todo{TODO}
+   
    \item U sekciji 4.2 Učenje statičkog analizatora iz podataka - ``Postoje dva ključna izazova pri izgradi statičkog analizatora`` - ``izradi ili izgradnji``.
+   \\\odgovor{Ispravljeno}
+   
    \item U sekciji 4.2 Učenje statičkog analizatora iz podataka - U pasusu ``Izuzetno važan problem...`` skup L nije pisan kao $\mathcal{L}$
-   \odgovor{Popravljeno.}
+   \\\odgovor{Popravljeno.}
+   
    \item U sekciji 4.2 Učenje statičkog analizatora iz podataka - ``Drugi znatno izazovniji problem pri izgradi`` - ``izradi ili izgradnji``.
+   \\\odgovor{Ispravljeno}
+   
    \item U sekciji 4.2 Učenje statičkog analizatora iz podataka - ``osobinom statičkog analizatora da ispravno kategoriše granični slučajeve.`` - ``granične``.
-   \odgovor{Popravljeno.}
+   \\\odgovor{Popravljeno.}
+   
    \item U sekciji 4.2 Učenje statičkog analizatora iz podataka - ``Ovaj problem se rešava procedurom učenja vodjenog`` - ``vođenog``.
-   \odgovor{Popravljeno.}
+   \\\odgovor{Popravljeno.}
+   
    \item U sekciji 4.2 Učenje statičkog analizatora iz podataka - ``nad pravilima koja su naučena u tom trenunku`` - ``trenutku``.
-   \odgovor{Popravljeno.}
+   \\\odgovor{Popravljeno.}
+   
    \item U sekciji 4.3 Od izvornog koda do istreniranih modela - ``algoritmi klasifikacije, algoritmi predvidanja, algoritmi klasterovanja, aravila asocijacije i tehnike evaluacije.`` -``pravila``.
-   \odgovor{Popravljeno.}
+   \\\odgovor{Popravljeno.}
+   
    \item U sekciji 4.3 Od izvornog koda do istreniranih modela - ``Kako transofmisati izvorni kod u odgovarajući format za klasifikatore?`` -``transformisati``.
-   \odgovor{Popravljeno.}
+   \\\odgovor{Popravljeno.}
+   
    \item U sekicji 6 Zaključak - nefrekventne - ne postoji reč.
+   \\\todo{Luka ovo je iz opisa tvog rada, najbolje ti da preformulišeš, pošto ja ne znam baš na šta si mislio pod nefrekventni testovi :D.}
 \end{itemize}
 
 
@@ -242,15 +288,21 @@ Posebno se ističe složenost onlajn pristupa.
 \item Slike 1, 2 i 3 su nepregledne.
 Trebalo ih je staviti u landscape format, u Dodatak, čime bi bile preglednije.
 \odgovor{Slike su preuzete od autora izlaganog rada i nisu u pogodnom formatu za landscape. Prebačene su u dodatak.}
+
 \item Takođe, treba preurediti potpise slika,
 jer završna reč (bez) ne ukazuje na stepen redukcije broja atributa.
 Predlog:
 Slika 1a) i Slika 1b), sa odgovarajućim potpisima.
 \odgovor{Promenjeno je prema preporuci.}
+
 \item U spisku literature, potrebno je reference 7, 8, 9, 11, 15
 dopuniti odgovarajućim informacijama (izdavač, časopis, ustanova, država).
+\\\todo{TODO}
+
 \item Formula na strani 14: verovatnoća nije dobro izračunata,
 jer bi sabiranjem po "i" trebalo dobiti 1 (izvestan događaj), što ovde nije slučaj jer je j!=i.
+\\\todo{TODO}
+
 \item Autori i njihovi mejlovi bi mogli da se napišu preglednije.
 Na primer, e-mail adrese bi mogle da se prebace u footnote.
 Autore bi trebalo ili staviti u jedan red smanjivanjem veličine fonta
@@ -263,55 +315,86 @@ ili ih navesti jednog ispod drugog.
 
 \begin{enumerate}
 \item Strana 2, red "U savremenom dobu,..." predstavlju $\rightarrow$ predstavljaju
-\\ \textbf{FIXED}
+\\ \odgovor{Zamenjeno.}
+
 \item Strana 4, red "matrica konfuzije 1" zameniti sa "matrica konfuzije, tabela 1"
+\\ \odgovor{Zamenjeno.}
+
 \item Tabela 1, zameniti Stvarno / Predviđeno sa Stvarno $\backslash$ Predviđeno
 \\ \odgovor{Zamenjeno.}
+
 \item Strana 6, prvo tvrđenje treba preimenovati u hipotezu
+\\\todo{TODO}
+
 \item Strane 6 i 7, Primeri 4.1 i 4.2, levo poravnati elemente skupa,
 a zatvarajuću vitičastu zagradu razdvojiti belinom.
+\\\todo{TODO}
+
 \item Strane 6 i 7, OBJ primeri steka $\rightarrow$ uskladiti tačke na kraju naredbi "op top"
+\\\todo{TODO}
+
 \item Strana 8, prvi pasus, izgradi $\rightarrow$ izgradnji ili izradi
-\\ \textbf{FIXED izgradnji}
+\\ \odgovor{Ispravljeno.}
+
 \item Strana 8, četvrti pasus, izgradi $\rightarrow$ izgradnji ili izradi
-\\ \textbf{FIXED izgradnji}
+\\ \odgovor{Ispravljeno.}
+
 \item Strana 8, četvrti pasus, treći red, da SE generalizuje
 \\ \odgovor{Dodato.}
+
 \item Strana 8, četvrti pasus, deveti red, granični $\rightarrow$ granične
 \\ \odgovor{Ispravljeno.}
+
 \item Strana 8, četvrti pasus, deseti red, vodjenog $\rightarrow$ vođenog
 \\ \odgovor{Ispravljeno.}
+
 \item Strana 8, peti pasus, proročište(en. oracle) $\rightarrow$ proročište (eng. oracle)
 \\ \odgovor{Ispravljeno.}
+
 \item Strana 9, prvi pasus, facebook $\rightarrow$ Facebook
-\\ \textbf{FIXED}
+\\ \odgovor{Ispravljeno.}
+
 \item Strana 9, drugi pasus, trenunku $\rightarrow$ trenutku
-\\ \textbf{FIXED}
+\\ \odgovor{Ispravljeno.}
+
 \item Strana 9, peti pasus, aravila $\rightarrow$ pravila
-\\ \textbf{FIXED}
+\\ \odgovor{Ispravljeno.}
+
 \item Strana 9, poslednji pasus, referenca na CMore
 \\ \odgovor{Dodato.}
+
 \item Strana 10, treći pasus, referenca na Holmes
 \\ \odgovor{Dodato.}
+
 \item Strana 10, šesti pasus, zasovana $\rightarrow$ zasnovana
-\\ \textbf{FIXED}
+\\ \odgovor{Ispravljeno.}
+
 \item Strana 11, prvi pasus, greškaka $\rightarrow$ grešaka
-\\ \textbf{FIXED}
+\\ \odgovor{Ispravljeno.}
+
 \item Strane 12 i 13, termini na engleskom prikazati iskošeno
-\\ \textbf{FIXED}
+\\ \odgovor{Ispravljeno.}
+
 \item Strana 12, četvrti pasus, su $\rightarrow$ čine
-\\ \textbf{FIXED}
+\\ \odgovor{Ispravljeno.}
+
 \item Strana 12, šesti pasus, podskupa( $\Sigma \rightarrow$ podskupa ($\Sigma$
-\\ \textbf{FIXED}
+\\ \odgovor{Ispravljeno.}
+
 \item Strana 12, sedmi pasus, specijanla $\rightarrow$ specijalna
-\\ \textbf{FIXED}
+\\ \odgovor{Ispravljeno.}
+
 \item Strana 13, $S_init \rightarrow S_{init}$
-\\ \textbf{FIXED}
+\\ \odgovor{Ispravljeno.}
+
 \item Strana 13, algoritam IUT I i model $\rightarrow$ IUT i model
-\\ \textbf{FIXED} bilo je IUT I i model M, ali zbog ograničenja dužine rada obrisana je dalja upotreba simbola M i I, osim u ovoj definicij.
+\\ \odgovor{Ispravljeno, bilo je IUT I i model M, ali zbog ograničenja dužine rada obrisana je dalja upotreba simbola M i I, osim u ovoj definiciji.}
+
 \item Strana 13, deterministčki $\rightarrow$ deterministički
-\\ \textbf{FIXED}
+\\ \odgovor{Ispravljeno.}
+
 \item Strana 13, isti red kao i prethodni, izvršiti prelom reda na odgovarajućem mestu
+\\ \odgovor{Ispravljeno.}
 \end{enumerate}
 
 \section{Provera sadržajnosti i forme seminarskog rada}
