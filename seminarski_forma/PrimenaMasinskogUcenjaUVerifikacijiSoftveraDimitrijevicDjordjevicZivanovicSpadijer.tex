@@ -20,6 +20,7 @@
 \hypersetup{colorlinks,citecolor=green,filecolor=green,linkcolor=blue,urlcolor=blue}
 
 \newtheorem*{tvrdjenje}{Tvrđenje}
+\newtheorem*{hipoteza}{Hipoteza}
 \theoremstyle{definition}
 %\newtheorem{primer}{Пример}[section] %ćirilični primer
 \newtheorem{primer}{Primer}[section]
@@ -79,7 +80,7 @@ Softver polako uspeva da se uplete u najneočekivanije aspekte naših života i 
 
 \par Dinamička verifikacija softvera zasnovana je na tome da se provera ispravnosti softvera vrši tokom njegovog izvršavanja. Najčešće se dinamička verifikacija softvera vrši testiranjem i ti pojmovi se poistovećuju, što nije sasvim ispravno.
 
-\par Testiranje je složen proces koji obuhvata pronalaženje što raznovrsnijeg skupa ulaza, definisanje očekivanih izlaza za svaki od tih ulaza, a zatim izvršavanje programa i provera da li je program za date ulaze vratio odgovarajuće izlaze. Postoje razne vrste i nivoi testova (da li imamo pristup izvornom kodu softvera ili ne, kao i da li testiramo jednu jedinicu koda ili više njih ili testiramo neku funkcionalnost softvera).
+\par Testiranje je složen proces koji obuhvata pronalaženje što raznovrsnijeg skupa ulaza, definisanje očekivanih izlaza za svaki od tih ulaza, a zatim izvršavanje programa i provera da li je program za date ulaze vratio odgovarajuće izlaze. Postoje razne vrste i nivoi testova: da li je dostupan pristup izvornom kodu softvera ili ne, kao i da li se testira jedna jedinica koda ili više njih ili se testira neka funkcionalnost softvera.
 
 \par Testiranje služi da, u slučaju kada postoji greška u izvornom kodu softvera, ukaže na njeno postojanje. U zavisnosti od vrste testa, kao i nivoa, može se otkriti gde se u kodu nalazi greška, ali to često nije slučaj. Umesto toga, testovi samo otkrivaju postojanje grešaka.
 
@@ -162,7 +163,7 @@ gde $prolazi(P,t)$ označava da program $P$ uspešno prolazi test $t$, $S\models
 
 \par Jedan od problema jeste pronaći skup testova $T$ za koji važi prethodna implikacija. Takav skup testova naziva se \emph{adekvatnim} skupom testova. Naravno, trivijalan primer je iscrpan skup testova, tj. skup testova koji obuhvataju sve moguće ulaze. No, u praksi, taj skup je obično beskonačan, te je kao takav neupotrebljiv. Potrebno je da se skup testova ograniči. Jedan od pristupa jeste da se nekom apriori analizom \cite{aprioriAnaliza} specifikacije izvuče odgovarajući skup testova. Međutim, postoji mogućnost da se dobiju testovi koje nije moguće direktno proveriti u datom programu, što dovodi do drugog tipičnog problema.
 
-\par Problem pravljenja efikasne procedure da se proveri tačnost konjunkcije $prolazi(P,t)\wedge S\models t$ poznat je pod nazivom \emph{problem proročišta} (eng.~{\em oracle problem}). Nije uvek lako proveriti tačnost od $prolazi(P,t)$, a pošto su program i njegova specifikacija zasnovani na drugačijim formalizmima, nije lako proveriti da li ova konjunkcija važi za svaki pojedinačni test. Zato je predložen pristup pokazivanja ispravnosti softvera u odnosu na specifikaciju pomoću testiranja zasnovanog na mašinskom učenju. Ukratko, postupak je zasnovan na sledećem. Ako je dat skup testova za konkretan program koji se sastoji od ulaznih i izlaznih vrednosti za svaki test, korišćenjem mašinskog učenja može se indukovati teorija koja odgovara datim podacima. Ta indukovana teorija apstraktno opisuje ulazno--izlazno ponašanje programa dato u testovima. Dokaz ispravnosti programa sledi iz dokaza da indukovana teorija ispunjava originalnu specifikaciju.
+\par Problem pravljenja efikasne procedure da se proveri tačnost konjunkcije $prolazi(P,t)\wedge S\models t$ poznat je pod nazivom \emph{problem proročišta} (eng.~{\em oracle problem}). Nije uvek lako proveriti tačnost od $prolazi(P,t)$, a pošto su program i njegova specifikacija zasnovani na drugačijim formalizmima, nije lako proveriti da li ova konjunkcija važi za svaki pojedinačni test. Zato je predložen pristup pokazivanja ispravnosti softvera u odnosu na specifikaciju pomoću testiranja zasnovanog na mašinskom učenju. Ukratko, postupak je zasnovan na sledećem: ako je dat skup testova za konkretan program koji se sastoji od ulaznih i izlaznih vrednosti za svaki test, korišćenjem mašinskog učenja može se indukovati teorija koja odgovara datim podacima. Ta indukovana teorija apstraktno opisuje ulazno--izlazno ponašanje programa dato u testovima. Dokaz ispravnosti programa sledi iz dokaza da indukovana teorija ispunjava originalnu specifikaciju.
 
 \par Matematički pojmovi koji se koriste mogu se pronaći u \cite{verify} i \cite{equationaltheory} i opisuju tzv. teorije jednačina (eng.~{\em equational theory}). Oni su važni, jer pred\-stav\-lja\-ju formalnu osnovu za ovaj metod verifikacije softvera. Između ostalih, definisani su pojmovi \emph{$\Sigma$-algebre}, \emph{$\Sigma$-teorije}, tj. \emph{specifikacije}, \emph{osnovne jednačine}, zatim kada $\Sigma$-algebra \emph{zadovoljava} teoriju, odnosno specifikaciju, i kada je jednačina \emph{semantička posledica} specifikacije (tj. značenje simbola $\models$). Takođe, definisan je i pojam \emph{morfizma teorija}, koji pred\-stav\-lja formalno preslikavanje između dveju teorija.
 
@@ -174,9 +175,9 @@ H\models p, & \mbox{ za svako } p\in P,\\
 H\not\models n, & \mbox{ za svako } n\in N.
 \end{eqnarray*}
 Prvi uslov govori da hipoteza zadovoljava sve pozitivne primere, a drugi uslov da ne zadovoljava nijedan negativan primer. Pozitivni i negativni primeri se, u kontekstu mašinskog učenja, zovu primerima za trening. U središtu mašinskog učenja jeste sledeća hipoteza induktivnog učenja:
-\begin{tvrdjenje}
+\begin{hipoteza}
 Ako indukovana teorija zadovoljava gornje uslove za dovoljno veliki skup primera za trening, onda će ta teorija s vremenom zadovoljiti i neobrađene primere.
-\end{tvrdjenje}
+\end{hipoteza}
 Dakle, mašinsko učenje nam dozvoljava da uopštavamo dalje od ko\-na\-čnog skupa primera za trening.
 
 \par Programi se, u formalnom smislu, posmatraju kao $\Sigma$-teorije koje zadovoljavaju neku teoriju jednačina, tj. specifikaciju. Program je ispravan u odnosu na specifikaciju ako je zadovoljava u smislu u kome $\Sigma$-algebra zadovoljava teoriju. Specifikacija $S$ zadovoljava skup testova T, u oznaci $S\models T$ ako $S\models t$ za svaki test $t\in T$. Skup testova $T$ je \emph{koherentan} ako je moguće indukovati teoriju $H$ takvu da $H\models T$. Skup testova $T$ je \emph{adekvatan} ako postoji morfizam teorija $\phi:S\models H$ gde je $S$ specifikacija programa, a $H$ je teorija indukovana iz skupa testova $T$. Finalni zaključak iznet je u sledećem tvrđenju.
