@@ -10,6 +10,7 @@
 \usepackage[utf8]{inputenc} % make weird characters work
 \usepackage{graphicx}
 \usepackage{subcaption}
+\usepackage{amsmath}
 
 \graphicspath{ {img/} }
 
@@ -174,7 +175,7 @@ gde $prolazi(P,t)$ označava da program $P$ uspešno prolazi test $t$, $S\models
 H\models p, & \mbox{ za svako } p\in P,\\
 H\not\models n, & \mbox{ za svako } n\in N.
 \end{eqnarray*}
-Prvi uslov govori da hipoteza zadovoljava sve pozitivne primere, a drugi uslov da ne zadovoljava nijedan negativan primer. Pozitivni i negativni primeri se, u kontekstu mašinskog učenja, zovu primerima za trening. U središtu mašinskog učenja jeste sledeća hipoteza induktivnog učenja:
+Prvi uslov govori da hipoteza zadovoljava sve pozitivne primere, a drugi uslov da ne zadovoljava nijedan negativan primer. Navedeni primeri predstavljaju skup podataka nad kojim se trenira model. U središtu mašinskog učenja jeste sledeća hipoteza induktivnog učenja:
 \begin{hipoteza}
 Ako indukovana teorija zadovoljava gornje uslove za dovoljno veliki skup primera za trening, onda će ta teorija s vremenom zadovoljiti i neobrađene primere.
 \end{hipoteza}
@@ -199,10 +200,11 @@ Neka je data specifikacija steka. Koristi se OBJ sintaksa, u kojoj ključna reč
 
 \begin{primer}
 Ako se posmatra skup testova
-\begin{eqnarray*}
-T_1 = \{&(\mbox{\textbf{top(push(v,a)),a}}),\\
-&(\mbox{\textbf{top(push(push(v,b),a)),a}})\}
-\end{eqnarray*}
+\begin{align*}
+T_1 = \{\ &(\mbox{\textbf{top(push(v,a)),a}}),\\
+&(\mbox{\textbf{top(push(push(v,b),a)),a}})\ \}
+\end{align*}
+
 i indukovana teorija
 \begin{verbatim}
 	obj STACKI is sorts Stack Element .
@@ -218,19 +220,19 @@ jednostavno se vidi da je skup testova koherentan, ali da indukovana teo\-ri\-ja
 
 \begin{primer}
 Za skup testova
-\begin{eqnarray*}
-T_2 = \{&(\mbox{\textbf{top(push(v,a)),a}}),\\
+\begin{align*}
+T_2 = \{\ &(\mbox{\textbf{top(push(v,a)),a}}),\\
 &(\mbox{\textbf{top(push(push(v,a),b)),b}}),\\
 &(\mbox{\textbf{top(push(push(v,b),a)),a}}),\\
-&(\mbox{\textbf{top(push(push(v,d),c)),c}})\},
-\end{eqnarray*}
+&(\mbox{\textbf{top(push(push(v,d),c)),c}})\ \},
+\end{align*}
 program za formalnu verifikaciju je indukovao sledeću teoriju.
 \begin{verbatim}
 	obj STACKI is sorts Stack Element .
 	  ops a b c d : -> Element .
 	  op v : -> Stack .
 	  op push : Stack Element -> Stack .
-	  op top  : Stack -> Element
+	  op top  : Stack -> Element .
 	  var X : Element . var S : Stack .
 	  eq top(push(S,X)) = X .
 	endo
@@ -271,7 +273,7 @@ analizatori su tipično opisani pomoću pravila, dok postojeće te\-hni\-ke maš
 učenja kao rezultat daju kombinaciju postojećih pravila. Ako bi se ove tehnike
 primenile na programsku analizu \cite{predictingProgramProperties} dobijena
 pravila ne bi bila interesantna. Iz tog razloga uvodi se specifični domenski
-jezik za opis pravila analize, nad kojim se mogu učiti zanimljiva pravila analize.
+jezik za opis pravila analize, nad kojim se mogu učiti nova pravila analize.
 
 
 % detaljan opis rešenja prvog problema
@@ -533,7 +535,7 @@ Biramo akciju na nasumičan način
 \item Najmanje frekventna: \\
 Klasičnu implementaciju familije algoritama učenja uslovljavanjem modifikujemo idejom anti-ant algoritma \cite{antiAnt} kako bi se izbeglo generisanje generacija redudantnih testova.
 Akciju biramo nasumično, ali najveću verovatnoću ima stanje koje je inverzno proporcionalno njegovoj ceni. To znači da su manje frekventne akcije favorizovane.
-Drugim rečima, ako potencijalne sledeće akcije obeležimo sa $(a_i)_{i < k}$ za neko k, i cene $(c_i)_{i < k}$, onda će verovatnoća za izbor akcije $a_i$ biti $c_i^{-1} / \sum_{j!=i}^{} c_j^{-1}$.
+Drugim rečima, ako potencijalne sledeće akcije obeležimo sa $(a_i)_{i < k}$ za neko k, i cene $(c_i)_{i < k}$, onda će verovatnoća za izbor akcije $a_i$ biti $c_i^{-1} / \sum_{j=0}^{k} c_j^{-1}$.
 \end{itemize}
 
 U radu \cite{online-testing-with-reinforcement-learning} se mogu videti primeri eksperimenta sa sva tri pristupa.
@@ -546,8 +548,9 @@ U radu \cite{online-testing-with-reinforcement-learning} se mogu videti primeri 
 
 \par Verifikacija softvera je veoma važna jer su moguće posledice neispravnog softvera ogromnih razmera. Tehnike mašinskog učenja se brzo u\-sa\-vr\-ša\-va\-ju i pokazuju izuzetno dobre rezultate, pa je prirodno razmišljati o njihovim mogućim primenama na verifikaciju softvera.
 
-\par Od primena mašinskog učenja na statičku verifikaciju softvera prikazane su tehnike formalne verifikacije, učenje statičkog analizatora i kako od izvornog koda doći do istreniranih modela, a od primena na dinamičku verifikaciju prikazana je tehnika učenja uslovljavanjem na onlajn testiranjima. U formalnoj verifikaciji se na osnovu skupa testova indukuju teorije koje bi trebalo da se poklapaju sa specifikacijom programa. Proces korišćenja generisanja kontraprimera, koji je obrađen u \ref{subsec:staticki-analizator} је inovativan pristup regularizaciji modela mašinskog učenja, koji se do sada nije javljao u naučnim radovima. U \ref{subsec:pregled} dat je primer prikupljanja podataka za trening i upoređivanje rezultata različitih algoritama koji imaju za cilj statičku detekciju grešaka. Kod onlajn testiranja se u isto vreme kreira i izvršava test i treba pokriti što više ponašanja sa fiksnim resursima. Učenje uslovljavanjem navodi da se ide na nefrekventne testove, a uz to postoje dodatni parametri, kao što je kazna ako se vrati u početno stanje.
+\par Od primena mašinskog učenja na statičku verifikaciju softvera prikazane su tehnike formalne verifikacije, učenje statičkog analizatora i kako od izvornog koda doći do istreniranih modela, a od primena na dinamičku verifikaciju prikazana je tehnika učenja uslovljavanjem na onlajn testiranjima. U formalnoj verifikaciji se na osnovu skupa testova indukuju teorije koje bi trebalo da se poklapaju sa specifikacijom programa. Proces korišćenja generisanja kontraprimera, koji je obrađen u \ref{subsec:staticki-analizator} је inovativan pristup regularizaciji modela mašinskog učenja, koji se do sada nije javljao u naučnim radovima. U \ref{subsec:pregled} dat je primer prikupljanja podataka za trening i upoređivanje rezultata različitih algoritama koji imaju za cilj statičku detekciju grešaka. Kod onlajn testiranja se u isto vreme kreira i izvršava test i treba pokriti što više ponašanja sa fiksnim resursima. Učenje uslovljavanjem navodi da se ide na testove koji su mali broj puta odrađeni, a uz to postoje dodatni parametri, kao što je kazna ako se vrati u početno stanje.
 
+\appendix
 % ==============================================================================
 \section{Dodatni materijali}
 \label{sec:dodatno}
