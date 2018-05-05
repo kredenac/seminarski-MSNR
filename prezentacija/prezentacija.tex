@@ -1,7 +1,6 @@
 % !TEX encoding = UTF-8 Unicode
 
-\documentclass[12pt]{beamer}
-
+\documentclass[11pt]{beamer}
 
 \usepackage{color}
 \usepackage{url}
@@ -30,22 +29,23 @@
 %\usecolortheme{lily}
 \usefonttheme{serif}
 
-\AtBeginSection[]{
-\begin{frame}
-\frametitle{Sadržaj}
-\tableofcontents[currentsection]
-\end{frame}
-}
+%\AtBeginSection[]{
+%\begin{frame}
+%\frametitle{Sadržaj}
+%\tableofcontents[currentsection]
+%\end{frame}
+%}
 
 %\renewcommand{\abstractname}{Apstrakt} %pisace Sazetak ako se ne ukljuci ova naredba
 
 \title{Primena mašinskog učenja u verifikaciji softvera}
 
 \author[\hspace{-0.8em}N. Dimitrijević, R. Đorđević, L. Živanović, D. Špadijer]
-		{Nikola Dimitrijević \footnote{nikoladim95@gmail.com}\\
-        Rastko Đorđević \footnote{mi14078@alas.matf.bg.ac.rs}\\
-        Luka Živanović \footnote{mi14164@alas.matf.bg.ac.rs}\\
-        Dimitrije Špadijer \footnote{mm11021@alas.matf.bg.ac.rs}\\}
+		{Nikola Dimitrijević\\ % \footnote{nikoladim95@gmail.com}\\
+        Rastko Đorđević\\ % \footnote{mi14078@alas.matf.bg.ac.rs}\\
+        Luka Živanović\\ % \footnote{mi14164@alas.matf.bg.ac.rs}\\
+        Dimitrije Špadijer} % \footnote{mm11021@alas.matf.bg.ac.rs}\\}
+\date{14. maj 2018.}
 
 \begin{document}
 \begin{frame}
@@ -55,6 +55,7 @@
 \section{Uvod}
 \label{sec:uvod}
 \begin{frame}
+\frametitle{Uvod}
 \begin{itemize}
 \item Softverska rešenja su prisutna svuda
 \item Veoma je važno da taj softver bude ispravan
@@ -68,18 +69,20 @@
 \section{Verifikacija softvera}
 \label{sec:verifikacija}
 \begin{frame}
+\frametitle{Verifikacija softvera}
 \begin{itemize}
 \item Oblast razvoja softvera koja se bavi proverom ispravnosti softvera
 \item Potpuno ispravan i delimično ispravan softver
 \item Razlika je u tome da li se zaustavlja za svaki ulaz
 \item Zbog neodlučivosti halting problema, uglavnom se proverava delimična ispravnost
-\item Dinamička i statička verifikacija
+\item Dinamička i statička verifikacija \cite{milena}
 \end{itemize}
 \end{frame}
 
 \subsection{Dinamička verifikacija softvera}
 \label{subsec:dinamicka}
 \begin{frame}
+\frametitle{Dinamička verifikacija softvera}
 \begin{itemize}
 \item Provera ispravnosti softvera tokom njegovog izvršavanja
 \item Testiranje $\subset$ dinamička verifikacija
@@ -93,16 +96,17 @@
 \label{subsec:staticka}
 
 \begin{frame}
+\frametitle{Statička verifikacija softvera}
 \begin{itemize}
 \item Provera ispravnosti softvera bez njegovog pokretanja
 \item Pregled koda i automatska verifikacija
 \item Uvid u kvalitet koda i u propuste
 \item Tehnike:
 	\begin{itemize}
-		\item \textbf{Analiza toka podataka} (eng.~{\em data flow analysis})
-		\item \textbf{Apstraktna interpretacija} (eng.~{\em abstract interpretation})
-		\item \textbf{Simbolička analiza} (eng.~{\em symbolic analysis})
-		\item \textbf{Proveravanje ograničenih modela} (eng.~{\em Bounded model che\-cking}), koja se najviše koristi za verifikaciju logičkih kola.
+		\item \textbf{Analiza toka podataka} (eng. \textcolor{red}{data flow analysis})
+		\item \textbf{Apstraktna interpretacija} (eng. \textcolor{red}{abstract interpretation})
+		\item \textbf{Simbolička analiza} (eng. \textcolor{red}{symbolic analysis})
+		\item \textbf{Proveravanje ograničenih modela} (eng. \textcolor{red}{Bounded model checking}), koja se najviše koristi za verifikaciju logičkih kola.
 	\end{itemize}
 \end{itemize}
 \end{frame}
@@ -110,30 +114,53 @@
 \section{Mašinsko učenje}
 
 \begin{frame}
+\frametitle{Mašinsko učenje}
+
+\begin{block}{Definicija}
+\textcolor{red}{Mašinsko učenje} bavi se proučavanjem indukcije, odnosno generalizacije, čime formalizuje uopštavanje od uzorka određene veličine ka univerzalnim zaključcima \cite{bishopML}.
+\end{block}
+
 \begin{itemize}
-\item bla
+\item Mašinsko učenje postiže rezultate superiorne u odnosu na rezultate ljudskih eksperata
+\item Pogodno za probleme koji se teško definišu, a izuzetno lako rešavaju, i u kojima je prihvatljiva poneka greška
+\item Kako se primenjuje na verifikaciju, ako se dopuštaju greške?
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Mašinsko učenje}
+\begin{itemize}
+\item Tri oblasti mašinskog učenja:
+	\begin{itemize}
+	\item \textbf{Nadgledano učenje} (eng. \textcolor{red}{supervised learning})
+	\item \textbf{Nenadgledano učenje} (eng. \textcolor{red}{unsupervised learning})
+	\item \textbf{Učenje uslovljavanjem} (eng. \textcolor{red}{reinforcement learning})
+	\end{itemize}
+\item Nadgledano učenje: za svaki ulaz postoji i željeni izlaz
+\item Nenadgledano učenje: algoritmu se ostavlja da sam otkrije strukturu u podacima
+\item Učenje uslovljavanjem: oblast između prethodne dve
 \end{itemize}
 \end{frame}
 
-\begin{comment}
-\par \textit{Mašinsko učenje} bavi se proučavanjem indukcije, odnosno generalizacije, čime formalizuje uopštavanje od uzorka određene veličine ka univerzalnim zaključcima \cite{bishopML}. U srcu novog zamaha veštačke inteligencije nalazi se oblast mašinskog učenja. U nekim domenima, kao na primer prepoznavanje lica, u kojima se računari nisu mogli porediti sa ljudima po uspešnosti, ova oblast postiže rezultate superiorne u odnosu na rezultate ljudskih eksperata.
-
-% Mašinsko učenje predstavlja automatsku detekciju smislenih šablona u podacima.
-
-\par Mašinsko učenje je posebno pogodno za probleme koje je čoveku teško definisati a izuzetno lako za rešiti i u kojima je prihvatljiva poneka greška. Zbog dopuštanja povremenih grešaka u izvršavanju, ova oblast na prvi pogled izgleda kao nepogodna za rešavanje problema statičke verifikacije softvera. Ipak u stanju je da doprinese kao dodatni alat za rešavanje raznih problema koji se mogu naći u statičkoj verifikaciji ako njime rukuje prava osoba, čak i ako ne može da obeća kompletno rešenje svih problema.
-
-\par Obično se identifikuju tri oblasti mašinskog učenja: \textit{nadgledano učenje} (eng. \emph{supervised learning}), \textit{nenadgledano učenje} (eng. \emph{unsupervised learning}) i \textit{učenje uslovljavanjem} (eng. \emph{reinforcement learning}). Nadgledano učenje odlikuje da pored ulaznih podataka postoji i njemu odgovarajući željeni izlaz. Model je zadužen za učenje pravila nad datim parovima ulaza i izlaza. Sa druge strane, kod nenadgledanog učenja dati su samo ulazni podaci pri čemu na algoritmu ostaje da pronađe strukturu u podacima.
-Učenje uslovljavanjem se može videti kao oblast između dve pret\-hod\-no pomenute oblasti. U okviru učenja uslovljavanjem mora se rešiti problem preduzimanjem niza akcija, koje su međusobno povezane, kako bi se maksimizovala konačna nagrada.
-
-\par Uobičajeni tok uspešne primene tehnika mašinskog učenja je sledeći. Nakon što se problem analizira, kao i podaci nad kojim će tehnike biti primenjene, potrebno je izabrati odgovarajući model. Nakon odabira modela, podaci se pretprocesiraju i izabrani model se trenira nad tako obrađenim podacima. Istrenirani model je dalje neophodno evaluirati kako bi bilo moguće znati u kojoj meri je koristan.
-
-%\subsection{Odabrani algoritmi}
-
-
+\begin{frame}
+\frametitle{Koraci}
+\begin{itemize}
+\item Analiza problema i podataka nad kojim će tehnike biti primenjene
+\item Izbor odgovarajućih modela
+\item Pretprocesiranje podataka i treniranje modela nad tako obrađenim podacima
+\item Evaulacija istreniranog modela i mera njegove korisnosti
+\end{itemize}
+\end{frame}
 
 \subsection{Evaluacija modela i mere kvaliteta}
-
-\par \textit{Evaluacija modela} predstavlja numeričko predstavljanje sposobnosti predviđanja datog modela na određenoj skali i direktno se oslanja na mere kvaliteta. Mere koje se najčešće sreću u klasifikaciji su \textit{tačnost}, \textit{preciznost}, \textit{odziv} i \textit{F1 mera}. Sve navedene mere izvedene su iz \textit{matrice konfuzije}, tabela \ref{table:matrica_konfuzije}.
+\begin{frame}
+\frametitle{Evaluacija modela i mere kvaliteta}
+\begin{itemize}
+\item Numeričko predstavljanje sposobnosti predviđanja datog modela na određenoj skali
+\item Direktno se oslanja na mere kvaliteta: \textcolor{red}{tačnost}, \textcolor{red}{preciznost}, \textcolor{red}{odziv} i \textcolor{red}{F1 mera}
+\item Mere su izvedene iz matrice konfuzije
+\end{itemize}
 
 \begin{table}[h]
 	\centering
@@ -150,19 +177,43 @@ Učenje uslovljavanjem se može videti kao oblast između dve pret\-hod\-no pome
 	%\caption{ tabelica stagod}
 \end{table}
 
-\par Stvarno pozitivne i stvarno negativne instance su one instance koje su ispravno određene od strane modela. Lažno pozitivne instance su negativne instance za koje je od strane modela predviđeno da su pozitivne, dok su lažno negativne instance zapravo pozitivne instance koje je model loše klasifikovao kao negativne.
+\end{frame}
 
-\par Tačnost klasifikacije predstavlja procenat uspešno klasifikovanih instanci u odnosu na ukupan broj instanci. Preciznost je udeo ispravno pronađenih pozitivnih instanci u svim instancama koje su proglašene za pozitivne. Odziv je udeo ispravno pronađenih pozitivnih instanci u svim zaista pozitivnim instancama. Preciznost i odziv su dve mere koje najviše ima smisla razmatrati zajedno i način na koji se to najčešće radi je F1 mera, koja predstavlja njihovu harmonijsku sredinu.
+\begin{frame}
+\frametitle{Evaluacija modela i mere kvaliteta}
+\begin{itemize}
+\item Tačnost: udeo uspešno klasifikovanih instanci u odnosu na ukupan broj instanci
+\item Preciznost: udeo ispravno pronađenih pozitivnih instanci u svim instancama koje su proglašene za pozitivne
+\item Odziv: udeo ispravno pronađenih pozitivnih instanci u svim zaista pozitivnim instancama
+\item F1 mera: harmonijska sredina preciznosti i odziva
+\end{itemize}
+\end{frame}
 
-% ==============================================================================
 \section{Odabrani problemi statičke verifikacije}
 \label{sec:naslovN}
-% ==============================================================================
-
-\par Iako na prvi pogled mašinsko učenje možda nije očigledan odgovor na probleme koje postavlja statička verifikacija, tokom prethodnih decenija su sa razvojom mašinskog učenja postignuti izuzetno značajni uspesi u spajanju ovih oblasti. U nastavku sledi opis nekih od tih uspeha, od uvoda u formalnu verifikaciju koji služi kao osnova mnogih daljih istraživanja, preko učenja statičkog analizatora u okviru kojeg se koriste najmodernije tehnike kako mašinskog učenja tako i testiranja, do pravljenja inteligentnog metoda detekcije grešaka koji obuhvata širok dijapazon tehnika mašinskog učenja.
 
 \subsection{Formalna verifikacija softvera}
 \label{subsec:formalna-verifikacija}
+\begin{frame}
+\frametitle{Formalna verifikacija}
+blablabla
+\end{frame}
+
+\subsection{Učenje statičkog analizatora iz podataka}
+\label{subsec:staticki-analizator}
+
+\subsection{Od izvornog koda do istreniranih modela}
+\label{subsec:pregled}
+
+\section{Primena mašinskog učenja u dinamičkoj verifikaciji}
+\label{sec:dinamcikaPrimena}
+
+\subsection{Onlajn testiranje korišćenjem učenja uslovljavanjem }
+
+\section{Zaključak}
+\label{sec:zakljucak}
+
+\begin{comment}
 
 \par Verifikaciji softvera može se pristupiti na strogo formalan matematički način. U ovom radu biće izložen pristup o kome se detaljnije može pročitati u radu \cite{verify}.
 
@@ -624,11 +675,9 @@ U radu \cite{online-testing-with-reinforcement-learning} se mogu videti primeri 
 
 \label{fig:falseNeg}
 \end{figure}
-
-\appendix
-\addcontentsline{toc}{section}{Literatura}
-\appendix
+\end{comment}
+\section{Literatura}
 \bibliography{seminarski}
 \bibliographystyle{plain}
-\end{comment}
+
 \end{document}
