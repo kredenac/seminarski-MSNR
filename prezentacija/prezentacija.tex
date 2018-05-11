@@ -290,11 +290,79 @@ Moze iskoristiti jednu ARFF datoteku kao ulaz za vise razlicitih algoritama.
 
 
 % Lukin rad
-\subsection{Formalna verifikacija softvera}
-\label{subsec:formalna-verifikacija}
+\subsection{Onlajn testiranje korišćenjem učenja uslovljavanjem}
+\label{subsec:online-rl}
 \begin{frame}
 \frametitle{Lukin rad}
-blablabla
+Ipak, veličina tog stabla može da postane izuzetno velika za pretragu, pa se pribegava tehnikama onlajn testiranja.
+
+Onlajn testiranje je tehnika u kojoj se kreiranje testa i njegovo izvršavanje rade u istom algoritmu.
+
+Može biti pogodnije od oflajn testiranja za reaktivne sisteme zato što se može dinamički prilagoditi za vreme izvršavanja tako da pokrije najrelevantnija ponašanja, umesto svih mogućih, što je obično nemoguće.
+
+Onlajn testiranje spada u skup testiranja baziranih na modelu (eng. model-based testing), gde tester koristi model da detektuje razlike izmedu impelementacije pod testom (eng. implementation under test - IUT) i modela.
+\end{frame}
+
+% Lukin rad
+\subsection{Onlajn testiranje korišćenjem učenja uslovljavanjem}
+\label{subsec:online-rl}
+\begin{frame}
+\frametitle{Lukin rad}
+Akcije testera ćemo nazivati kontrolisane akcije, dok ćemo akcije IUTa nazivati posmatrane akcije.
+
+Stanja modela čine memorijske lokacije programa koje su preslikane u konačni skup vrednosti.
+Pravila ažuriranja su konačan skup funkcija ko je preslikava ju vrednosti iz domena stanja u domen stanja (odnosno relacija ...).
+
+$[[p]] \subseteq Stanja \times Vrednost^n \times Stanja$.
+$Stanja \times Vrednost^n  \rightarrow Stanja$
+
+Čuvar $\varphi$ je formula koja zavisi od stanja.
+
+Čuvano pravilo ažuriranja je par ($\varphi$,p) i ono limitira primenu p na stanja i argumente koji zadovoljavaju $\varphi(\bar{v})$.
+\end{frame}
+
+
+% Lukin rad
+\subsection{Onlajn testiranje korišćenjem učenja uslovljavanjem}
+\label{subsec:online-rl}
+\begin{frame}
+\frametitle{Lukin rad}
+
+prostor stanja $Stanja$,
+prostor vrednosti $Vrednosti$,
+inicijalno stanje $s_0 \in Stanja$,
+konačni skup simbola akcija $\Sigma$ podeljen u dva disjunktna podskupa ($\Sigma_c$ kontrolisanih akcija i $\Sigma_o$ posmatranih akcija),
+familija $(\varphi_f, p_f) f \in \Sigma$ čuvanih pravila ažuriranja,
+arnost funkcije f je broj ulaznih parametara $p_f$ i
+arnost reset pravila je 0 i $[[p_{Reset}]](s) = s_0$ za sve $s \models \varphi_{Reset}$.
+
+\end{frame}
+
+
+
+% Lukin rad
+\subsection{Onlajn testiranje korišćenjem učenja uslovljavanjem}
+\label{subsec:online-rl}
+\begin{frame}
+\frametitle{Lukin rad}
+
+Ostaje još da opišemo način izbora naredne akcije u algoritmu:
+• Ukoliko nema mogućih akcija prekini trenutni test.
+• Ukoliko nema mogućeg izbora za kontrolisanu akciju vrati posmatranu.
+• Ukoliko nema mogućeg izbora za posmatranu akciju vrati kontrolisanu.
+• Inače
+izaberi izmedu kontrolisane i posmatrane akcije.
+
+Algoritam prati težine transakcija u trenutnom testu. Sledeća kontrolisana akcija se bira iz nepraznog skupa dozvoljenih akcija koristeći datu strategiju:
+
+Umesto da posmatramo minimizaciju cene, možemo pretpostaviti da imamo fiksne resurse i da maksimizujemo procenat pokrivenih ponašanja.
+
+Najjeftinija
+Nasumična
+Najmanje frekventna:
+RL modifikujemo idejom anti-ant algoritma [12] kako bi se izbeglo ge- nerisanje generacija redudantnih testova.
+ako potencijalne sledeće akcije obeležimo sa $(a_i)_{i < k}$ za neko k, i cene $(c_i)_{i < k}$, onda će verovatnoća za izbor akcije $a_i$ biti $c_i^{-1} / \sum_{j=0}^{k} c_j^{-1}$.
+
 \end{frame}
 
 
