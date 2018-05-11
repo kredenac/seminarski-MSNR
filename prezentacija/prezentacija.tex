@@ -58,9 +58,10 @@
 \frametitle{Uvod}
 \begin{itemize}
 \item Softverska rešenja su prisutna svuda
+\item Avioni, samovozeći automobili, medicinski uređaji
 \item Veoma je važno da taj softver bude ispravan
 \item Verifikacija softvera se bavi proverom ispravnosti softvera
-\item Mnoga ograničenja u verifikaciji koja se teško prevazilaze
+%\item Mnoga ograničenja u verifikaciji koja se teško prevazilaze
 \item Mašinsko učenje je popularno i s puno uspeha
 \item Primene mašinskog učenja u verifikaciji
 \end{itemize}
@@ -236,6 +237,9 @@ Ako je $S$ specifikacija, $P$ program i $T$ adekvatan i koherentan skup testova,
 blablabla
 \end{frame}
 
+
+
+
 % Nikolin rad
 \subsection{Od izvornog koda do istreniranih modela}
 \label{subsec:WEKA}
@@ -248,16 +252,18 @@ blablabla
 \item Kako trenirati te klasifikatore i koje podatke treba koristiti?
 \item Koje su karakteristike potrebne algoritmu i koji koristiti?
 
+\item Od javno dostupnih repozitorijuma dobija se skup za treniranje upoređivanjem verzija datoteka.
 
-
-\item  CMore izdvaja stanja analizirajući izvorni kod
-i kao izlaz daje odgovarajucu ARFF datoteku.
-
-
-
-\item Holmes od ARFF datoteka koda sa greškom i bez pravi novu.
+%\item  CMore izdvaja stanja analizirajući izvorni kod i kao izlaz daje odgovarajucu ARFF datoteku.
+%\item Holmes od ARFF datoteka koda sa greškom i bez pravi novu.
 \end{itemize}
 \end{frame}
+
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth, trim=0cm 0 0 -7cm]{weka.png}}
+\begin{frame}
+\end{frame}
+}
 
 % Nikolin rad
 \subsection{Od izvornog koda do istreniranih modela}
@@ -265,7 +271,7 @@ i kao izlaz daje odgovarajucu ARFF datoteku.
 \begin{frame}
 \frametitle{Od izvornog koda do istreniranih modela}
 \begin{itemize}
-\item Od javno dostupnih repozitorijuma dobija se skup za treniranje upoređivanjem verzija datoteka.
+
 
 \item WEKA - biblioteka mašinskog učenja.
 Moze iskoristiti jednu ARFF datoteku kao ulaz za vise razlicitih algoritama.
