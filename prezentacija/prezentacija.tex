@@ -240,36 +240,45 @@ blablabla
 \subsection{Formalna verifikacija softvera}
 \label{subsec:formalna-verifikacija}
 \begin{frame}
-\frametitle{Nikolin rad}
-Pravljenje modela mašinskog učenja za detekciju grešaka korišćenjem izvornih kodova.
+\frametitle{Od izvornog koda do istreniranih modela}
 
-1. Kako transformisati izvorni kod u odgovarajući format za klasifikatore?
-2. Kako trenirati te klasifikatore i koje podatke treba koristiti?
-3. Koje su karakteristike potrebne algoritmu i koji je najbolji za dati problem?
 
-Od javno dostupnih repozitorijuma se može lako dobiti veliki skup za treniranje upoređivanjem verzija datoteka.
+\begin{itemize}
+\item Kako od izvornog kod do ulaza za klasifikatore?
+\item Kako trenirati te klasifikatore i koje podatke treba koristiti?
+\item Koje su karakteristike potrebne algoritmu i koji koristiti?
 
-Koristi se program CMore koji izdvaja stanja programa analizirajući izvorni kod
+
+
+\item  CMore izdvaja stanja analizirajući izvorni kod
 i kao izlaz daje odgovarajucu ARFF datoteku.
 
-Potom program Holmes od ARFF datoteke ispravnog koda i onog sa greškom pravi novu ARFF datoteku
-gde su samo razlike zadržane.
+
+
+\item Holmes od ARFF datoteka koda sa greškom i bez pravi novu.
+\end{itemize}
 \end{frame}
 
 % Nikolin rad
 \subsection{Formalna verifikacija softvera}
 \label{subsec:formalna-verifikacija}
 \begin{frame}
-\frametitle{Nikolin rad}
-WEKA - biblioteka mašinskog učenja.
+\frametitle{Od izvornog koda do istreniranih modela}
+\begin{itemize}
+\item Od javno dostupnih repozitorijuma dobija se skup za treniranje upoređivanjem verzija datoteka.
+
+\item WEKA - biblioteka mašinskog učenja.
 Moze iskoristiti jednu ARFF datoteku kao ulaz za vise razlicitih algoritama.
 
-Analiza pogodnosti daje rezultate poredjenja 71 klasifikatora.
+\item Analiza pogodnosti daje rezultate poredjenja 71 klasifikatora.
 
-Među najboljim su
-Neuronska mreža MultiLayerPerceptron
-Najbliži susedi Ibk
-Stabla ADABoost
+\item Među najboljim su:
+\begin{itemize}
+	\item Neuronska mreža MultiLayerPerceptron
+	\item Najbliži susedi Ibk
+	\item Stabla ADABoost
+\end{itemize}
+\end{itemize}
 \end{frame}
 
 
