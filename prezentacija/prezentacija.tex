@@ -76,7 +76,7 @@
 \item Potpuno ispravan i delimično ispravan softver
 \item Razlika je u tome da li se zaustavlja za svaki ulaz
 \item Zbog neodlučivosti halting problema, uglavnom se proverava delimična ispravnost
-\item Dinamička i statička verifikacija \cite{milena}
+\item Dinamička i statička verifikacija
 \end{itemize}
 \end{frame}
 
@@ -118,7 +118,7 @@
 \frametitle{Mašinsko učenje}
 
 \begin{block}{Definicija}
-\textcolor{red}{Mašinsko učenje} bavi se proučavanjem indukcije, odnosno generalizacije, čime formalizuje uopštavanje od uzorka određene veličine ka univerzalnim zaključcima \cite{bishopML}.
+\textcolor{red}{Mašinsko učenje} bavi se proučavanjem indukcije, odnosno generalizacije, čime formalizuje uopštavanje od uzorka određene veličine ka univerzalnim zaključcima.
 \end{block}
 
 \begin{itemize}
@@ -198,7 +198,7 @@
 \begin{frame}
 \frametitle{Formalna verifikacija}
 \begin{itemize}
-\item Formalni, matematički pristup verifikaciji \cite{verify}
+\item Formalni, matematički pristup verifikaciji
 \item $P$ program, $T$ skup testova, $S$ specifikacija
 $$(\forall t\in T)\ [prolazi(P,t)\wedge S\models t]\Rightarrow P\equiv S$$
 \item Dva česta problema:
@@ -206,8 +206,8 @@ $$(\forall t\in T)\ [prolazi(P,t)\wedge S\models t]\Rightarrow P\equiv S$$
 	\item Pronaći \textcolor{red}{adekvatan} skup testova $T$
 	\item Proveriti tačnost konjukcije $prolazi(P,t)\wedge S\models t$ (\textcolor{red}{problem proročišta})
 	\end{itemize}
-\item Prevazilaze se primenom mašinskog učenja i indukovanje teorije koja odgovara datim podacima
-\item Matematički pojmovi iz teorije jednačina (eng. \textcolor{red}{equational theory} \cite{equationaltheory})
+\item Prevazilaze se primenom mašinskog učenja i indukovanjem teorije koja odgovara datim podacima
+\item Matematički pojmovi iz teorije jednačina (eng. \textcolor{red}{equational theory})
 \end{itemize}
 \end{frame}
 
@@ -293,7 +293,7 @@ Može iskoristiti jednu ARFF datoteku kao ulaz za više različitih algoritama.
 \subsection{Onlajn testiranje korišćenjem učenja uslovljavanjem}
 \label{subsec:online-rl}
 \begin{frame}
-\frametitle{Lukin rad}
+\frametitle{Onlajn testiranje}
 Ipak, veličina tog stabla može da postane izuzetno velika za pretragu, pa se pribegava tehnikama onlajn testiranja.
 
 Onlajn testiranje je tehnika u kojoj se kreiranje testa i njegovo izvršavanje rade u istom algoritmu.
@@ -304,7 +304,7 @@ Onlajn testiranje spada u skup testiranja baziranih na modelu (eng. model-based 
 \end{frame}
 
 \begin{frame}
-\frametitle{Lukin rad}
+\frametitle{Onlajn testiranje}
 Akcije testera ćemo nazivati kontrolisane akcije, dok ćemo akcije IUTa nazivati posmatrane akcije.
 
 Stanja modela čine memorijske lokacije programa koje su preslikane u konačni skup vrednosti.
@@ -320,7 +320,7 @@ $Stanja \times Vrednost^n  \rightarrow Stanja$
 
 
 \begin{frame}
-\frametitle{Lukin rad}
+\frametitle{Onlajn testiranje}
 
 prostor stanja $Stanja$,
 prostor vrednosti $Vrednosti$,
@@ -335,7 +335,7 @@ arnost reset pravila je 0 i $[[p_{Reset}]](s) = s_0$ za sve $s \models \varphi_{
 
 
 \begin{frame}
-\frametitle{Lukin rad}
+\frametitle{Onlajn testiranje}
 
 Ostaje još da opišemo način izbora naredne akcije u algoritmu:
 • Ukoliko nema mogućih akcija prekini trenutni test.
@@ -365,7 +365,37 @@ ako potencijalne sledeće akcije obeležimo sa $(a_i)_{i < k}$ za neko k, i cene
 
 \section{Zaključak}
 \label{sec:zakljucak}
+\begin{frame}
+\frametitle{Zaključak}
+\begin{itemize}
+\item Značaj verifikacije softvera
+\item Izuzetno dobri rezultati tehnika mašinskog učenja
+\item Prirodno je razmišljati o primeni mašinskog učenja na verifikaciju softvera
+\item Primene i u statičkoj i u dinamičkoj verifikaciji
+\item Odabrane primene:
+	\begin{itemize}
+		\item Formalna verifikacija
+		\item Učenje statičkog analizatora iz podataka
+		\item Od izvornog koda do istreniranih modela
+		\item Onlajn testiranje korišćenjem učenja uslovljavanjem
+	\end{itemize}
+\end{itemize}
+\end{frame}
 
+\section{Literatura}
+\begin{frame}
+\frametitle{Literatura}
+\begin{itemize}
+\item Lutz Hamel, On the use of machine learning in formal software verification, University of Rhode Island, 2003.
+\item Christopher M. Bishop, Pattern Recognition and Machine Learning (Information Science and Statistics), Springer-Verlag New York, Inc, Secaucus, NJ, 2006.
+\item Hannes Tribus, Static Code Features for a Machine Learning based Inspection, School of Engineering, Blekinge Institute of Technology, Sweden, 5 2010.
+\item Margus Veanes, Pritam Roy and Colin Campbell, Online testing with reinforcement learning, In Formal Approaches to Software Testing and Runtime Verification, FATES/RV 2006, volume 4262, Springer Verlag, January 2006.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+\centering\Huge{Hvala na pažnji!}
+\end{frame}
 
 \begin{comment}
 
@@ -744,8 +774,5 @@ U radu \cite{online-testing-with-reinforcement-learning} se mogu videti primeri 
 \label{fig:falseNeg}
 \end{figure}
 \end{comment}
-\section{Literatura}
-\bibliography{seminarski}
-\bibliographystyle{plain}
 
 \end{document}
