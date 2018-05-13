@@ -154,6 +154,9 @@
 %\end{itemize}
 %\end{frame}
 
+\begin{comment}
+
+
 \begin{frame}
 \frametitle{Koraci}
 \begin{itemize}
@@ -189,6 +192,7 @@
 \end{table}
 
 \end{frame}
+\end{comment}
 
 %%%%%%%%%%% mislim da nam nije potreban ovaj slajd, na osnovu gornjeg se moze sve ispricati
 %\begin{frame}
@@ -244,11 +248,36 @@ Ako je $S$ specifikacija, $P$ program i $T$ adekvatan i koherentan skup testova,
 \subsection{Učenje statičkog analizatora iz podataka}
 \label{subsec:staticki-analizator}
 \begin{frame}
-\frametitle{Rastkov rad}
-https://wordcounter.net/
+\frametitle{Učenje statičkog analizatora iz podataka}
+
+\begin{itemize}
+	\item Šta su statički analizatori?
+	\item Doprinos automatizacije kreiranja statičkih analizatora.
+	\item Nov automatski pristup koji počiva na tehnikama mašinskog učenja.
+	\item Dva ključna izazova novog pristupa:
+	\begin{itemize}
+		\item Učenje pravila koja nisu kombinacija već poznatih.
+		\item Preprilagođavanja prilikom učenja modela.
+	\end{itemize}
+	
+\end{itemize}
+
 \end{frame}
 
+%============================ new frame ===========================
+\begin{frame}
+\frametitle{Učenje statičkog analizatora iz podataka}
 
+\begin{itemize}
+	\item Prvi problem se rešava uvođenjem specificnog domenskog jezika.
+	\item Učenje analizatora se može predstaviti kao problem učenja stabla odlučivanja.
+	\item Koristi se prošireni ID3 algoritam.
+	\item Drugi problem se rešava procedurom učenja vođenom kontrapirmerima.
+	\item Ključna komponenta ovog pristupa je proročište.
+	\item Proročište testira korektnost i generiše kontrapirmere.
+	
+\end{itemize}
+\end{frame}
 
 
 % Nikolin rad
