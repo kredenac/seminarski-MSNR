@@ -230,8 +230,8 @@ Ako je $S$ specifikacija, $P$ program i $T$ adekvatan i koherentan skup testova,
 
 
 % Rastkov rad
-\subsection{opa cupa}
-\label{subsec:formalna-verifikacija}
+\subsection{Učenje statičkog analizatora iz podataka}
+\label{subsec:staticki-analizator}
 \begin{frame}
 \frametitle{Rastkov rad}
 blablabla
@@ -248,9 +248,9 @@ blablabla
 
 
 \begin{itemize}
-\item Kako od izvornog kod do ulaza za klasifikatore?
+\item Kako od izvornog koda do ulaza za klasifikatore?
 \item Kako trenirati te klasifikatore i koje podatke treba koristiti?
-\item Koje su karakteristike potrebne algoritmu i koji koristiti?
+\item Koje su karakteristike potrebne algoritmu i koji algoritam koristiti?
 
 \item Od javno dostupnih repozitorijuma dobija se skup za treniranje upoređivanjem verzija datoteka.
 
@@ -265,20 +265,17 @@ blablabla
 \end{frame}
 }
 
-% Nikolin rad
-\subsection{Od izvornog koda do istreniranih modela}
-\label{subsec:WEKA}
 \begin{frame}
 \frametitle{Od izvornog koda do istreniranih modela}
 \begin{itemize}
 
 
 \item WEKA - biblioteka mašinskog učenja.
-Moze iskoristiti jednu ARFF datoteku kao ulaz za vise razlicitih algoritama.
+Može iskoristiti jednu ARFF datoteku kao ulaz za više različitih algoritama.
 
-\item Analiza pogodnosti daje rezultate poredjenja 71 klasifikatora.
+\item Analiza pogodnosti daje rezultate poređenja 71 klasifikatora.
 
-\item Među najboljim su:
+\item Među najboljima su:
 \begin{itemize}
 	\item Neuronska mreža MultiLayerPerceptron
 	\item Najbliži susedi Ibk
@@ -290,6 +287,9 @@ Moze iskoristiti jednu ARFF datoteku kao ulaz za vise razlicitih algoritama.
 
 
 % Lukin rad
+\section{Primena mašinskog učenja u dinamičkoj verifikaciji}
+\label{sec:dinamcikaPrimena}
+
 \subsection{Onlajn testiranje korišćenjem učenja uslovljavanjem}
 \label{subsec:online-rl}
 \begin{frame}
@@ -303,9 +303,6 @@ Može biti pogodnije od oflajn testiranja za reaktivne sisteme zato što se mož
 Onlajn testiranje spada u skup testiranja baziranih na modelu (eng. model-based testing), gde tester koristi model da detektuje razlike izmedu impelementacije pod testom (eng. implementation under test - IUT) i modela.
 \end{frame}
 
-% Lukin rad
-\subsection{Onlajn testiranje korišćenjem učenja uslovljavanjem}
-\label{subsec:online-rl}
 \begin{frame}
 \frametitle{Lukin rad}
 Akcije testera ćemo nazivati kontrolisane akcije, dok ćemo akcije IUTa nazivati posmatrane akcije.
@@ -322,9 +319,6 @@ $Stanja \times Vrednost^n  \rightarrow Stanja$
 \end{frame}
 
 
-% Lukin rad
-\subsection{Onlajn testiranje korišćenjem učenja uslovljavanjem}
-\label{subsec:online-rl}
 \begin{frame}
 \frametitle{Lukin rad}
 
@@ -340,9 +334,6 @@ arnost reset pravila je 0 i $[[p_{Reset}]](s) = s_0$ za sve $s \models \varphi_{
 
 
 
-% Lukin rad
-\subsection{Onlajn testiranje korišćenjem učenja uslovljavanjem}
-\label{subsec:online-rl}
 \begin{frame}
 \frametitle{Lukin rad}
 
@@ -372,41 +363,8 @@ ako potencijalne sledeće akcije obeležimo sa $(a_i)_{i < k}$ za neko k, i cene
 \subsection{Od izvornog koda do istreniranih modela}
 \label{subsec:pregled}
 
-\section{Primena mašinskog učenja u dinamičkoj verifikaciji}
-\label{sec:dinamcikaPrimena}
-
-\subsection{Onlajn testiranje korišćenjem učenja uslovljavanjem }
-
 \section{Zaključak}
 \label{sec:zakljucak}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 \begin{comment}
