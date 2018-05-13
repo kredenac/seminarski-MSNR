@@ -129,20 +129,30 @@
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Mašinsko učenje}
-\begin{itemize}
-\item Tri oblasti mašinskog učenja:
-	\begin{itemize}
-	\item \textbf{Nadgledano učenje} (eng. \textcolor{red}{supervised learning})
-	\item \textbf{Nenadgledano učenje} (eng. \textcolor{red}{unsupervised learning})
-	\item \textbf{Učenje uslovljavanjem} (eng. \textcolor{red}{reinforcement learning})
-	\end{itemize}
-\item Nadgledano učenje: za svaki ulaz postoji i željeni izlaz
-\item Nenadgledano učenje: algoritmu se ostavlja da sam otkrije strukturu u podacima
-\item Učenje uslovljavanjem: oblast između prethodne dve
-\end{itemize}
-\end{frame}
+%ml slika
+{
+\begin{frame}{}
+        \begin{center}
+            \includegraphics[width=\textwidth,height=0.97\textheight,keepaspectratio]{machine-learning.png}
+        \end{center}
+    \end{frame}
+
+% mislim da je bolje ova slika nego tekst
+
+%\begin{frame}
+%\frametitle{Mašinsko učenje}
+%\begin{itemize}
+%\item Tri oblasti mašinskog učenja:
+%	\begin{itemize}
+%	\item \textbf{Nadgledano učenje} (eng. \textcolor{red}{supervised learning})
+%	\item \textbf{Nenadgledano učenje} (eng. \textcolor{red}{unsupervised learning})
+%	\item \textbf{Učenje uslovljavanjem} (eng. \textcolor{red}{reinforcement learning})
+%	\end{itemize}
+%\item Nadgledano učenje: za svaki ulaz postoji i željeni izlaz
+%\item Nenadgledano učenje: algoritmu se ostavlja da sam otkrije strukturu u podacima
+%\item Učenje uslovljavanjem: oblast između prethodne dve
+%\end{itemize}
+%\end{frame}
 
 \begin{frame}
 \frametitle{Koraci}
@@ -180,15 +190,16 @@
 
 \end{frame}
 
-\begin{frame}
-\frametitle{Evaluacija modela i mere kvaliteta}
-\begin{itemize}
-\item Tačnost: udeo uspešno klasifikovanih instanci u odnosu na ukupan broj instanci
-\item Preciznost: udeo ispravno pronađenih pozitivnih instanci u svim instancama koje su proglašene za pozitivne
-\item Odziv: udeo ispravno pronađenih pozitivnih instanci u svim zaista pozitivnim instancama
-\item F1 mera: harmonijska sredina preciznosti i odziva
-\end{itemize}
-\end{frame}
+%%%%%%%%%%% mislim da nam nije potreban ovaj slajd, na osnovu gornjeg se moze sve ispricati
+%\begin{frame}
+%\frametitle{Evaluacija modela i mere kvaliteta}
+%\begin{itemize}
+%\item Tačnost: udeo uspešno klasifikovanih instanci u odnosu na ukupan broj instanci
+%\item Preciznost: udeo ispravno pronađenih pozitivnih instanci u svim instancama koje su proglašene za pozitivne
+%\item Odziv: udeo ispravno pronađenih pozitivnih instanci u svim zaista pozitivnim instancama
+%\item F1 mera: harmonijska sredina preciznosti i odziva
+%\end{itemize}
+%\end{frame}
 
 \section{Odabrani problemi statičke verifikacije}
 \label{sec:naslovN}
@@ -234,7 +245,7 @@ Ako je $S$ specifikacija, $P$ program i $T$ adekvatan i koherentan skup testova,
 \label{subsec:staticki-analizator}
 \begin{frame}
 \frametitle{Rastkov rad}
-blablabla
+https://wordcounter.net/
 \end{frame}
 
 
@@ -248,14 +259,13 @@ blablabla
 
 
 \begin{itemize}
+\item Cilj je napraviti inteligentni metod detekcije grešaka
 \item Kako od izvornog koda do ulaza za klasifikatore?
 \item Kako trenirati te klasifikatore i koje podatke treba koristiti?
 \item Koje su karakteristike potrebne algoritmu i koji algoritam koristiti?
 
 \item Od javno dostupnih repozitorijuma dobija se skup za treniranje upoređivanjem verzija datoteka.
 
-%\item  CMore izdvaja stanja analizirajući izvorni kod i kao izlaz daje odgovarajucu ARFF datoteku.
-%\item Holmes od ARFF datoteka koda sa greškom i bez pravi novu.
 \end{itemize}
 \end{frame}
 
@@ -270,8 +280,8 @@ blablabla
 \begin{itemize}
 
 
-\item WEKA - biblioteka mašinskog učenja.
-Može iskoristiti jednu ARFF datoteku kao ulaz za više različitih algoritama.
+\item WEKA - biblioteka mašinskog učenja
+\item Jedna ARFF datoteka kao ulaz za više algoritama
 
 \item Analiza pogodnosti daje rezultate poređenja 71 klasifikatora.
 
@@ -294,6 +304,7 @@ Može iskoristiti jednu ARFF datoteku kao ulaz za više različitih algoritama.
 \label{subsec:online-rl}
 \begin{frame}
 \frametitle{Onlajn testiranje}
+https://wordcounter.net/
 Ipak, veličina tog stabla može da postane izuzetno velika za pretragu, pa se pribegava tehnikama onlajn testiranja.
 
 Onlajn testiranje je tehnika u kojoj se kreiranje testa i njegovo izvršavanje rade u istom algoritmu.
