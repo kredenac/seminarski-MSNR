@@ -87,7 +87,7 @@
 {
 \begin{frame}{}
  	\begin{center}
-         	\includegraphics[width=\textwidth,height=0.97\textheight,keepaspectratio]{machine-learning.png}
+         	\includegraphics[width=\textwidth,height=0.9\textheight,keepaspectratio]{machine-learning.png}
         \end{center}
 \end{frame}
 
@@ -105,28 +105,35 @@
 \end{itemize}
 \end{frame}
 
-\subsection{Dinamička verifikacija softvera}
-\label{subsec:dinamicka}
+%\subsection{Dinamička verifikacija softvera}
+%\label{subsec:dinamicka}
 \begin{frame}
-\frametitle{Dinamička verifikacija softvera}
+\frametitle{Verifikacija softvera}
 \begin{itemize}
-\item Provera ispravnosti softvera tokom njegovog izvršavanja
-\item Testiranje $\subset$ dinamička verifikacija
-\item Testiranjem se dokazuje prisustvo, ali ne i odsustvo grešaka
-\item Dobar skup testova obezbeđuje sigurnost i poverenje u softver
-\item Debagovanje --- drugi najčešći vid dinamičke verifikacije
+\item Dinamička verifikacija:
+	\begin{itemize}
+		\item Provera ispravnosti softvera tokom njegovog izvršavanja
+		\item Testiranje $\subset$ dinamička verifikacija
+		\item Testiranjem se dokazuje prisustvo, ali ne i odsustvo grešaka
+		\item Dobar skup testova obezbeđuje sigurnost i poverenje u softver
+		\item Debagovanje --- drugi najčešći vid dinamičke verifikacije
+	\end{itemize}
+\item Statička verifikacija:
+	\begin{itemize}
+		\item Provera ispravnosti softvera bez njegovog pokretanja
+		\item Pregled koda i automatska verifikacija
+		\item Uvid u kvalitet koda i u propuste
+	\end{itemize}
 \end{itemize}
 \end{frame}
 
+\begin{comment}
 \subsection{Statička verifikacija softvera}
 \label{subsec:staticka}
 
 \begin{frame}
 \frametitle{Statička verifikacija softvera}
 \begin{itemize}
-\item Provera ispravnosti softvera bez njegovog pokretanja
-\item Pregled koda i automatska verifikacija
-\item Uvid u kvalitet koda i u propuste
 \item Tehnike:
 	\begin{itemize}
 		\item \textbf{Analiza toka podataka} (eng. \textcolor{red}{data flow analysis})
@@ -136,6 +143,7 @@
 	\end{itemize}
 \end{itemize}
 \end{frame}
+\end{comment}
 
 % mislim da je bolje ova slika nego tekst
 
@@ -338,9 +346,9 @@ Ako je $S$ specifikacija, $P$ program i $T$ adekvatan i koherentan skup testova,
 	\item Veliki, nedeterministički sistemi?
 	\item Kombinovanje generisanje testova i njihovo izvršavanje
 	\item Pokriva najrelevantnija ponašanja
-	\item Testiranja bazirana na modelu (eng. \emph{model-based testing})
+	\item Testiranja bazirana na modelu (eng. \textcolor{red}{model-based testing})
 	\begin{itemize}
-		\item Implementacija pod testom \newline (eng. \emph{implementation under test - IUT})
+		\item Implementacija pod testom \newline (eng. \textcolor{red}{implementation under test - IUT})
 		\item Model	
 	\end{itemize}
 \end{itemize}
@@ -361,15 +369,16 @@ Ako je $S$ specifikacija, $P$ program i $T$ adekvatan i koherentan skup testova,
 \begin{itemize}
 	\item Akcije testera - kontrolisane akcije
 	\item Akcije IUT - posmatrane akcije
-\end{itemize}
 
-Pravila ažuriranja:
+
+\item Pravila ažuriranja:
 \begin{itemize}
-	\item $[[p]] \subseteq Stanja \times Vrednost^n \times Stanja$.
+	\item $[[p]] \subseteq Stanja \times Vrednost^n \times Stanja$
 	\item $[[p]] \subseteq Stanja \times Vrednost^n \rightarrow Stanja$
 \end{itemize}
 
-Čuvano pravilo ažuriranja je par ($\varphi$,p) 
+\item Čuvano pravilo ažuriranja je par ($\varphi$,p) 
+\end{itemize}
 \end{frame}
 
 
@@ -378,10 +387,10 @@ Pravila ažuriranja:
 
 Izbor naredne akcije:
 \begin {itemize}
-	\item Ukoliko nema mogućih akcija: \newline \textbf{prekini trenutni test.}
-	\item Ukoliko nema mogućeg izbora za kontrolisanu akciju: \newline \textbf{vrati posmatranu.}
-	\item Ukoliko nema mogućeg izbora za posmatranu akciju: \newline \textbf{vrati kontrolisanu.}
-	\item Inače: \newline \textbf{izaberi izmedu kontrolisane i posmatrane akcije.}
+	\item Ukoliko nema mogućih akcija: \newline \textbf{prekini trenutni test}
+	\item Ukoliko nema mogućeg izbora za kontrolisanu akciju: \newline \textbf{vrati posmatranu}
+	\item Ukoliko nema mogućeg izbora za posmatranu akciju: \newline \textbf{vrati kontrolisanu}
+	\item Inače: \newline \textbf{izaberi između kontrolisane i posmatrane akcije}
 \end {itemize}
 
 \end{frame}
@@ -391,16 +400,17 @@ Izbor naredne akcije:
 \begin{frame}
 \frametitle{Onlajn testiranje}
 
-Politika izbora:
-\begin {itemize}
+\begin{itemize}
+\item Politika izbora:
+\begin{itemize}
 	\item Najjeftinija
 	\item Nasumična
 	\item Najmanje frekventna
-\end {itemize}
-\textbf{učenje uslovljavanjem, anti-ant algoritam} \newline
-Akcije $(a_i)_{i < k}$, Cene $(c_i)_{i < k}$\newline
-verovatnoća za izbor akcije $a_i$ biti $c_i^{-1} / \sum_{j=0}^{k} c_j^{-1}$.
-
+\end{itemize}
+\item \textbf{Učenje uslovljavanjem, anti-ant algoritam}
+\item Akcije $(a_i)_{i < k}$, Cene $(c_i)_{i < k}$
+\item Verovatnoća za izbor akcije $a_i$ je $c_i^{-1} / \sum_{j=0}^{k} c_j^{-1}$
+\end{itemize}
 \end{frame}
 
 \section[]{Zaključak}
